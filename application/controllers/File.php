@@ -53,9 +53,9 @@ class File extends CI_Controller {
   	}
 
 		//fungsi untuk menampilkan tampilkan
-		public function Tampilan()
+		public function Test()
 		{
-			$this->load->view('halAwalNoLogin');
+			$this->load->view('loginModal');
 		}
 
 		//tampilkan error Message
