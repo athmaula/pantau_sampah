@@ -55,7 +55,7 @@ class File extends CI_Controller {
 		//fungsi untuk menampilkan tampilkan
 		public function Test()
 		{
-			$this->load->view('loginModal');
+			$this->load->view('signupModal');
 		}
 
 		//tampilkan error Message

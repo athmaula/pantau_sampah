@@ -1,9 +1,14 @@
+<link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo base_url()?>/assets/css/main.css" rel="stylesheet">
+<link href="<?php echo base_url()?>/assets/css/tambahan.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 <!--carousel-->
   <div id="MyCarousel" class="carousel slide">
       <ol class="carousel-indicators">
-        <li data-target = "#MyCarousel" data-slide-to ="0" class="active"></li>
-        <li data-target = "#MyCarousel" data-slide-to ="1"></li>
-        <li data-target = "#MyCarousel" data-slide-to ="2"></li>
+        <li data-target ="#MyCarousel" data-slide-to ="0" class="active"></li>
+        <li data-target ="#MyCarousel" data-slide-to ="1"></li>
+        <li data-target ="#MyCarousel" data-slide-to ="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="item active">
@@ -21,7 +26,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="img/space.jpg" alt="floor" class="img-responsive">
+          <img src="../../asset/img/space.jpg" alt="floor" class="img-responsive">
             <div class="carousel-caption">
               <h3>SPACE</h3>
               <p>
@@ -35,7 +40,7 @@
             </div>
         </div>
         <div class="item">
-          <img src="img/city.jpg" alt="floor" class="img-responsive">
+          <img src="../../asset/img/city.jpg" alt="floor" class="img-responsive">
             <div class="carousel-caption">
               <h3>City</h3>
               <p>
@@ -57,3 +62,6 @@
       </a>
   </div>
   <!--ends of carousel-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>
