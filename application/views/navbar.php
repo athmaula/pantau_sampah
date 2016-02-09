@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Pantau Sampah</title>
-  <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="<?php echo base_url()?>/assets/css/main.css" rel="stylesheet">
-  <!--<link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
+<?php $this->load->view('header') ?>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
@@ -17,8 +9,8 @@
       			<li><a href="#">Tentang Kami</a></li>
       	</ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="<?php echo base_url()?>index.php/application/views/signupModal.php"><span class="glyphicon glypicon-log-in" data-toggle="modal"></span>Login</a></li>
-          <li><a href="#"><span class="glyphicon glypicon-user"></span>Sign Up</a></li>
+          <li><a href="<?php echo site_url('file/login'); ?>"><span class="glyphicon glypicon-log-in" data-toggle="modal"></span>Login</a></li>
+          <li><a href="<?php echo site_url('file/register'); ?>"><span class="glyphicon glypicon-user"></span>Sign Up</a></li>
         </ul>
     </div>
   </nav>
