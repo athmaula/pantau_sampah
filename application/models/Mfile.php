@@ -9,12 +9,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $this->load->database();
     }
 
-    function Mnama()
-    {
-      $data['role_id']=$this->db->get('user');
-      //return $username->result();
-    }
-
     function get_user_all()
     {
         $query=$this->db->query("SELECT role_id FROM user limit 1");
@@ -26,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $username = set_value('username');  
       $password = set_value('password');
 
-      $hasil = $this->db->where('username',$username)
+      $hasil = $this->db->where('username',$username) //mengambil data dari database untuk di cocokan dengan inputan
                 ->where('password',$password)
                 ->limit(1)
                 ->get('users');

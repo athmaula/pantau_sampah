@@ -19,47 +19,24 @@ class file extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	 function __construct()
-	 {
-	 	parent::__construct();
-	 	$this->load->helper(array('url','form'));
-	 	$this->load->model('Mfile');
+	function __construct()
+	{
+		parent::__construct();
+ 	}
 
- 	 }
-
- 	 public function index()
-		{
-			$this->load->view('halAwalNoLogin');
-		}
-
-	 //fungsi ini untuk memanggil role_id user
-	 /*public function nama()
-	 {
-		 $data['data_user']=$this->Mfile->Mnama();
-		 $username=$data['data_user'];
-		 $data['Vnamauser'] = $this->Mfile->get_user_all();
-		 $this->load->view('Vnamauser', $data);
-	 }*/
-
-		/*fungsi untuk menampilkan tampilkan
-		public function Test()
-		{
-			$this->load->view('signupModal');
-		}
-		*/
-
-		//redirect halaman login form
-		public function login()
-		{
-			$this->load->view('form-login');
-		}
-
-		//redirect halaman register form
-		public function register()
-		{
-			$this->load->view('form-register');
-		}
-
-		//tampilkan error Message
-		//$this->output->enable_profiler(true);
+ 	public function index()
+	{
+		$this->load->view('halAwalNoLogin');
 	}
+
+	public function login()
+	{	
+		$this->load->view('form-login');	//memanggil halaman login
+	}
+
+	public function register()
+	{
+		$this->load->view('form-register'); //memanggil halaman register
+	}
+
+}

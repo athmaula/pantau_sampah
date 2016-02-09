@@ -1,9 +1,9 @@
 <?php $this->load->view('header');?>
 <div class="container">
 <div><?php $this->session->flashdata('error');
-           echo validation_errors();
+           echo validation_errors();  //apabila terjadi kesalahan akan ada pesen error
  ?></div>
-    <div><?php echo form_open('login','class="form-horizontal"')?></div>
+    <div><?php echo form_open('login','class="form-horizontal"')?></div> <!--mengarahkan hasil inputan ke controller -->
     <div class="form-group">
       <label class="col-sm-2 control-label">Username</label>
       <div class="col-sm-10">
@@ -23,5 +23,5 @@
       </div>
     <a href="<?php echo site_url('file/register') ?>">buat akun baru</a>
     </div>
-<?php form_close(); ?>
+<?php form_close(); ?> <!-- menutup form -->
 </div>

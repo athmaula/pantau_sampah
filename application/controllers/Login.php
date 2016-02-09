@@ -42,8 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					$this->session->set_userdata('role',$valid_user->role);
 
 					switch ($valid_user->role) {
-						case '1': //admin
-							$this->load->view('admin');	
+						case '1': //redirect ke halaman admin
+							$this->load->view('templateadmin/dashboard');	
 							break;
 						case '2': //user
 							$this->load->view('dashboard_member');	
