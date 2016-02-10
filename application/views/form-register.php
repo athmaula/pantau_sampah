@@ -38,6 +38,7 @@
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-success">Sign in</button>
+          <a href="<?php echo site_url('file/login') ?>">sudah punya akun, Login !</a>
       </div>
     </div>
 <?php form_close(); ?> <!-- menutup form -->

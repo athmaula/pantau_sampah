@@ -1,7 +1,6 @@
 <?php $this->load->view('navbar') ?>
 
-  <!--carousel
-    <div id="MyCarousel" class="carousel slide">
+      <div id="MyCarousel" class="carousel slide">
         <ol class="carousel-indicators">
           <li data-target ="#MyCarousel" data-slide-to ="0" class="active"></li>
           <li data-target ="#MyCarousel" data-slide-to ="1"></li>
@@ -9,7 +8,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="item active">
-            <img src="../../asset/img/floor.jpg" alt="floor" class="img-responsive">
+            <img src="<?php base_url() ?>asset/img/floor.jpg" alt="floor" class="img-responsive">
             <div class="carousel-caption">
               <h3>FLOOR</h3>
               <p>
@@ -23,7 +22,7 @@
             </div>
           </div>
           <div class="item">
-            <img src="../../asset/img/space.jpg" alt="floor" class="img-responsive">
+            <img src="<?php base_url(); ?>asset/img/space.jpg" alt="floor" class="img-responsive">
               <div class="carousel-caption">
                 <h3>SPACE</h3>
                 <p>
@@ -37,7 +36,7 @@
               </div>
           </div>
           <div class="item">
-            <img src="../../asset/img/city.jpg" alt="floor" class="img-responsive">
+            <img src="<?php base_url(); ?>asset/img/city.jpg" alt="floor" class="img-responsive">
               <div class="carousel-caption">
                 <h3>City</h3>
                 <p>
