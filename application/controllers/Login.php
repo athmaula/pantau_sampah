@@ -39,9 +39,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				{
 					//jika username dan password cocok
 					$this->session->set_userdata('username',$valid_user->username);
-					$this->session->set_userdata('role',$valid_user->role);
+					$this->session->set_userdata('role',$valid_user->role_id);
 
-					switch ($valid_user->role) {
+					switch ($valid_user->role_id) {
 						case '1': //redirect ke halaman admin
 							$this->load->view('templateadmin/dashboard');	
 							break;
