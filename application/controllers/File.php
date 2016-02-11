@@ -53,7 +53,7 @@ class File extends CI_Controller {
   	}
 
 		//fungsi untuk menampilkan tampilkan
-		public function Test()
+		public function index()
 		{
 			$this->load->view('halAwalNoLogin');
 		}

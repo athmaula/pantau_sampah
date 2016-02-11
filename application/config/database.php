@@ -77,13 +77,8 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-<<<<<<< HEAD
 	'password' => 'enaknyaapa',
 	'database' => 'PantauSampah',
-=======
-	'password' => 'namaku',
-	'database' => 'infosampah',
->>>>>>> 5bb998435bb19c6b5b7e9999964dbf3e214584cd
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
