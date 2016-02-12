@@ -1,7 +1,7 @@
 <?php $this->load->view('header');?>
 <div class="container">
 <div><?php $this->session->flashdata('error') ?></div>
-<div><?php validation_errors(); ?></div> <!-- apabila terjadi kesalahan akan ada pesen error -->
+<div><?php echo validation_errors(); ?></div> <!-- apabila terjadi kesalahan akan ada pesen error -->
     <div><?php echo form_open('login/register','class="form-horizontal"')?></div>  <!--mengarahkan hasil inputan ke controller--> 
     <div class="form-group">
       <label class="col-sm-2 control-label">Full Name</label>
@@ -19,6 +19,12 @@
       <label class="col-sm-2 control-label">Password</label>
       <div class="col-sm-10">
           <input type="password" class="form-control" name="password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Confirm Password</label>
+      <div class="col-sm-10">
+          <input type="password" class="form-control" name="passconf">
       </div>
     </div>
     <div class="form-group">

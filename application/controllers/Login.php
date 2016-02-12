@@ -65,7 +65,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->form_validation->set_rules('nama', 'Nama', 'required');
 			$this->form_validation->set_rules('username', 'Username', 'required');
 			$this->form_validation->set_rules('email', 'Email', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required');
+			$this->form_validation->set_rules('password', 'Password', 'required|matches[passconf]');
+			$this->form_validation->set_rules('passconf', 'Confirm Password', 'required');
 			
 
 			if ($this->form_validation->run() == FALSE) {

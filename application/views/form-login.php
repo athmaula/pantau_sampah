@@ -1,6 +1,6 @@
 <?php $this->load->view('header');?>
 <div class="container">
-<div><?php $this->session->flashdata('error');
+<div><?php echo $this->session->flashdata('error');
            echo validation_errors();  //apabila terjadi kesalahan akan ada pesen error
  ?></div>
     <div><?php echo form_open('login','class="form-horizontal"')?></div> <!--mengarahkan hasil inputan ke controller -->
