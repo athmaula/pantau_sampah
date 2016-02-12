@@ -58,6 +58,16 @@ class File extends CI_Controller {
 			$this->load->view('halAwalNoLogin');
 		}
 
+		public function login()
+	{	
+		$this->load->view('form-login');	//memanggil halaman login
+	}
+
+	public function register()
+	{
+		$this->load->view('form-register'); //memanggil halaman register
+	}
+
 		//tampilkan error Message
 		//$this->output->enable_profiler(true);
 	}
