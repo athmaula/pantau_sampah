@@ -13,12 +13,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			# code...
 			parent::__construct();
 			$this->load->model('mfile');
-			$this->load->library('form_validation');
+			$this->load->library('form_validation'); //memanggil form validation
 		}
 
 		public function index()
 		{
-		
 			$this->form_validation->set_rules('username', 'Username', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
@@ -62,11 +61,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		public function register()
 		{
-			$this->form_validation->set_rules('nama', 'Nama', 'required');
-			$this->form_validation->set_rules('username', 'Username', 'required');
-			$this->form_validation->set_rules('email', 'Email', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required|matches[passconf]');
-			$this->form_validation->set_rules('passconf', 'Confirm Password', 'required');
+			$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+			$this->form_validation->set_rules('username', 'Username', 'trim|required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|matches[passconf]');
+			$this->form_validation->set_rules('passconf', 'Confirm Password', 'trim|required');
 			
 
 			if ($this->form_validation->run() == FALSE) {
@@ -76,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			else
 			{
 				$this->mfile->register();
-				redirect('file/register'); 
+				redirect('file/register');
 			}
 
 		}

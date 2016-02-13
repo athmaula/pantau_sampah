@@ -33,6 +33,7 @@ class crud extends CI_Controller
 		$data['password'] = $this->input->post('password');
 		$data['email'] = $this->input->post('email');
 		$data['gender'] = $this->input->post('gender');
+		$data['role_id'] = $this->input->post('role');
 
 		$hasil = $this->crudmodel->add($data);
 		if ($hasil) {
@@ -42,33 +43,35 @@ class crud extends CI_Controller
 
 	}
 
-	public function edit($id)
+	public function edit()
 	{
-	    $data = array('id' => $id);
-	    $data['data_edit'] = $this->crudmodel->edit_m($data);
-	    $this->load->view('templateadmin/editform', $data);
-  	}
+	    $kd = $this->uri->segment(3);
+ 		if ($kd == NULL) {
+			redirect('crud');
+		}
+		$dt = $this->crudmodel->edit_m($kd);
+		$data['nama'] = $dt->nama;
+		$data['username'] = $dt->username;
+		$data['password'] = $dt->password;
+		$data['email'] = $dt->email;
+		$data['gender'] = $dt->gender;
+		$data['id'] = $kd;
+		$this->load->view('templateadmin/editform', $data);
+	}
 
   public function update()
   {
-  	$id 		= $this->input->post('id');
-    $nama 		= $this->input->post('nama');
-    $username  	= $this->input->post('username');
-    $password  	= $this->input->post('password');
-    $gender    	= $this->input->post('gender');
-    $email     	= $this->input->post('email');
-    //$role     	= $this->input->post('role');
-    //$update_at 	= $this->input->post('now()');
-   
-	$data = array('username' => $username, 
-				  'password' => $password,
-              	  'gender'	=> $gender,
-            	  'email'    => $email
-		);
-    
-    $this->crudmodel->update_m($data, $id);
-    redirect('crud');
-  }
+	  	if ($this->input->post('mit'))
+	  	{
+	   		$id = $this->input->post('id');
+	   		$this->crudmodel->update_m($id);
+	   		redirect('crud');
+	   	}
+	   	else
+	   	{
+	    	redirect('crud/edit/'.$id);
+	    }
+    }
 
   public function delete_user($id)
   {

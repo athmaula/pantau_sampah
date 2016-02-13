@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * 
 */
-class Crudmodel extends CI_Model
+class crudmodel extends CI_Model
 {
 	function __construct()
 	{
@@ -22,17 +22,35 @@ class Crudmodel extends CI_Model
 		return $query->result();
 	}
 
-	public function edit_m($data)
+	public function edit_m($a)
 	{
-      $this->db->where($data);
-      $edit=$this->db->get('user');
-      return $edit->result();
+       	$d = $this->db->get_where('user', array('id' => $a))->row();
+ 		return $d;
     }
-    public function update_m($data, $id)
+    public function update_m($id)
     {
-      $this->db->where('id',$id);
-      $this->db->update('user', $data);
-      return true;
+	    $nama 		= $this->input->post('nama');
+	    $username  	= $this->input->post('username');
+	    $password  	= $this->input->post('password');
+	    $email     	= $this->input->post('email');
+	    $gender    	= $this->input->post('gender');
+	    $role     	= $this->input->post('role');
+	    $edit	 	= $this->input->post('now()');
+	   
+		$data = array(
+			'nama'		=> $nama,
+			'username' => $username, 
+			'password' => $password,
+	        'email'    => $email,
+	        'gender'	=> $gender,
+	        'role_id' 	=> $role,
+	        'edit_at'	=> $edit
+
+			);
+
+      	$this->db->where('id', $id);
+  		$this->db->update('user', $data);
+      
     }
 
     public function delete($id)
