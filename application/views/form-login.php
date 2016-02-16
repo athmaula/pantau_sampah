@@ -10,14 +10,12 @@
       <div>
         <?php echo $this->session->flashdata('error');
               echo validation_errors();  //apabila terjadi kesalahan akan ada pesen error?>
-      </div>
     </div><!-- /.box-tools -->
   </div><!-- /.box-header -->
 </div>
   <div class="box-body with-border">
     <div>
       <?php echo form_open('login','class="form-horizontal"')?>
-    </div>
     <div class="form-group">
       <label class="col-sm-2 control-label">Username</label>
         <div class="col-sm-10">
@@ -36,22 +34,12 @@
   <div class="box-footer">
     <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-success">Sign in</button>
+        <a href="<?php echo site_url('file/register') ?>" class="pull-right">buat akun baru</a>
     </div>
-    <a href="<?php echo site_url('file/register') ?>">buat akun baru</a>
     </div>
     <?php form_close(); ?>
+    </div>
+    </div>
   </div><!-- box-footer -->
 </div><!-- /.box -->
 </div>
-
-
-<!--<div class="container">
-  <div id="box box-solid box-primary">
-
-     <!--mengarahkan hasil inputan ke controller -->
-
-
-
- <!-- menutup form -->
-<!--</div>
-</div>-->
