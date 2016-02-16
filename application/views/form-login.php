@@ -1,11 +1,10 @@
 <?php $this->load->view('header');?>
- <?php echo $this->session->flashdata('error');
-       echo validation_errors();  //apabila terjadi kesalahan akan ada pesen error?>
+ <?php echo $this->session->flashdata('error'); ?>
 
 <div class="col-sm-offset-4 col-sm-4 tengah">
   <div class="box box-solid box-primary">
   <div class="box-header with-border">
-    <h3 class="box-title">Register Pantau Sampah</h3>
+    <h3 class="box-title">Login Pantau Sampah</h3>
     <div class="box-tools pull-right">
       <!-- Buttons, labels, and many other things can be placed here! -->
       <!-- Here is a label for example -->
@@ -20,10 +19,12 @@
         <label class="col-sm-2 control-label">Username</label>
           <div class="col-sm-12">
             <input type="text" class="form-control" name="username" placeholder="Username">
+            <?php echo form_error('username', '<div class="error" style="color: #d50000">', '</div>'); ?>
           </div>
         <label class="col-sm-2 control-label">Password</label>
           <div class="col-sm-12">
             <input type="password" class="form-control" name="password" placeholder="Password">
+            <?php echo form_error('password', '<div class="error" style="color: #d50000">', '</div>'); ?>
           </div>
     </div>
   </div>

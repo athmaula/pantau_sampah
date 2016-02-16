@@ -21,7 +21,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			//menset rules apa saja yang di pakai untuk form
 			$this->form_validation->set_rules('username', 'Username', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
-			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
 
 			if($this->form_validation->run() == FALSE){
 				$this->load->view('form-login');	
@@ -70,18 +69,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|matches[passconf]');
 			$this->form_validation->set_rules('passconf', 'Confirm Password', 'trim|required');
-			$this->form_validation->set_error_delimiters('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>','</div>');
 						
 
 			if ($this->form_validation->run() == FALSE) {
 				//membuat alert message registrasi gagal
+				$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Sorry </strong>The Registered Failed, please try again !</div>');
 				$this->load->view('form-register');
 			}
 			else
 			{
 				$this->mfile->register();
 				//membuat alert message sukses register
-				$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Successfully Registered.</strong></div>');
+				$this->session->set_flashdata('success', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Successfully Registered.</strong></div>');
 				redirect('file/register');
 			}
 
