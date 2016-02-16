@@ -10,7 +10,7 @@
       	</ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="<?php echo site_url('file/login'); ?>"><span class="glyphicon glypicon-log-in"></span>Login</a></li>
-          <li><a href="<?php echo site_url('file/register'); ?>"><span class="glyphicon glypicon-user"></span>Sign Up</a></li>
+          <li><a href="#tentang"><span class="glyphicon glypicon-user"></span>Sign Up</a></li>
         </ul>
     </div>
   </nav>
