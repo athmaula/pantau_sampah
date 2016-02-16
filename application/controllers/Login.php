@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$valid_user = $this->mfile->checkvalid();
 				if($valid_user==FALSE)
 				{	//error message bila username / password salah
-					$this->session->set_flashdata('error','Wrong, Username / Password !!!');
+					$this->session->set_flashdata('error','<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong> Wrong Username / Password !!</div>');
 					redirect('login');
 				}
 				else
@@ -70,19 +70,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|matches[passconf]');
 			$this->form_validation->set_rules('passconf', 'Confirm Password', 'trim|required');
-			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+			$this->form_validation->set_error_delimiters('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>','</div>');
 						
 
 			if ($this->form_validation->run() == FALSE) {
 				//membuat alert message registrasi gagal
-				$this->session->set_flashdata('error','Error, please re-Registration');
 				$this->load->view('form-register');
 			}
 			else
 			{
 				$this->mfile->register();
 				//membuat alert message sukses register
-				$this->session->set_flashdata('message', 'Successfully Registered.');
+				$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Successfully Registered.</strong></div>');
 				redirect('file/register');
 			}
 
