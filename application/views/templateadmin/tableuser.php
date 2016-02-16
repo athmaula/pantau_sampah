@@ -10,26 +10,34 @@
                 <table class="table no-margin">
                   <thead>
                   <tr>
+                    <th>No</th>
                     <th>#ID</th>
                     <th>Username</th>
-                    <th>Nama</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Gender</th>
                     <th>Status</th>
+                    <th>Create at</th>
+                    <th>Edit at</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($get_data as $row) {
+                  <?php   $no = 0;
+                          foreach ($get_data as $row) {
+                          $no++;
                     # code...
                    ?>
 					        <tr>
+                    <td><?php echo $no ?></td>
 					          <td><?php echo $row->id; ?></td>
 					          <td><?php echo $row->username; ?></td>
 					          <td><?php echo $row->nama; ?></td>
 					          <td><?php echo $row->email; ?></td>
 					          <td><?php echo $row->gender; ?></td>
-					          <td><?php echo $row->role_id; ?></td>
+                    <td><?php echo $row->role_id; ?></td>
+					          <td><?php echo $row->create_at; ?></td>
+                    <td><?php echo $row->edit_at; ?></td>
 					          <td>
 					          	<a href="<?php echo site_url('crud/edit/'.$row->id);?>" class="btn btn-warning">Edit</a> 
 					          	<a href="<?php echo site_url('crud/delete_user/'.$row->id); ?>" class="btn btn-danger">Delete</a>
