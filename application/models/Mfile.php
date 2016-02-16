@@ -15,8 +15,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         return $query->result();
     }
 
-    public function checkvalid()
+    public function checkvalid() //cek valid user
     {
+      //menset data dari form
       $username = set_value('username');  
       $password = set_value('password');
 
@@ -24,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 ->where('password',$password)
                 ->limit(1)
                 ->get('user');
+
       if ($hasil->num_rows()>0)
       {
         return $hasil->row();
@@ -41,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $password  = set_value('password');
     $email     = set_value('email');
     $gender    = set_value('gender');
-    $role      = set_value('', '2');
+    $role      = set_value('', '2'); // 'user_role' diset otomatis '2' / untuk member
     $create_at = set_value('create_at');
     
     $data['nama']       = $nama;
@@ -52,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['role_id']    = $role;
     $data['create_at']  = $create_at;
 
-    $this->db->insert('user', $data);
+    $this->db->insert('user', $data); //query insert data
     
   }
 
