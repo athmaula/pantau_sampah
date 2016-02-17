@@ -1,7 +1,39 @@
 .latar{
-  background-image: url("../img/back.png");
+  background-image: url("../img/bck.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 43.5em;
 }
 
 .tengah{
     padding: 100px 30px 50px 80px;
+}
+
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+}
+
+#myCarousel {
+  width: 100%;
+  padding: 50px;
+}
+
+.bottom {
+	margin:auto;
+    background-color: #373737;
+    color: #ffffff;
+}
+.bottom .container-fluid h4 {
+	margin-top: 40px;
+    text-align: left;
+}
+.bottom .container-fluid {
+    min-height: 200px;
+    border: 1px;
+    border-color: red;
+}
+.bottom .container-fluid p {
+    text-align: justify;
 }

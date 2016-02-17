@@ -2,7 +2,7 @@
   <head>
     <title>Pantau Sampah</title>
     <link href="<?php echo base_url()?>asset/css/bootstrap.min.css" rel="stylesheet">
-  	<link href="<?php echo base_url()?>asset/css/main.css" rel="stylesheet">
+  	
     <link href="<?php echo base_url()?>asset/css/tambahan.css" rel="stylesheet">
     <link href="<?php echo base_url()?>asset/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>asset/css/AdminLTE.min.css"  rel="stylesheet" >

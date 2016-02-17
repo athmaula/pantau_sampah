@@ -3,12 +3,10 @@
 <div class="bottom">
         <div class="container-fluid">
             <div class="col-md-8 col-sm-4">
-                <h4>PantauSampah</h4>
+                <h4>Pantau Sampah Crew</h4>
                 <p>
-                Aplikasi ini dibuat dengan tujuan menginformasikan user seputar produksi sampah di Semarang, terutama sampah rumah
-                tangga dan dampaknya bila tidak di kelola dengan baik.
-                Selain itu aplikasi ini dapat mengitung jumlah sampah yang dihasilkan oleh user perhari dan menghitung jumlah sampah
-                yang di produksi warga kota Semarang setiap harinya sambil menampilkan fakta fakta unik seputar sampah.
+                This application is collaboration idea from two student who aware the risk of not
+                manage our garbage correctly. We invent this application
                 </p>
                 <hr>
             </div>
