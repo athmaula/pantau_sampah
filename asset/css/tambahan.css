@@ -1,13 +1,42 @@
 .latar{
-  background-image: url("../img/bck.jpg");
+  background-image: url("../img/section.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 43.5em;
 }
 
-.tengah{
-    padding: 100px 30px 50px 80px;
+.navbar-custom{
+  background-color: #4db6ac;
 }
+
+.navbar-brand a{
+  color: white;
+  text-decoration: none;
+}
+.navbar-brand a:hover{
+  color: #00695c;
+  text-decoration: none;
+  font-style: bold;
+}
+
+.navbar-header a{
+  color: white;
+  text-decoration: none;
+}
+.navbar-header a:hover{
+  color: #00695c;
+  text-decoration: none;
+  font-style: bold;
+}
+
+.tengah{
+    padding: 165px 30px 50px 80px;
+}
+
+.tengah-reg{
+    padding: 85px 30px 50px 80px;
+}
+
 
 .carousel-content {
     color:black;
@@ -22,18 +51,6 @@
 
 .bottom {
 	margin:auto;
-    background-color: #373737;
+    background-color: #4db6ac;
     color: #ffffff;
-}
-.bottom .container-fluid h4 {
-	margin-top: 40px;
-    text-align: left;
-}
-.bottom .container-fluid {
-    min-height: 200px;
-    border: 1px;
-    border-color: red;
-}
-.bottom .container-fluid p {
-    text-align: justify;
 }

@@ -1,16 +1,21 @@
 <?php $this->load->view('header') ?>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
+	<style media="screen">
+
+	</style>
+
+	<nav class="navbar navbar-custom navbar-fixed-top">
+		<div class="container">
     		<div class="navbar-header">
       			<a class="navbar-brand" href="<?php echo site_url('file/index'); ?>">PantauSampah</a>
-    		</div>
-    		<ul class="nav navbar-nav">
-      			<li><a href="<?php echo site_url('file/index#tentang'); ?>">About Us</a></li>
-      	</ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="<?php echo site_url('file/login'); ?>"><span class="glyphicon glypicon-log-in"></span>Login</a></li>
-          <li><a href="<?php echo site_url('file/register'); ?>"><span class="glyphicon glypicon-user"></span>Sign Up</a></li>
-        </ul>
+						<a href="<?php echo site_url('file/index#tentang'); ?>" class="navbar-brand" style="font-size:14px">About Us</a>
+				</div>
+
+        <div class="nav navbar-brand navbar-right" style="font-size:14px">
+          <a href="<?php echo site_url('file/login'); ?>">Login</a>
+        </div>
+				<div class="nav navbar-brand navbar-right" style="font-size:14px">
+          <a href="<?php echo site_url('file/register'); ?>">Sign Up</a>
+        </div>
     </div>
   </nav>
