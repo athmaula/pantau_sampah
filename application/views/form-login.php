@@ -1,4 +1,5 @@
 <?php $this->load->view('header');?>
+<?php $this->load->view('navbar') ?>
  <?php echo $this->session->flashdata('error'); ?>
 
 <div class="col-sm-offset-4 col-sm-4 tengah">
