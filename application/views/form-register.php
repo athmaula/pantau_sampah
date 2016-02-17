@@ -1,7 +1,7 @@
 <?php $this->load->view('header');?>
 <div>
 <?php echo $this->session->flashdata('error') ?>
-<?php echo validation_errors(); ?>
+<?php echo $this->session->flashdata('success') ?>
 </div>
 <div class="col-sm-offset-3 col-sm-6 tengah-reg">
   <div class="box box-solid box-primary">
@@ -19,31 +19,38 @@
       <label class="col-sm-2 control-label">Full Name</label>
       <div class="col-sm-12">
           <input type="text" class="form-control" name="nama" placeholder="Pantau Sampah">
+          <?php echo form_error('nama', '<div class="error" style="color: #d50000">', '</div>'); ?>
       </div>
 
       <label class="col-sm-2 control-label">Username</label>
       <div class="col-sm-12">
           <input type="text" class="form-control" name="username" placeholder="PantauSampah">
+          <?php echo form_error('username', '<div class="error" style="color: #d50000">', '</div>'); ?>
       </div>
 
       <label class="col-sm-2 control-label">Password</label>
       <div class="col-sm-12">
           <input type="password" class="form-control" name="password" placeholder="Insert Password">
+          <?php echo form_error('password', '<div class="error" style="color: #d50000">', '</div>'); ?>
       </div>
 
       <label class="col-sm-4 control-label">Confirm Password</label>
       <div class="col-sm-12">
           <input type="password" class="form-control" name="passconf" placeholder="Retype Password">
+          <?php echo form_error('passconf', '<div class="error" style="color: #d50000">', '</div>'); ?>
       </div>
           <label class="col-sm-2 control-label">Email</label>
       <div class="col-sm-12">
           <input type="text" class="form-control" name="email" placeholder="example@PantauSampah.com">
+          <?php echo form_error('email', '<div class="error" style="color: #d50000">', '</div>'); ?>     
       </div>
 
       <label class="col-sm-1 control-label">Gender</label>
       <div class="col-sm-12">
           <input type="radio" name="gender" value="male" <?php echo set_radio('gender', 'male'); ?>/>Male
           <input type="radio" name="gender" value="female" <?php echo set_radio('gender', 'female'); ?>/>Female
+          <?php echo form_error('gender', '<div class="error" style="color: #d50000">', '</div>'); ?>
+
       </div>
     </div>
     <div class="clearfix"></div>
