@@ -18,9 +18,6 @@
                     <th>No</th>
                     <th>Username</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>Role as</th>
                     <th>Create at</th>
                     <th>Edit at</th>
                     <th>Action</th>
@@ -37,15 +34,12 @@
 					          <td class="hidden"><?php echo $row->id; ?></td>
 					          <td><?php echo $row->username; ?></td>
 					          <td><?php echo $row->nama; ?></td>
-					          <td><?php echo $row->email; ?></td>
-					          <td><?php echo $row->gender; ?></td>
-                    <td><?php echo $row->role_id; ?></td>
 					          <td><?php echo $row->create_at; ?></td>
                     <td><?php echo $row->edit_at; ?></td>
 					          <td>
 					          	<a href="<?php echo site_url('crud/edit/'.$row->id);?>" class="btn btn-warning btn-flat">Edit</a> 
 					          	<a href="<?php echo site_url('crud/delete_user/'.$row->id);?>" id="delete" class="btn btn-danger btn-flat" onclick="return dodelete()">Delete</a>
-                       <a href="<?php echo site_url('crud/viewmoreuser/'.$row->id); ?>" class="btn btn-info btn-flat">View More</a>
+                      <a href="<?php echo site_url('crud/viewmoreuser/'.$row->id); ?>" class="btn btn-info btn-flat">View More</a>
                     </td>
                     </tr>
 					      <?php } ?>

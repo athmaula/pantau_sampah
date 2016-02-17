@@ -56,6 +56,7 @@ class crud extends CI_Controller
 		$data['password'] = $dt->password;
 		$data['email'] = $dt->email;
 		$data['gender'] = $dt->gender;
+		$data['role_id'] = $dt->role_id;
 		$data['id'] = $kd;
 		$this->load->view('templateadmin/editform', $data);
 	}
@@ -84,8 +85,21 @@ class crud extends CI_Controller
 
   public function viewmoreuser()
   {
-
-  	$this->load->view('templateadmin/vmoreuser');
+  	$kd = $this->uri->segment(3);
+ 		if ($kd == NULL) {
+			redirect('crud');
+		}
+		$dt = $this->crudmodel->editmore($kd);
+		$data['nama'] = $dt->nama;
+		$data['username'] = $dt->username;
+		$data['password'] = $dt->password;
+		$data['email'] = $dt->email;
+		$data['gender'] = $dt->gender;
+		$data['role_id'] = $dt->role_id;
+		$data['bio'] = $dt->bio;
+		$data['born_date'] = $dt->born_date;
+		$data['id'] = $kd;
+  	$this->load->view('templateadmin/vmoreuser', $data);
   }
 
 }

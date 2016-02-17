@@ -59,4 +59,15 @@ class crudmodel extends CI_Model
     	return $this->db->delete('user');
     }
 
+    public function getid()
+    {
+    	$this->session->userdata('id');
+    }
+
+    public function editmore($a)
+    {
+    	$d = $this->db->get_where('user', array('id' => $a))->row();
+ 		return $d;
+    }
+
 }
