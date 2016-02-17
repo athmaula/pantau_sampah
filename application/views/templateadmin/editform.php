@@ -34,15 +34,15 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">Gender</label>
             <div class="col-sm-10">
-                <input type="radio" name="gender" value="male" <?php echo set_radio('gender', 'male'); ?>/>Male
-                <input type="radio" name="gender" value="female" <?php echo set_radio('gender', 'female'); ?>/>Female
+                <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male"/>Male
+                <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female"/>Female
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Status</label>
             <div class="col-sm-10">
-                <input type="radio" name="role" value="1" <?php echo set_radio('gender', '1'); ?>/>Admin
-                <input type="radio" name="role" value="2" <?php echo set_radio('gender', '2'); ?>/>User Only
+                <input type="radio" name="role" <?php if (isset($role) && $role=="1") echo "checked";?> value="1"/>Admin
+                <input type="radio" name="role" <?php if (isset($role) && $role=="2") echo "checked";?> value="2" />Member
             </div>
           </div>
           <div class="clearfix"></div>

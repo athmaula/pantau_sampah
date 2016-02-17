@@ -20,7 +20,7 @@ class crud extends CI_Controller
 		$this->load->view('templateadmin/tableuser', $data);
 	}
 
-	public function add()
+	public function add() 
 	{
 		
 		$this->load->view('templateadmin/addnew');
@@ -37,6 +37,7 @@ class crud extends CI_Controller
 
 		$hasil = $this->crudmodel->add($data);
 		if ($hasil) {
+					$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
 					redirect('crud');
 					# code...
 				}		
@@ -65,6 +66,7 @@ class crud extends CI_Controller
 	  	{
 	   		$id = $this->input->post('id');
 	   		$this->crudmodel->update_m($id);
+			$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
 	   		redirect('crud');
 	   	}
 	   	else
@@ -76,7 +78,14 @@ class crud extends CI_Controller
   public function delete_user($id)
   {
   	$this->crudmodel->delete($id);
+	$this->session->set_flashdata('success_delete','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Delete Data,</div>');
   	$this->index();
+  }
+
+  public function viewmoreuser()
+  {
+
+  	$this->load->view('templateadmin/vmoreuser');
   }
 
 }

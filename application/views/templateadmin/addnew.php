@@ -4,31 +4,31 @@
   <div class="content-header">
     <div class="box box-info">
       <div class="box-body">
-          <div><?php
-                    echo form_open('crud/insert','class="form-horizontal"');
-                    echo validation_errors();?> 
+          <?php
+                    echo form_open('crud/insert','class="form-horizontal"');?>
+
           <div class="form-group">
             <label class="col-sm-2 control-label">Full Name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="nama">
+                <input type="text" class="form-control" name="nama" placeholder="Pantau Sampah">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Username</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="username">
+                <input type="text" class="form-control" name="username" placeholder="Pantau Sampah">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Password</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" name="password">
+                <input type="password" class="form-control" name="password" placeholder="Insert Password">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">Email</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="email">
+                <input type="text" class="form-control" name="email" placeholder="Example@pantausampah.com">
             </div>
           </div>
           <div class="form-group">
@@ -49,13 +49,13 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-success">Tambah Data</button>
+                <a href="<?php echo site_url('crud') ?>" class="btn btn-danger" >Back</a>
             </div>
           </div>
       <?php form_close(); ?> <!-- menutup form -->
       </div>
     </div>
   </div>
-</div>
 </div>
 <?php $this->load->view('templateadmin/footer'); ?>
 
