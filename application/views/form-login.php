@@ -1,8 +1,8 @@
 <?php $this->load->view('header');?>
 <?php $this->load->view('navbar') ?>
- <?php echo $this->session->flashdata('error'); ?>
 
 <div class="col-sm-offset-4 col-sm-4 tengah">
+  <?php echo $this->session->flashdata('error'); ?>
   <div class="box box-solid box-primary">
   <div class="box-header with-border">
     <h3 class="box-title">Login Pantau Sampah</h3>
@@ -40,4 +40,5 @@
   </div><!-- box-footer -->
   </div>
 </div><!-- /.box -->
+
 </div>
