@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 04, 2016 at 03:18 PM
+-- Generation Time: Feb 18, 2016 at 03:15 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -114,19 +114,30 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `role_id` int(2) NOT NULL,
-  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `bio` text NOT NULL,
+  `born_date` varchar(70) NOT NULL,
+  `gender` varchar(8) DEFAULT NULL,
+  `role_id` int(2) DEFAULT NULL,
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `nama`, `username`, `password`, `role_id`, `create_at`, `edit_at`) VALUES
-(1, 'admin', 'admin', 'popo', 1, '2016-02-01 11:37:09', '0000-00-00 00:00:00');
+INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `bio`, `born_date`, `gender`, `role_id`, `create_at`, `edit_at`) VALUES
+(2, 'immatulfathina', 'fathina', 'qwerty', 'imma@fathina.com', '', '', 'female', 1, '2016-02-13 08:01:15', '2016-02-16 17:17:41'),
+(3, 'arya kusuma', 'aryakus', '123456', 'arya@kuskus.com', '', '', 'male', 2, '2016-02-13 08:00:21', '2016-02-16 09:29:49'),
+(17, 'athoil maula', 'athoilma', '123456789', 'athoil@maula.com', '', '', 'male', 1, '2016-02-10 18:47:16', '2016-02-16 15:17:20'),
+(18, 'hafiz zakky', 'hafiz', '123456', 'hafiz@zakky.com', 'hafiss', '1995-09-09', 'male', NULL, '2016-02-11 04:30:39', '2016-02-18 07:27:01'),
+(21, 'patricia b', 'patricia', 'qwerty', 'patricia@mail.com', '', '', 'female', 1, '0000-00-00 00:00:00', '2016-02-16 09:30:18'),
+(43, 'Admin', 'admin', 'popo', 'admin@admin.com', 'gua admin nya', '', NULL, NULL, '2016-02-16 16:59:29', '2016-02-18 07:52:29'),
+(44, 'portgas D ace', 'hikenace', '123456', 'portgas@ace.com', 'Shirohige boys', '', 'male', NULL, '0000-00-00 00:00:00', '2016-02-18 06:22:31'),
+(45, 'sherlock holmes', 'holmes', 'qwerty', 'sherlock@holmes.com', '', '1999-01-10', 'male', NULL, '0000-00-00 00:00:00', '2016-02-18 07:37:03');
 
 -- --------------------------------------------------------
 
