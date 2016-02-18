@@ -1,11 +1,10 @@
 <?php $this->load->view('header');?>
 <?php $this->load->view('navbar') ?>
 
-<div>
-<?php echo $this->session->flashdata('error') ?>
-<?php echo $this->session->flashdata('success') ?>
-</div>
+
 <div class="col-sm-offset-3 col-sm-6 tengah-reg">
+  <?php echo $this->session->flashdata('error') ?>
+  <?php echo $this->session->flashdata('success') ?>
   <div class="box box-solid box-primary">
   <div class="box-header with-border">
     <h3 class="box-title">Sign Up Pantau Sampah</h3>

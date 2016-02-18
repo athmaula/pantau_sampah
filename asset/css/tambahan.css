@@ -2,7 +2,7 @@
   background-image: url("../img/section.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 43.5em;
+  height: 609px;
 }
 
 .navbar-custom{
@@ -53,4 +53,17 @@
 	margin:auto;
     background-color: #4db6ac;
     color: #ffffff;
+}
+
+.skin-custom-font{
+  color:#fff;
+}
+
+.skin-custom .main-header .navbar {
+  background-color: #4db6ac;
+}
+
+.skin-custom .main-header .logo {
+  background-color: #26a69a;
+  color: white;
 }
