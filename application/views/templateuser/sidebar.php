@@ -26,10 +26,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li><a href="<?php echo site_url('crud') ?>"><i class="fa fa-th"></i>Input</a></li>
-        <li><a href="<?php echo site_url('crud') ?>"><i class="fa fa-user"></i>Profile</a></li>
-
-        </li>
+        <li><a href="<?php echo site_url() ?>"><i class="fa fa-th"></i>Input</a></li>
 
       </ul>
     </section>

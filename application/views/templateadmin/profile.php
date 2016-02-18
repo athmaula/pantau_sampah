@@ -1,5 +1,5 @@
-<?php $this->load->view('templateuser/header'); ?>
-<?php $this->load->view('templateuser/sidebar') ?>
+<?php $this->load->view('templateadmin/header'); ?>
+<?php $this->load->view('templateadmin/sidebar') ?>
 <div class="content-wrapper">
  <?php echo $this->session->flashdata('success_edit'); ?>
 	<div class="content-header">
@@ -7,7 +7,7 @@
 			<div class="box box-info">
 				<div class="box-header with-border">
 					<h2 class="box-title">Nama</h2>
-					<a href="<?php echo site_url('user/edit') ?>" class="glyphicon glyphicon-pencil pull-right"></a>
+					<a href="<?php echo site_url('admin/edit') ?>" class="glyphicon glyphicon-pencil pull-right"></a>
 				</div>
 				<div class="box-body">
 						<div class="panel-body">
@@ -78,7 +78,7 @@
 		</div>
 	</div>
 </div>
-<?php $this->load->view('templateuser/footer'); ?>
+<?php $this->load->view('templateadmin/footer'); ?>
 
 
 

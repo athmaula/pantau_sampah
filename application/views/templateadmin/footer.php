@@ -30,5 +30,6 @@
 <script src="<?php echo base_url();?>asset/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>asset/dist/js/demo.js"></script>
+<script src="<?php echo base_url();?>asset/plugins/datepicker/bootstrap-datepicker.js"></script>
 </body>
 </html>
