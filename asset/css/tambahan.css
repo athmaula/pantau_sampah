@@ -54,3 +54,16 @@
     background-color: #4db6ac;
     color: #ffffff;
 }
+
+.skin-custom-font{
+  color:#fff;
+}
+
+.skin-custom .main-header .navbar {
+  background-color: #4db6ac;
+}
+
+.skin-custom .main-header .logo {
+  background-color: #26a69a;
+  color: white;
+}

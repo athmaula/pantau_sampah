@@ -55,11 +55,11 @@ class File extends CI_Controller {
 		//fungsi untuk menampilkan tampilkan
 		public function index()
 		{
-			$this->load->view('halAwalNoLogin');
+			$this->load->view('templateadmin/dashboard');
 		}
 
 		public function login()
-	{	
+	{
 		$this->load->view('form-login');	//memanggil halaman login
 	}
 
