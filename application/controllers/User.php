@@ -74,4 +74,32 @@ class user extends CI_Controller
 	   		redirect('user/view');
 	   	}
 	}
+
+	public function inputview()
+	{
+		$this->load->view('templateuser/inputform');
+	}
+
+	public function inputsampah()
+	{
+		// $id['profile'] = $this->userm->getId();
+
+		//$id = $this->input->post('id_user');
+		//$data['id_user'] = $this->userm->getId();
+		$id = $this->session->userdata('id');
+		$data['id_user'] = $id;
+		$data['satuan'] = $this->input->post('satuan');
+		$data['input_sampah'] = $this->input->post('beratsampah');
+		$data['action'] = $this->input->post('action');
+		$data['jenis_sampah'] = $this->input->post('jenis');
+		$data['tanggal'] = $this->input->post('tanggal');
+		
+		$hasil = $this->userm->insertsampah($data);
+		if ($hasil) {
+					//$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
+					redirect('user');
+					# code...
+				}		
+
+	}
 }

@@ -26,6 +26,11 @@ class File extends CI_Controller {
 	 	$this->load->model('Mfile');
  	 }
 
+ 	 public function index()
+ 	 {
+ 	 	$this->load->view('halAwalNoLogin');
+ 	 }
+
 	 //fungsi ini untuk memanggil role_id user
 	 public function nama()
 	 {
@@ -53,10 +58,6 @@ class File extends CI_Controller {
   	}
 
 		//fungsi untuk menampilkan tampilkan
-		public function index()
-		{
-			$this->load->view('templateadmin/dashboard');
-		}
 
 		public function login()
 	{
