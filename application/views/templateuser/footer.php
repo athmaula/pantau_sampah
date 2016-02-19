@@ -2,8 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.2
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2014-2015
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -17,6 +16,7 @@
 <script src="<?php echo base_url();?>asset/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>asset/js/app.min.js"></script>
+<script src="<?php echo base_url();?>asset/plugins/datepicker/bootstrap-datepicker.js"></script>-->
 <!-- Sparkline -->
 <script src="<?php echo base_url();?>asset/plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -30,6 +30,14 @@
 <script src="<?php echo base_url();?>asset/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>asset/dist/js/demo.js"></script>
+
+<script>
+  $(document).ready(function() {
+   $('.datepicker').datepicker({
+    startDate: '-3d'
+    });
+});
+  </script>
 
 </body>
 </html>

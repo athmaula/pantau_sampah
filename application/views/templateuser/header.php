@@ -4,6 +4,7 @@
     <title>Pantau Sampah</title>
     <!-- bootstrap link -->
     <link href="<?php echo base_url()?>asset/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>asset/plugins/datepicker/datepicker3.css">
     <!-- Font awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Ionicon -->
@@ -13,7 +14,7 @@
     <!-- theme admin lte style -->
     <link href="<?php echo base_url(); ?>asset/css/AdminLTE.min.css"  rel="stylesheet" >
     <link href="<?php echo base_url(); ?>asset/css/skins/_all-skins.min.css"  rel="stylesheet" >
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>asset/plugins/datepicker/datepicker3.css">
+    
 
   </head>
   <body class="hold-transition skin-green-light sidebar-mini">

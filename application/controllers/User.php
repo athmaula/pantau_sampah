@@ -19,7 +19,8 @@ class user extends CI_Controller
 	public function index()
 	{
 		# code...
-		$this->load->view('templateuser/dashboard');
+		$data['getdata'] = $this->userm->view();
+		$this->load->view('templateuser/dashboard', $data);
 	}
 
 	public function view()
@@ -86,8 +87,10 @@ class user extends CI_Controller
 
 		//$id = $this->input->post('id_user');
 		//$data['id_user'] = $this->userm->getId();
-		$id = $this->session->userdata('id');
-		$data['id_user'] = $id;
+		$id_user = $this->session->userdata('id');
+
+		//$data['id_data'] = $this->input->post('id');
+		$data['user_id'] = $id_user;
 		$data['satuan'] = $this->input->post('satuan');
 		$data['input_sampah'] = $this->input->post('beratsampah');
 		$data['action'] = $this->input->post('action');
@@ -95,11 +98,54 @@ class user extends CI_Controller
 		$data['tanggal'] = $this->input->post('tanggal');
 		
 		$hasil = $this->userm->insertsampah($data);
-		if ($hasil) {
-					//$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
-					redirect('user');
-					# code...
-				}		
-
+		if ($hasil) 
+		{
+			$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
+			redirect('user');
+			# code...
+		}
+		else
+		{
+			$this->session->set_flashdata('error', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
+			redirect('inputview');
+		}		
 	}
+
+	public function editinputsampah()
+	{
+		$kd = $this->uri->segment(3);
+ 		if ($kd == NULL) {
+			redirect('user');
+		}
+		$dt = $this->userm->editsampah($kd);
+		$data['input_sampah'] = $dt->input_sampah;
+		$data['satuan'] 	  = $dt->satuan;
+		$data['action'] 	  = $dt->action;
+		$data['jenis_sampah'] = $dt->jenis_sampah;
+		$data['tanggal'] 	  = $dt->tanggal;
+		$data['id_data'] = $kd;
+		$this->load->view('templateuser/editinputsampah', $data);
+	}
+
+	public function updateinputsampah()
+	{
+		if ($this->input->post('submit'))
+	  	{
+	   		$id = $this->input->post('id_data');
+	   		$this->userm->updatesampah($id);
+			$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
+	   		redirect('user');
+	   	}
+	   	else
+	   	{
+	    	redirect('user/editinputsampah/'.$id);
+	    }
+	}
+
+	public function deleteinputsampah($id)
+	  {
+	  	$this->userm->deletesampah($id);
+		$this->session->set_flashdata('success_delete','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Delete Data,</div>');
+	  	$this->index();
+	  }
 }
