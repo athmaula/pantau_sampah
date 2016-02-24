@@ -6,15 +6,15 @@
     <?php echo $this->session->flashdata('error'); ?>
       <section class="content">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-7">
             <div class="box box-solid box-info">
               <div class="box-header with-border">
-                <h3> Input Your .... </h3>
-              </div>              
+                <h3> Input Your Garbage Weight </h3>
+              </div>
               <?php echo form_open('user/inputsampah','class="form-horizontal"');?>
                 <div class="box-body" id="settings">
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Satuan berat sampah</label>
+                    <label class="col-sm-4 control-label">Satuan berat sampah</label>
                     <div class="col-sm-7">
                       <select class="form-control" name="satuan">
                         <option value="0">--SELECT--</option>
@@ -24,25 +24,25 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">berat sampah</label>
+                    <label class="col-sm-4 control-label">Garbage Weight</label>
                     <div class="col-sm-7">
                       <input type="text" class="form-control" name="beratsampah" placeholder="">
                     </div>
                   </div>
                    <div class="form-group">
-                     <label class="col-sm-2 control-label">Jenis Sampah</label>
+                     <label class="col-sm-4 control-label">Garbage Form</label>
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="jenis" value="1">
-                          Plastik
+                          Plastic
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="2">
-                          Kertas
+                          Paper
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="3">
-                          Kaca
+                          Glass
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="4">
@@ -54,13 +54,13 @@
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="6">
-                          Lain -lain
+                          Other
                         </label>
                       </div>
                   </div>
                   <br />
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Action</label>
+                    <label class="col-sm-4 control-label">Action to Garbage</label>
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="action" value="1">
@@ -77,7 +77,7 @@
                       </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">tanggal</label>
+                    <label class="col-sm-4 control-label">Date</label>
                       <div class="col-sm-7">
                         <div class="input-group date">
                           <input type="text" class="form-control" name="tanggal" data-provide="datepicker" data-date-format="yyyy-dd-mm">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="box-footer">
                   <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-5">
+                    <div class="col-sm-offset-9 col-sm-5">
                       <input type="submit" class="btn btn-success btn-flat" value="submit">
                     </div>
                   </div>
@@ -102,4 +102,3 @@
 <?php $this->load->view('templateadmin/footer'); ?>
 
  <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
-

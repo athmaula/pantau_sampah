@@ -1,6 +1,7 @@
 <!DOCTYPE html>
   <head>
     <title>Pantau Sampah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<?php echo base_url()?>asset/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="<?php echo base_url()?>asset/css/tambahan.css" rel="stylesheet">

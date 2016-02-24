@@ -10,22 +10,29 @@
 
 
     <!-- Wrapper for slides -->
-    <div class="row">
+    <div class="row tengah">
         <div class="col-xs-offset-3 col-xs-6">
           <div class="carousel-inner" role="listbox">
     <div class="item active">
         <div class="carousel-content">
             <div>
-                <h3>#1</h3>
-                <p>This is a twitter bootstrap carousel that only uses text. There are no images in the carousel slides.</p>
+                <h1>National Waste Commemoration Day</h1>
+                <h4>In February, 21th set as National Waste Commemoration Day, because tragedy take place in Leuwigajah, Cimahi,
+                  West of Java. Stack of garbage fall out and burried 150 people, most of them are scavenger who lived around
+                   the Leuwigajah landfill. Goverment see the tragedy as reminders that they not handle the garbage problem correctly
+                   and commit to handle garbage problem seriously.
+                </h4>
             </div>
         </div>
     </div>
     <div class="item">
         <div class="carousel-content">
             <div>
-                <h3>#2</h3>
-                <p>This is another much longer item. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, sint fuga temporibus nam saepe delectus expedita vitae magnam necessitatibus dolores tempore consequatur dicta cumque repellendus eligendi ducimus placeat! Sapiente, ducimus, voluptas, mollitia voluptatibus nemo explicabo sit blanditiis laborum dolore illum fuga veniam quae expedita libero accusamus quas harum ex numquam necessitatibus provident deleniti tenetur iusto officiis recusandae corporis culpa quaerat?</p>
+                <h1></h1>
+                <h4>
+                  Indonesia contribute heaps of plastic garbage in the world, currently second in the world with 3,216,856
+
+                </h4>
             </div>
         </div>
     </div>
@@ -39,20 +46,6 @@
     </div>
   </div></div>
 </div></div>
-
-    <!--div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <p>Test haha</p>
-      </div>
-
-      <div class="item">
-        <img src="../../asset/img/city.jpg" alt="floor"class="img-responsive"/>
-      </div>
-
-      <div class="item">
-        <img src="../../asset/img/space.jpg" alt="floor" class="img-responsive"/>
-      </div>
-    </div-->
 
 <div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -126,7 +119,7 @@
         <!--<script src="<?php echo base_url()?>asset/js/jquery.min.js"></script>
         <script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>
+        <!--script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       </body>
 </html>

@@ -1,8 +1,8 @@
 <?php $this->load->view('header') ?>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-custom navbar-fixed-top">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">PantauSampah</a>
     </div>
@@ -10,7 +10,6 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Input Jumlah Sampah</a></li>
-          <li><a href="#">Cara Membuang Sampah</a></li>
           <li><a href="#">Logout</a></li>
         </ul>
       </li>

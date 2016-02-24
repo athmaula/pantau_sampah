@@ -4,9 +4,15 @@
 
 	</style>
 
-	<nav class="navbar navbar-custom navbar-fixed-top">
+	<nav class="navbar navbar-custom navbar-fixed-top navbar-collapse">
 		<div class="container">
     		<div class="navbar-header">
+					<button class="navbar-toggle collapsed" aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
       			<a class="navbar-brand" href="<?php echo site_url('file/index'); ?>">PantauSampah</a>
 						<a href="<?php echo site_url('file/index#tentang'); ?>" class="navbar-brand" style="font-size:14px">About Us</a>
 				</div>

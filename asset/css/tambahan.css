@@ -7,13 +7,23 @@
 
 .navbar-custom{
   background-color: #4db6ac;
-}
 
+}
 .navbar-brand a{
   color: white;
   text-decoration: none;
 }
 .navbar-brand a:hover{
+  color: #00695c;
+  text-decoration: none;
+  font-style: bold;
+}
+
+.navbar-nav > li > a{
+  color: white;
+  text-decoration: none;
+}
+.navbar-nav > li > a:hover{
   color: #00695c;
   text-decoration: none;
   font-style: bold;
@@ -29,8 +39,55 @@
   font-style: bold;
 }
 
+.btn-adn:active,
+.btn-adn.active,
+.open > .dropdown-toggle.btn-adn {
+  color: #4db6ac;
+  background-color: #ce563f;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-toggle{
+  /*background-color: #4db6ac;*/
+  color:#fff;
+}
+
+.skin-custom .main-header .navbar .sidebar-toggle {
+    color: #fff;
+}
+
+.skin-custom .main-header li.user-header {
+    background-color: #4db6ac;
+}
+
+.skin-custom .main-header .navbar {
+  background-color: #4db6ac;
+}
+
+.skin-custom .main-header .logo {
+  background-color: #4db6ac;
+  color: white;
+}
+
+.skin-custom .main-header .navbar a:hover {
+  /*background-color: #00695c;*/
+  text-decoration: none;
+}
+
+.skin-custom .main-header .logo span:hover {
+  background-color: #00695c;
+}
+
 .tengah{
     padding: 165px 30px 50px 80px;
+}
+
+.lebar{
+    padding: 100px;
+}
+
+.lebar-custom{
+    padding: 240px 10px 230px 10px;
 }
 
 .tengah-reg{
@@ -55,15 +112,11 @@
     color: #ffffff;
 }
 
-.skin-custom-font{
-  color:#fff;
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
+  background-color: transparent;
 }
 
-.skin-custom .main-header .navbar {
-  background-color: #4db6ac;
-}
-
-.skin-custom .main-header .logo {
-  background-color: #26a69a;
-  color: white;
+.navbar-nav > li > a:hover{
+  background-color: transparent;
 }
