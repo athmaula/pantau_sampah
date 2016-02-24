@@ -14,16 +14,6 @@
               <?php echo form_open('user/inputsampah','class="form-horizontal"');?>
                 <div class="box-body" id="settings">
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Satuan berat sampah</label>
-                    <div class="col-sm-7">
-                      <select class="form-control" name="satuan">
-                        <option value="0">--SELECT--</option>
-                        <option value="kilo">Kilo</option>
-                        <option value="gram">Gram</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group">
                     <label class="col-sm-4 control-label">Garbage Weight</label>
                     <div class="col-sm-7">
                       <input type="text" class="form-control" name="beratsampah" placeholder="">

@@ -27,6 +27,12 @@ class user extends CI_Controller
 		$this->load->view('templateuser/dashboard', $data);
 	}
 
+	public function landingpage()
+	{
+		$data['get'] = $this->userm->view_data_landingpage();
+		$this->load->view('templateuser/landingPageUser', $data);
+	}
+
 	public function view()
 	{
 		$data['profile'] = $this->userm->getId();
@@ -37,7 +43,6 @@ class user extends CI_Controller
 	public function edit()
 	{
 		$data['profile'] = $this->userm->getId();
-
 		$this->load->view('templateuser/editprofile', $data);	
 	}
 

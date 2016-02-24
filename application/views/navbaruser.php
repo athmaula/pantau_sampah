@@ -9,10 +9,9 @@
     <ul class="nav-baru navbar-nav navbar-right">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Input Jumlah Sampah</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="">Input Your Garbage</a></li>
+          <li><?php echo anchor('logout', 'Sign Out'); ?></li>
         </ul>
-
     </ul>
   </div>
 </nav>

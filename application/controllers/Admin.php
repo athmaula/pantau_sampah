@@ -18,7 +18,6 @@ class admin extends CI_Controller
 
 	public function index()
 	{
-		# code...
 		$this->load->view('templateadmin/dashboard');
 	}
 
@@ -73,5 +72,129 @@ class admin extends CI_Controller
 			$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
 	   		redirect('admin/view');
 	   	}
+	}
+
+	public function view_input_tips()
+	{
+		$data['get'] = $this->adminm->view_data();
+		$this->load->view('templateadmin/inputtips', $data);
+	}
+
+	public function input_tips()
+	{
+		$id_user = $this->session->userdata('id');
+		$data['id_user'] = $id_user;
+		$data['title'] = $this->input->post('title');
+		$data['content'] = $this->input->post('content');
+
+		$hasil = $this->adminm->insert_tips($data);
+		if ($hasil) 
+		{	
+			$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
+			redirect('admin/view_input_tips');
+			# code...
+		}
+		else
+		{
+			$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
+			redirect('admin/view_input_tips');
+		}
+	}
+
+	public function edit_tips_landingpage()
+	{
+		$id = $this->uri->segment(3);
+ 		if ($id == NULL) {
+			redirect('user');
+		}
+		$dt = $this->adminm->edit_tips_landingpage($id);
+		$data['title'] = $dt->title;
+		$data['content'] = $dt->content;
+		$data['id'] = $id;
+		$this->load->view('templateadmin/edit_tips_landingpage', $data);
+	}
+
+	public function update_tips_landingpage()
+	{
+		if ($this->input->post('submit'))
+	  	{
+	   		$id = $this->input->post('id');
+	   		$this->adminm->update_tips_landingpage($id);
+			$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
+	   		redirect('admin/view_input_tips');
+	   	}
+	   	else
+	   	{
+			$this->session->set_flashdata('error_edit','<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong> Edit Data,</div>');
+	    	redirect('admin/edit_tips_landingpage/'.$id);
+	    }
+	}
+	public function delete_tips_landingpage($id)
+	{
+		$this->adminm->delete_tips_landingpage($id);
+		$this->session->set_flashdata('success_delete','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Delete Data,</div>');
+  		redirect('admin/view_input_tips');
+	}
+
+	public function view_input_tips_homepage()
+	{
+		$data['get'] = $this->adminm->view_data_tips_homepage();
+		$this->load->view('templateadmin/input_tips_homepage', $data);
+	}
+
+	public function input_tips_homepage()
+	{
+		$id_user = $this->session->userdata('id');
+		$data['id_user'] = $id_user;
+		$data['title'] = $this->input->post('title');
+		$data['content'] = $this->input->post('content');
+
+		$hasil = $this->adminm->insert_tips_homepage($data);
+		if ($hasil) 
+		{	
+			$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
+			redirect('admin/view_input_tips_homepage');
+			# code...
+		}
+		else
+		{
+			$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
+			redirect('admin/view_input_tips_homepage');
+		}
+	}
+
+	public function edit_tips_homepage()
+	{
+		$id = $this->uri->segment(3);
+ 		if ($id == NULL) {
+			redirect('user');
+		}
+		$dt = $this->adminm->edit_tips_homepage($id);
+		$data['title'] = $dt->title;
+		$data['content'] = $dt->content;
+		$data['id'] = $id;
+		$this->load->view('templateadmin/edit_tips_homepage', $data);
+	}
+
+	public function update_tips_homepage()
+	{
+		if ($this->input->post('submit'))
+	  	{
+	   		$id = $this->input->post('id');
+	   		$this->adminm->update_tips_homepage($id);
+			$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
+	   		redirect('admin/view_input_tips_homepage');
+	   	}
+	   	else
+	   	{
+			$this->session->set_flashdata('error_edit','<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong> Edit Data,</div>');
+	    	redirect('admin/edit_tips_homepage/'.$id);
+	    }
+	}
+	public function delete_tips_homepage($id)
+	{
+		$this->adminm->delete_tips_homepage($id);
+		$this->session->set_flashdata('success_delete','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Delete Data,</div>');
+  		redirect('admin/view_input_tips_homepage');
 	}
 }

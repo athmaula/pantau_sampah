@@ -9,7 +9,6 @@ class adminm extends CI_Model
 	
 	function __construct()
 	{
-		# code...
 		parent::__construct();
 	}
 
@@ -25,5 +24,88 @@ class adminm extends CI_Model
 	{
 		$this->db->where('id', $id);
   		$this->db->update('user', $data);
+	}
+
+	public function insert_tips($data)
+	{
+		return $this->db->insert('data_tips', $data);
+	}
+
+	public function view_data()
+	{
+		$user_id =  $this->session->userdata('id');
+		$this->db->where('id_user', $user_id);
+		$query = $this->db->get('data_tips');
+		return $query->result();
+	}
+
+	public function edit_tips_landingpage($a)
+	{
+		$d = $this->db->get_where('data_tips', array('id' => $a))->row();
+ 		return $d;
+	}
+
+	public function update_tips_landingpage($id)
+	{
+		$title 		= $this->input->post('title');
+	    $content	= $this->input->post('content');
+	    $edit		= $this->input->post('now()');
+	   
+		$data = array(
+			'title'				=> $title,
+			'content' 			=> $content,
+	        'edit_at'		  	=> $edit
+
+			);
+
+      	$this->db->where('id', $id);
+  		$this->db->update('data_tips', $data);
+	}
+
+	public function delete_tips_landingpage($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->delete('data_tips');
+	}
+
+	public function insert_tips_homepage($data)
+	{
+		return $this->db->insert('data_tips_homepage', $data);
+	}
+
+	public function view_data_tips_homepage()
+	{
+		$user_id =  $this->session->userdata('id');
+		$this->db->where('id_user', $user_id);
+		$query = $this->db->get('data_tips_homepage');
+		return $query->result();
+	}
+
+	public function edit_tips_homepage($a)
+	{
+		$d = $this->db->get_where('data_tips_homepage', array('id' => $a))->row();
+ 		return $d;
+	}
+
+	public function update_tips_homepage($id)
+	{
+		$title 		= $this->input->post('title');
+	    $content	= $this->input->post('content');
+	    $edit		= $this->input->post('now()');
+	   
+		$data = array(
+			'title'				=> $title,
+			'content' 			=> $content,
+	        'edit_at'		  	=> $edit
+			);
+
+      	$this->db->where('id', $id);
+  		$this->db->update('data_tips_homepage', $data);
+	}
+
+	public function delete_tips_homepage($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->delete('data_tips_homepage');
 	}
 }

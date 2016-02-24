@@ -105,4 +105,10 @@ class userm extends CI_Model
     	$this->db->where('id', $id_user);
     	$this->db->insert('user', $data);
     }
+
+    public function view_data_landingpage()
+    {
+		$query = $this->db->get('data_tips');
+		return $query->result();
+    }
 }

@@ -23,7 +23,7 @@
     <div class="wrapper">
       <header class="main-header">
         <!-- Logo -->
-        <a href="#" class="logo">
+        <a href="<?php echo site_url('user/landingpage') ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>Ps</b></span>
           <!-- logo for regular state and mobile devices -->
