@@ -94,7 +94,6 @@
     padding: 85px 30px 50px 80px;
 }
 
-
 .carousel-content {
     color:black;
     display:flex;
@@ -108,8 +107,8 @@
 
 .bottom {
 	margin:auto;
-    background-color: #4db6ac;
-    color: #ffffff;
+  background-color: #4db6ac;
+  color: #ffffff;
 }
 
 
@@ -119,4 +118,35 @@
 
 .navbar-nav > li > a:hover{
   background-color: transparent;
+}
+
+.sidebar-background{
+  background-color: #b2dfdb;
+}
+
+.navbar-nav .dropdown .dropdown-toggle {
+  text-decoration: none;
+}
+
+.nav-baru{
+  text-decoration: none;
+  padding: 15px;
+}
+
+.nav-baru a:hover{
+  text-decoration: none;
+  padding: 15px;
+  color: #00695c;
+}
+
+.nav-baru a:active{
+  text-decoration: none;
+  padding: 15px;
+  color: #00695c;
+}
+
+.section-color{
+  background-color: #b2dfdb;
+  width: 100%;
+  height: 609px;
 }

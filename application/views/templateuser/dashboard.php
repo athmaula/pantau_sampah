@@ -7,17 +7,13 @@
       <h1>
         Dashboard
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
        <?php echo $this->session->flashdata('success_insert'); ?>
        <?php echo $this->session->flashdata('success_edit'); ?>
        <?php echo $this->session->flashdata('success_delete'); ?>
     </section>
           <!-- /.box -->
           <section class="content">
-          <div class="row"> 
+          <div class="row">
             <div class="col-xs-12 col-md-10">
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -73,4 +69,3 @@
         <?php $this->load->view('templateuser/footer'); ?>
         <!-- /.col -->
   <!-- /.content-wrapper -->
-
