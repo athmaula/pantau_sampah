@@ -58,7 +58,7 @@
 									 Role as
 									</td>
 									<td>
-										<?php if ($role_id == 1) {echo "admin";} else { echo "member"; } ?>
+										<?php echo $role_id ?>
 									</td>
 								</tr>
 								<tr>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Pantau Sampah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap link -->
     <link href="<?php echo base_url()?>asset/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>asset/plugins/datepicker/datepicker3.css">
@@ -9,15 +10,16 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Ionicon -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    
+
     <link href="<?php echo base_url(); ?>asset/plugins/jvectormap/jquery-jvectormap-1.2.2.css"  rel="stylesheet" >
     <!-- theme admin lte style -->
     <link href="<?php echo base_url(); ?>asset/css/AdminLTE.min.css"  rel="stylesheet" >
     <link href="<?php echo base_url(); ?>asset/css/skins/_all-skins.min.css"  rel="stylesheet" >
-    
+    <link href="<?php echo base_url(); ?>asset/css/tambahan.css"  rel="stylesheet" >
+
 
   </head>
-  <body class="hold-transition skin-green-light sidebar-mini">
+  <body class="hold-transition skin-custom sidebar-mini">
     <div class="wrapper">
       <header class="main-header">
         <!-- Logo -->
@@ -57,7 +59,7 @@
                       }else
                       {
                         echo "Member";
-                      } 
+                      }
                     ?></p>
                   </li>
                   <!-- Menu Footer-->
@@ -77,4 +79,3 @@
 
         </nav>
       </header>
-      

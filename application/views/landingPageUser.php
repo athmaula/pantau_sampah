@@ -70,6 +70,7 @@
                       </p>
                   </div>
               </div>
+
             </div>
         </div>
     </div>
@@ -89,11 +90,29 @@
 
 <!--ends of carousel-->
 
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading"><br/><br/>Grapich Garbage Productivity</h2>
+          <hr class="primary">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <canvas id="myCanvas" width="256" height="256">
+
+      </canvas>
+    </div>
+</section>
+
+
         <!--<script src="<?php echo base_url()?>asset/js/jquery.min.js"></script>-->
         <!--<script src="<?php echo base_url()?>asset/js/jquery.min.js"></script>
         <script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>asset/plugin/chartjs/Chart.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       </body>
 </html>
