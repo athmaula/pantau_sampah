@@ -7,11 +7,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class user extends CI_Controller
 {
 	public function __construct(){
-    parent::__construct();
-    if($this->session->userdata('role') != '2'){ //cek apakah user memiliki 'role_id' == 2
-      $this->session->set_flashdata('error','<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Sorry</strong> Your not logged in</div>');
-      redirect('login');
-      }
+	parent::__construct();
+	if($this->session->userdata('role') != '2')
+	    { //cek apakah user memiliki 'role_id' == 2
+	      $this->session->set_flashdata('error','<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Sorry</strong> Your not logged in</div>');
+	      redirect('login');
+	    }
 		$this->load->model('userm');
 		$this->load->library('form_validation');
     }
@@ -20,6 +21,9 @@ class user extends CI_Controller
 	{
 		# code...
 		$data['getdata'] = $this->userm->view();
+		$data['getdata'] = $this->userm->viewjenis();
+		$data['data'] = $this->userm->getdata();
+
 		$this->load->view('templateuser/dashboard', $data);
 	}
 
@@ -65,7 +69,7 @@ class user extends CI_Controller
 			'password'=>$this->input->post('password'),
 	        'email'    =>$this->input->post('email'),
 	        'bio'      =>$this->input->post('bio'),
-	        'born_date'   =>$this->input->post('born_date'),
+	        'born_date' =>$this->input->post('born_date'),
 	        'gender'	=>$this->input->post('gender'),
 	        'role_id' 	=>$this->input->post('role'),
 	        'edit_at'	=>$this->input->post('edit')
@@ -83,30 +87,25 @@ class user extends CI_Controller
 
 	public function inputsampah()
 	{
-		// $id['profile'] = $this->userm->getId();
 
-		//$id = $this->input->post('id_user');
-		//$data['id_user'] = $this->userm->getId();
 		$id_user = $this->session->userdata('id');
-
-		//$data['id_data'] = $this->input->post('id');
 		$data['user_id'] = $id_user;
-		$data['satuan'] = $this->input->post('satuan');
 		$data['input_sampah'] = $this->input->post('beratsampah');
 		$data['action'] = $this->input->post('action');
 		$data['jenis_sampah'] = $this->input->post('jenis');
 		$data['tanggal'] = $this->input->post('tanggal');
-		
+		//$data['input_total'] = $this->input->post('beratsampah');
+
 		$hasil = $this->userm->insertsampah($data);
 		if ($hasil) 
-		{
+		{	
 			$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
 			redirect('user');
 			# code...
 		}
 		else
 		{
-			$this->session->set_flashdata('error', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
+			$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
 			redirect('inputview');
 		}		
 	}
@@ -119,7 +118,6 @@ class user extends CI_Controller
 		}
 		$dt = $this->userm->editsampah($kd);
 		$data['input_sampah'] = $dt->input_sampah;
-		$data['satuan'] 	  = $dt->satuan;
 		$data['action'] 	  = $dt->action;
 		$data['jenis_sampah'] = $dt->jenis_sampah;
 		$data['tanggal'] 	  = $dt->tanggal;
@@ -131,14 +129,14 @@ class user extends CI_Controller
 	{
 		if ($this->input->post('submit'))
 	  	{
-	   		$id = $this->input->post('id_data');
-	   		$this->userm->updatesampah($id);
+	   		$id_data = $this->input->post('id_data');
+	   		$this->userm->updatesampah($id_data);
 			$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
 	   		redirect('user');
 	   	}
 	   	else
 	   	{
-	    	redirect('user/editinputsampah/'.$id);
+	    	redirect('user/editinputsampah/'.$id_data);
 	    }
 	}
 
@@ -148,4 +146,35 @@ class user extends CI_Controller
 		$this->session->set_flashdata('success_delete','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Delete Data,</div>');
 	  	$this->index();
 	  }
+/*
+	public function do_upload()
+    {
+	    if($this->input->post('upload'))
+		{
+			$config['upload_path'] = 'asset/uploads/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['max_size']    = '2048';
+			$this->load->library('upload', $config);
+			if ( ! $this->upload->do_upload())
+			{
+				$error = array('error' => $this->upload->display_errors());
+				$this->load->view('templateuser/editprofile', $error);
+			}
+			else
+			{
+				$data=$this->upload->data();
+				$file=array(
+				'file'=>$data['raw_name'],
+				'ext'=>$data['file_ext'],
+			);
+			$this->userm->upload_image($file);
+			$data = array('upload_data' => $this->upload->data());
+			$this->load->view('templateuser/profile', $data);
+			}
+		}
+		else
+		{
+			redirect('user/view');
+		}
+	}*/
 }

@@ -2,6 +2,7 @@
 <?php $this->load->view('templateadmin/sidebar') ?>
 <div class="content-wrapper">
   <div class="content-header">
+  <div></div>
     <div class="box box-info">
       <div class="box-body">
         <div class="col-xs-12 col-md-offset-2 col-md-6">
@@ -44,8 +45,7 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">Born Date</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="born_date" value="<?php echo $profile->born_date; ?>">
-                <p>ex. 1990-09-09</p>
+                <input type="text" class="form-control" name="born_date" value="<?php echo $profile->born_date; ?>" data-provide="datepicker" data-date-format="dd-mm-yyyy">
             </div>
           </div>
           <div class="form-group">
@@ -59,7 +59,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" class="btn btn-success" value="Update">
-                <a href="<?php echo site_url('user/view') ?>" class="btn btn-danger" >Back</a>
+                <a href="<?php echo site_url('admin/view') ?>" class="btn btn-danger" >Back</a>
             </div>
           </div>
       <?php form_close(); ?> <!-- menutup form -->
@@ -67,7 +67,6 @@
     </div>
     </div>
   </div>
-</div>
 </div>
 <?php $this->load->view('templateadmin/footer'); ?>
 

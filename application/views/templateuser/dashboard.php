@@ -25,16 +25,14 @@
                 </div>
                 <div class="box-body">
                   <div class="box-body table-responsive">
-                    <table class="table table-bordered table-hover">
+                    <table class="table table-bordered table-hover" style="text-align: center">
                       <thead>
                         <tr>
                           <th>No</th>
                           <th>Jumlah Inputan</th>
-                          <th>Satuan</th>
                           <th>Aksi ke sampah</th>
                           <th>Jenis</th>
                           <th>Tanggal</th>
-                          <th>Edit_at</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
@@ -49,14 +47,12 @@
                           <td class="hidden"><?php echo $row->id_data; ?></td>
                           <td class="hidden"><?php echo $row->user_id; ?></td>
                           <td><?php echo $row->input_sampah; ?></td>
-                          <td><?php echo $row->satuan; ?></td>
-                          <td><?php echo $row->action; ?></td>
-                          <td><?php echo $row->jenis_sampah; ?></td>
+                          <td><?php echo $row->pembuangan; ?></td>
+                          <td><?php echo $row->jenis; ?></td>
                           <td><?php echo $row->tanggal; ?></td>
-                          <td><?php echo $row->edit_at; ?></td>
                           <td>
                             <a href="<?php echo site_url('user/editinputsampah/'.$row->id_data);?>" class="btn btn-warning">Edit</a>
-                            <a href="<?php echo site_url('user/deleteinputsampah/'.$row->id_data); ?>" class="btn btn-danger">Delete</a>
+                            <a href="<?php echo site_url('user/deleteinputsampah/'.$row->id_data); ?>" class="btn btn-danger" onclick="return dodelete()">Delete</a>
                           </td>
                         </tr>
                         <?php }  ?>
@@ -66,6 +62,33 @@
                 </div>
               </div>
             </div>
+            <div class="col-xs-12 col-md-5">
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Total Inputan</h3>
+                </div>
+                <div class="box-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-hover" style="text-align: center">
+                      <thead>
+                      <th>Input Sampah Total</th>
+                      <th>Input Sampah perbulan</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><?php echo $data->input_sampah; ?></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+            <div class="box box-primary">
+              <canvas id="chart" width="50" height="50"></canvas>
+            </div>
+            </div>
             </div>
           </section>
           <!-- /.row -->
@@ -73,4 +96,50 @@
         <?php $this->load->view('templateuser/footer'); ?>
         <!-- /.col -->
   <!-- /.content-wrapper -->
+
+  <script type="text/javascript">
+    function dodelete()
+    {
+        if(confirm("Are You Sure ?"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;  
+        } 
+   }
+var lineChartData = {
+      labels : ["Jan","Feb","Maret","April","Mei","Juni"],
+      datasets : [
+//jika anda tidak suka dengan warna linechart, silahkan ganti sendiri warnanya
+//dari fillColor sampai pointHIghlghtStroke dengan kode WARNA hexa atau RGBA
+//klo anda programer/desainer bagian ini tidak perlu dijelaskan lagi      
+        {
+          label: "Jakarta",
+
+          fillColor : "rgba(151,187,205,0.2)",
+          strokeColor : "rgba(151,187,205,1)",
+          pointColor : "rgba(151,187,205,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(151,187,205,1)",
+//ini adalah data yang akan dibuatkan grafiknya, 
+//jika memakai PHP mYSQL baris inilah yang diganti 
+          data : [<?php foreach ($getdata as $row) {
+            # code...
+          echo $row->input_sampah; }?>]
+        }
+        
+      ]
+
+    }
+
+  window.onload = function(){
+    var ctx = document.getElementById("chart").getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+      responsive: true
+    });
+  }
+  </script>
 

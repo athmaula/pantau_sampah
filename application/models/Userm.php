@@ -43,16 +43,38 @@ class userm extends CI_Model
 		return $query->result();
 	}
 
+	public function viewjenis()
+	{
+		$id_user = $this->session->userdata('id');
+		$this->db->select('*');
+		$this->db->from('data_sampah_user');
+		$this->db->join('jenis_sampah', 'jenis_sampah.id = data_sampah_user.jenis_sampah');
+		$this->db->join('pembuangan_sampah', 'pembuangan_sampah.id = data_sampah_user.action');
+		$this->db->where('data_sampah_user.user_id', $id_user);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function getdata()
+	{
+		$id_user = $this->session->userdata('id');
+		$this->db->select_sum('input_sampah');
+		$this->db->from('data_sampah_user');
+		$this->db->where('data_sampah_user.user_id', $id_user);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+
 	public function editsampah($a)
 	{
 		$d = $this->db->get_where('data_sampah_user', array('id_data' => $a))->row();
  		return $d;
 	}
 
-	public function updatesampah($id)
+	public function updatesampah($id_data)
 	{
 	    $inputsampah 		= $this->input->post('inputsampah');
-	    $satuan  			= $this->input->post('satuan');
 	    $action  			= $this->input->post('action');
 	    $jenis_sampah    	= $this->input->post('jenis_sampah');
 	    $tanggal    		= $this->input->post('tanggal');
@@ -60,7 +82,6 @@ class userm extends CI_Model
 	   
 		$data = array(
 			'input_sampah'		=> $inputsampah,
-			'satuan' 			=> $satuan, 
 			'action' 			=> $action,
 	        'jenis_sampah'    	=> $jenis_sampah,
 	        'tanggal'		  	=> $tanggal,
@@ -68,7 +89,7 @@ class userm extends CI_Model
 
 			);
 
-      	$this->db->where('id_data', $id);
+      	$this->db->where('id_data', $id_data);
   		$this->db->update('data_sampah_user', $data);
 	}
 
@@ -76,5 +97,12 @@ class userm extends CI_Model
     {
     	$this->db->where('id_data', $id);
     	return $this->db->delete('data_sampah_user');
+    }
+
+    public function upload_image($data)
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->where('id', $id_user);
+    	$this->db->insert('user', $data);
     }
 }
