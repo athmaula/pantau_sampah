@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 24, 2016 at 03:24 PM
+-- Generation Time: Feb 25, 2016 at 12:28 AM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -71,13 +71,43 @@ INSERT INTO `data_sampah_user` (`id_data`, `user_id`, `input_sampah`, `input_tot
 CREATE TABLE IF NOT EXISTS `data_tips` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
-  `tips` text NOT NULL,
-  `nama_file` varchar(100) NOT NULL,
+  `title` varchar(20) NOT NULL,
+  `content` text NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `data_tips`
+--
+
+INSERT INTO `data_tips` (`id`, `id_user`, `title`, `content`, `create_at`, `edit_at`) VALUES
+(3, 48, 'this is example', 'this is example of tips in Landingpage Pantau Sampah', '2016-02-24 16:53:36', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_tips_homepage`
+--
+
+CREATE TABLE IF NOT EXISTS `data_tips_homepage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `title` varchar(20) NOT NULL,
+  `content` text NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `edit_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `data_tips_homepage`
+--
+
+INSERT INTO `data_tips_homepage` (`id`, `id_user`, `title`, `content`, `create_at`, `edit_at`) VALUES
+(1, 48, 'this is example TIPS', ' this is example tips of homepage Pantau Sampah', '2016-02-24 17:18:44', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -159,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `bio`, `born_date`, `gender`, `file`, `ext`, `input_total`, `role_id`, `create_at`, `edit_at`) VALUES
-(46, 'qwerty', 'qwerty', 'qwerty', 'qwerty@q.com', '', '0000-00-00', 'male', NULL, NULL, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(46, 'qwerty', 'qwerty', 'qwerty', 'qwerty@q.com', '', '0000-00-00', 'male', NULL, NULL, 0, 1, '0000-00-00 00:00:00', '2016-02-24 09:31:43'),
 (47, 'immatulfathina', 'fathina', 'qwerty', 'fathina@email.com', '', '0000-00-00', 'female', NULL, NULL, 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (48, 'admin', 'admin', 'popo', 'admin@pantausampah.com', '', '0000-00-00', 'male', NULL, NULL, 0, 1, '2016-02-19 06:24:28', '0000-00-00 00:00:00'),
 (49, 'athoil maula', 'athoil', 'qwerty', 'atho@maula.com', '', '0000-00-00', 'male', NULL, NULL, 0, 2, '0000-00-00 00:00:00', '2016-02-22 14:08:46'),
