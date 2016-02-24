@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 18, 2016 at 03:15 PM
+-- Generation Time: Feb 24, 2016 at 03:24 PM
 -- Server version: 5.5.47-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -27,17 +27,40 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `data_sampah_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_user` int(11) NOT NULL,
+  `id_data` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `input_sampah` double NOT NULL,
-  `input_sampah_perbulan` double NOT NULL,
+  `input_total` double NOT NULL,
   `action` int(3) NOT NULL,
-  `jenis_sampah` int(3) NOT NULL,
-  `tanggal` datetime NOT NULL,
-  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `jenis_sampah` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id_data`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+
+--
+-- Dumping data for table `data_sampah_user`
+--
+
+INSERT INTO `data_sampah_user` (`id_data`, `user_id`, `input_sampah`, `input_total`, `action`, `jenis_sampah`, `tanggal`, `create_at`, `edit_at`) VALUES
+(7, 47, 1.5, 0, 3, 1, '2016-02-29', '2016-02-21 13:21:50', '2016-02-22 14:01:59'),
+(10, 51, 10, 0, 2, 1, '2016-02-29', '2016-02-22 14:04:05', '2016-02-22 14:04:14'),
+(18, 50, 20, 0, 2, 1, '2016-02-16', '2016-02-23 13:12:56', '0000-00-00 00:00:00'),
+(19, 50, 10, 0, 1, 1, '2016-02-28', '2016-02-23 13:13:15', '0000-00-00 00:00:00'),
+(20, 50, 20, 0, 1, 5, '2016-02-28', '2016-02-23 13:13:55', '0000-00-00 00:00:00'),
+(21, 50, 40, 0, 2, 2, '2016-02-29', '2016-02-23 13:14:18', '0000-00-00 00:00:00'),
+(23, 50, 10, 0, 2, 2, '2016-02-28', '2016-02-23 14:05:44', '0000-00-00 00:00:00'),
+(24, 50, 11, 0, 2, 2, '2016-02-28', '2016-02-23 18:19:29', '0000-00-00 00:00:00'),
+(25, 50, 11, 0, 2, 2, '2016-02-28', '2016-02-23 18:20:19', '0000-00-00 00:00:00'),
+(26, 50, 11, 0, 2, 2, '2016-02-28', '2016-02-23 18:20:47', '0000-00-00 00:00:00'),
+(27, 50, 11, 0, 2, 2, '2016-02-28', '2016-02-23 18:21:47', '0000-00-00 00:00:00'),
+(28, 0, 0, 20, 0, 0, '0000-00-00', '2016-02-24 05:51:57', '0000-00-00 00:00:00'),
+(29, 0, 0, 40, 0, 0, '0000-00-00', '2016-02-24 05:53:03', '0000-00-00 00:00:00'),
+(30, 0, 0, 4, 0, 0, '0000-00-00', '2016-02-24 05:55:16', '0000-00-00 00:00:00'),
+(31, 50, 20, 0, 2, 2, '2016-02-28', '2016-02-24 06:04:31', '0000-00-00 00:00:00'),
+(32, 50, 10, 0, 2, 2, '0000-00-00', '2016-02-24 08:13:53', '0000-00-00 00:00:00'),
+(33, 52, 12, 0, 2, 1, '0000-00-00', '2016-02-24 08:18:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -52,7 +75,8 @@ CREATE TABLE IF NOT EXISTS `data_tips` (
   `nama_file` varchar(100) NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `id_user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -63,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `data_tips` (
 
 CREATE TABLE IF NOT EXISTS `jenis_sampah` (
   `id` int(2) NOT NULL,
-  `jenis sampah` varchar(50) NOT NULL,
+  `jenis` varchar(50) NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -73,12 +97,13 @@ CREATE TABLE IF NOT EXISTS `jenis_sampah` (
 -- Dumping data for table `jenis_sampah`
 --
 
-INSERT INTO `jenis_sampah` (`id`, `jenis sampah`, `create_at`, `edit_at`) VALUES
+INSERT INTO `jenis_sampah` (`id`, `jenis`, `create_at`, `edit_at`) VALUES
 (1, 'Plastik', '2016-02-02 10:09:43', '0000-00-00 00:00:00'),
 (2, 'Kertas', '2016-02-02 10:09:43', '0000-00-00 00:00:00'),
 (3, 'Kaca', '2016-02-02 10:09:43', '0000-00-00 00:00:00'),
 (4, 'Logam', '2016-02-02 10:09:43', '0000-00-00 00:00:00'),
-(5, 'Sisa Makanan', '2016-02-02 10:09:43', '0000-00-00 00:00:00');
+(5, 'Sisa Makanan', '2016-02-02 10:09:43', '0000-00-00 00:00:00'),
+(6, 'lain - lain', '2016-02-19 09:29:57', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -117,27 +142,30 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `bio` text NOT NULL,
-  `born_date` varchar(70) NOT NULL,
+  `born_date` date NOT NULL,
   `gender` varchar(8) DEFAULT NULL,
-  `role_id` int(2) DEFAULT NULL,
+  `file` varchar(200) DEFAULT NULL,
+  `ext` varchar(8) DEFAULT NULL,
+  `input_total` double NOT NULL,
+  `role_id` int(2) NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+  PRIMARY KEY (`id`),
+  KEY `role_id` (`role_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `bio`, `born_date`, `gender`, `role_id`, `create_at`, `edit_at`) VALUES
-(2, 'immatulfathina', 'fathina', 'qwerty', 'imma@fathina.com', '', '', 'female', 1, '2016-02-13 08:01:15', '2016-02-16 17:17:41'),
-(3, 'arya kusuma', 'aryakus', '123456', 'arya@kuskus.com', '', '', 'male', 2, '2016-02-13 08:00:21', '2016-02-16 09:29:49'),
-(17, 'athoil maula', 'athoilma', '123456789', 'athoil@maula.com', '', '', 'male', 1, '2016-02-10 18:47:16', '2016-02-16 15:17:20'),
-(18, 'hafiz zakky', 'hafiz', '123456', 'hafiz@zakky.com', 'hafiss', '1995-09-09', 'male', NULL, '2016-02-11 04:30:39', '2016-02-18 07:27:01'),
-(21, 'patricia b', 'patricia', 'qwerty', 'patricia@mail.com', '', '', 'female', 1, '0000-00-00 00:00:00', '2016-02-16 09:30:18'),
-(43, 'Admin', 'admin', 'popo', 'admin@admin.com', 'gua admin nya', '', NULL, NULL, '2016-02-16 16:59:29', '2016-02-18 07:52:29'),
-(44, 'portgas D ace', 'hikenace', '123456', 'portgas@ace.com', 'Shirohige boys', '', 'male', NULL, '0000-00-00 00:00:00', '2016-02-18 06:22:31'),
-(45, 'sherlock holmes', 'holmes', 'qwerty', 'sherlock@holmes.com', '', '1999-01-10', 'male', NULL, '0000-00-00 00:00:00', '2016-02-18 07:37:03');
+INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `bio`, `born_date`, `gender`, `file`, `ext`, `input_total`, `role_id`, `create_at`, `edit_at`) VALUES
+(46, 'qwerty', 'qwerty', 'qwerty', 'qwerty@q.com', '', '0000-00-00', 'male', NULL, NULL, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(47, 'immatulfathina', 'fathina', 'qwerty', 'fathina@email.com', '', '0000-00-00', 'female', NULL, NULL, 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(48, 'admin', 'admin', 'popo', 'admin@pantausampah.com', '', '0000-00-00', 'male', NULL, NULL, 0, 1, '2016-02-19 06:24:28', '0000-00-00 00:00:00'),
+(49, 'athoil maula', 'athoil', 'qwerty', 'atho@maula.com', '', '0000-00-00', 'male', NULL, NULL, 0, 2, '0000-00-00 00:00:00', '2016-02-22 14:08:46'),
+(50, 'bootstrap bills', 'bootbills', 'qwerty', 'boot@bill.com', '', '1995-02-21', 'male', NULL, NULL, 0, 2, '0000-00-00 00:00:00', '2016-02-22 14:08:39'),
+(51, 'zxcvbn', 'zxcvbn', 'asdfg', 'zxcv@zx.com', '', '0000-00-00', 'male', NULL, NULL, 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(52, 'doscom', 'doscom', 'doscom', 'doscom@doscom.com', '', '0000-00-00', 'male', NULL, NULL, 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -158,6 +186,22 @@ CREATE TABLE IF NOT EXISTS `user_role` (
 INSERT INTO `user_role` (`id`, `role`) VALUES
 (1, 'admin'),
 (2, 'user');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `data_tips`
+--
+ALTER TABLE `data_tips`
+  ADD CONSTRAINT `data_tips_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `user_role` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
