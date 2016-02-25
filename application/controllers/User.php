@@ -35,10 +35,14 @@ class user extends CI_Controller
 		$data['getdata_min'] = $this->userm->get_data_min();
 		$data['getdata_input'] = $this->userm->get_data_input();
 		$data['getdata_avg'] = $this->userm->get_data_avg();
+		$data['getdata_cnt1'] = $this->userm->get_data_cnt1();
+		$data['getdata_cnt2'] = $this->userm->get_data_cnt2();
+		$data['getdata_cnt3'] = $this->userm->get_data_cnt3();
 		$data['getdata_cnt4'] = $this->userm->get_data_cnt4();
+		$data['getdata_cnt5'] = $this->userm->get_data_cnt5();
+		$data['getdata_cnt6'] = $this->userm->get_data_cnt6();
 		$data['get'] = $this->userm->view_data_landingpage();
 		$this->load->view('templateuser/landingPageUser', $data);
-		$this->output->enable_profiler(true);
 	}
 
 	/*public function chart()

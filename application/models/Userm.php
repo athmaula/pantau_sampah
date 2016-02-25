@@ -133,7 +133,7 @@ class userm extends CI_Model
     	$this->db->from('data_sampah_user');
     	$this->db->where('data_sampah_user.user_id', $id_user);
     	$query = $this->db->get();
-    	return $query->row();
+    	return $query->result();
     }
 
     public function get_data_avg()
@@ -145,12 +145,68 @@ class userm extends CI_Model
     	$query = $this->db->get();
     	return $query->row();
     }
-     public function get_data_cnt4()
+    public function get_data_cnt1()
     {
     	$id_user = $this->session->userdata('id');
-    	$this->db->select_avg('input_sampah');
+    	$this->db->select('COUNT(jenis_sampah) as plastic');
     	$this->db->from('data_sampah_user');
     	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$this->db->where('jenis_sampah', '1');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function get_data_cnt2()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select('COUNT(jenis_sampah) as paper');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$this->db->where('jenis_sampah', '2');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function get_data_cnt3()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select('COUNT(jenis_sampah) as glass');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$this->db->where('jenis_sampah', '3');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function get_data_cnt4()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select('COUNT(jenis_sampah) as logam');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$this->db->where('jenis_sampah', '4');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function get_data_cnt5()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select('COUNT(jenis_sampah) as leftover');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$this->db->where('jenis_sampah', '5');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function get_data_cnt6()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select('COUNT(jenis_sampah) as other');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$this->db->where('jenis_sampah', '6');
     	$query = $this->db->get();
     	return $query->row();
     }

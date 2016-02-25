@@ -74,14 +74,29 @@
       </div>
     </div>
     <div class="container text-center">
-      <canvas id="weeks" width="600" height="400"></canvas>
+      <canvas id="weeks" width="300" height="400"></canvas>
     </div>
     <br/><br/><br/>
 </section>
 <!-- end grafik per minggu-->
 
-<!--grafik jenis sampah-->
 <section class="section-color">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading"><br/><br/>Grapich Garbage Productivity</h2>
+          <hr class="primary">
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <canvas id="diagram" width="600" height="400"></canvas>
+    </div>
+    <br/><br/><br/>
+</section>
+
+<!--grafik jenis sampah-->
+<section>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -98,24 +113,9 @@
 
 <!--end grafik jenis sampah-->
 
-<section>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading"><br/><br/>Grapich Garbage Productivity</h2>
-          <hr class="primary">
-        </div>
-      </div>
-    </div>
-    <div class="container text-center">
-      <canvas id="diagram" width="600" height="400"></canvas>
-    </div>
-    <br/><br/><br/>
-</section>
-
 <script>
 var data = {
-    labels: ["Maximum your input", "Minimum yout input", "Average"],
+    labels: ["Maximum your input", "Minimum yout input", "Average your Input"],
     datasets: [
         {
             label: "My First dataset",
@@ -134,24 +134,34 @@ var clientsChart = new Chart(context).Bar(data);
 
 var data = [
   {
-    value: 1,
-    color:"#000000"
+    value: <?php echo $getdata_cnt1->plastic; ?>,
+    color:"#F7464A",
+    label:"plastic"
   },
   {
-    value : <?php echo $getdata_min->input_sampah; ?>,
-    color : "#4ACAB4"
+    value : <?php echo $getdata_cnt2->paper; ?>,
+    color : "#D4CCC5",
+    label : "paper"
   },
   {
-    value : 10,
-    color : "#FF8153"
+    value : <?php echo $getdata_cnt3->glass; ?>,
+    color : "#9c27b0",
+    label : "glass"
   },
   {
-    value : 10,
-    color : "#FF8153"
+    value : <?php echo $getdata_cnt4->logam; ?>,
+    color : "#FF8153",
+    label : "logam"
   },
   {
-    value : 30,
-    color : "#FFEA88"
+    value : <?php echo $getdata_cnt5->leftover; ?>,
+    color : "#FFEA88",
+    label : "leftover"
+  },
+  {
+    value : <?php echo $getdata_cnt6->other; ?>,
+    color : "#4caf50",
+    label : "other"
   }
   ];
 
@@ -159,14 +169,19 @@ var data = [
   new Chart(kind).Doughnut(data);
 
 var weekData = {
-  labels : ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+  labels : [<?php $no=0; foreach ($getdata_input as $row) {
+                  $no++;
+                  echo $no.',';
+                    } ?>],
   datasets : [
     {
       fillColor : "#b2dfdb",
       strokeColor : "#00796b",
       pointColor : "#fff",
       pointStrokeColor : "#004d40",
-      data : [2,3,1,5.5,9,3.2,4.9]
+      data : [<?php foreach ($getdata_input as $row) {
+                    echo $row->input_sampah.',';
+      } ?>]
     }
   ]
 }
