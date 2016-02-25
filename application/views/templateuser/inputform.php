@@ -6,8 +6,13 @@
     <?php echo $this->session->flashdata('error'); ?>
       <section class="content">
         <div class="row">
+<<<<<<< HEAD
             <div class="col-sm-7">
             <div class="box box-primary">
+=======
+          <div class="col-sm-9">
+            <div class="box box-solid box-info">
+>>>>>>> 7659f797d89d3a364d93dc081683c6d80534dfbb
               <div class="box-header with-border">
                 <h3> Input Your Garbage Weight </h3>
               </div>
@@ -50,7 +55,7 @@
                   </div>
                   <br />
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Action to Garbage</label>
+                    <label class="col-sm-4 control-label">Method of Disposal</label>
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="action" value="1">
