@@ -58,4 +58,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
   }
 
+  public function view_data_homepage()
+    {
+    $query = $this->db->get('data_tips_homepage');
+    return $query->result();
+    }
+
 } 

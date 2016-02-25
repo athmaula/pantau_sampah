@@ -16,7 +16,7 @@
                   <div class="form-group">
                     <label class="col-sm-4 control-label">Garbage Weight</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" name="beratsampah" placeholder="">
+                      <input type="text" class="form-control" name="beratsampah" placeholder="Kilo">
                     </div>
                   </div>
                    <div class="form-group">
@@ -70,7 +70,7 @@
                     <label class="col-sm-4 control-label">Date</label>
                       <div class="col-sm-7">
                         <div class="input-group date">
-                          <input type="text" class="form-control" name="tanggal" data-provide="datepicker" data-date-format="yyyy-dd-mm">
+                          <input type="text" class="form-control" name="tanggal" data-provide="datepicker" data-date-format="yyyy-mm-dd">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                         </div>
                       </div>

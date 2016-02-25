@@ -1,9 +1,8 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.3.2
+      <b>Pantau Sampah</b>
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2014-2015 </strong>
   </footer>
 </div>
 <!-- ./wrapper -->

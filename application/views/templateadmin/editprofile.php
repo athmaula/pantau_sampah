@@ -1,8 +1,13 @@
 <?php $this->load->view('templateadmin/header'); ?>
 <?php $this->load->view('templateadmin/sidebar') ?>
 <div class="content-wrapper">
-  <div class="content-header">
+  <section class="content">
+  <div class="row">
+  <div class="col-xs-12 col-md-7">
     <div class="box box-info">
+    <div class="box-header with-header">
+      <h3 class="box-title">Edit Your Profile</h3>
+    </div>
       <div class="box-body">
         <div class="col-xs-12 col-md-offset-2 col-md-6">
                    <?php echo form_open('admin/update','class="form-horizontal"'); ?>  <!--mengarahkan hasil inputan ke controller--> 
@@ -66,8 +71,9 @@
       </div>
     </div>
     </div>
+    </div>
   </div>
-</div>
+</section>
 </div>
 <?php $this->load->view('templateadmin/footer'); ?>
 

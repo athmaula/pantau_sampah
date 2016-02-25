@@ -2,12 +2,6 @@
 
 <!--carousel-->
   <div id="myCarousel" class="carousel slide carousel-fade latar" data-ride="carousel">
-    <ol class="carousel-indicators" >
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
 
     <!-- Wrapper for slides -->
     <div class="row tengah">
@@ -16,34 +10,22 @@
     <div class="item active">
         <div class="carousel-content">
             <div>
-                <h1>National Waste Commemoration Day</h1>
-                <h4>In February, 21th set as National Waste Commemoration Day, because tragedy take place in Leuwigajah, Cimahi,
-                  West of Java. Stack of garbage fall out and burried 150 people, most of them are scavenger who lived around
-                   the Leuwigajah landfill. Goverment see the tragedy as reminders that they not handle the garbage problem correctly
-                   and commit to handle garbage problem seriously.
+                <h1>What is Pantau Sampah ?</h1>
+                <h4>This application is collaboration idea from two student who aware the risk of not manage our garbage correctly. They believe unless someone start cares about garbage problem NOTHING is going to get better. They start to thing what kind of action they can make to make people aware about this problem. Because their basic is tecnology engineering, the first idea comes to their mind is application. They invent application that able to count user production of garbage, calculate it and serve it as interesting as they can. This way they provide real time data. 
                 </h4>
             </div>
         </div>
     </div>
+    <?php foreach ($tips_homepage as $row) { ?>
     <div class="item">
         <div class="carousel-content">
             <div>
-                <h1></h1>
-                <h4>
-                  Indonesia contribute heaps of plastic garbage in the world, currently second in the world with 3,216,856
-
-                </h4>
+                <h1><strong><?php echo $row->title; ?></strong></h1>
+                <h4><?php echo $row->content; ?></strong></h4>
             </div>
         </div>
     </div>
-    <div class="item">
-        <div class="carousel-content">
-            <div>
-                <h3>#3</h3>
-                <p>This is the third item.</p>
-            </div>
-        </div>
-    </div>
+    <?php } ?>
   </div></div>
 </div></div>
 

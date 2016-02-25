@@ -7,10 +7,6 @@
       <h1>
         Dashboard
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
        <?php echo $this->session->flashdata('success_insert'); ?>
        <?php echo $this->session->flashdata('success_edit'); ?>
        <?php echo $this->session->flashdata('success_delete'); ?>
@@ -46,7 +42,7 @@
                           <td><?php echo $no; ?></td>
                           <td class="hidden"><?php echo $row->id_data; ?></td>
                           <td class="hidden"><?php echo $row->user_id; ?></td>
-                          <td><?php echo $row->input_sampah; ?></td>
+                          <td><?php echo $row->input_sampah; ?> Kilo</td>
                           <td><?php echo $row->pembuangan; ?></td>
                           <td><?php echo $row->jenis; ?></td>
                           <td><?php echo $row->tanggal; ?></td>
@@ -65,29 +61,29 @@
             <div class="col-xs-12 col-md-5">
               <div class="box box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Total Inputan</h3>
+                  <h3 class="box-title">Total Input</h3>
                 </div>
                 <div class="box-body">
                   <div class="table-responsive">
                     <table class="table table-bordered table-hover" style="text-align: center">
                       <thead>
-                      <th>Input Sampah Total</th>
-                      <th>Input Sampah perbulan</th>
+                      <th>Total Garbage Input</th>
+                      <th>Monthly Total Input</th>
+                      <th>Maximum Total Input</th>
+                      <th>Minimum Total Input</th>
                       </thead>
                       <tbody>
                         <tr>
-                          <td><?php echo $data->input_sampah; ?></td>
+                          <td><?php echo $data->input_sampah; ?> Kilo</td>
+                          <td></td>
+                          <td><?php echo $data_max->input_sampah; ?> Kilo</td>
+                          <td><?php echo $data_min->input_sampah; ?> Kilo</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-8">
-            <div class="box box-primary">
-              <canvas id="chart" width="50" height="50"></canvas>
-            </div>
             </div>
             </div>
           </section>

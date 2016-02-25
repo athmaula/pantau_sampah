@@ -28,7 +28,8 @@ class File extends CI_Controller {
 
  	 public function index()
  	 {
- 	 	$this->load->view('halAwalNoLogin');
+ 	 	$data['tips_homepage'] = $this->Mfile->view_data_homepage();
+ 	 	$this->load->view('halAwalNoLogin', $data);
  	 }
 
 	 //fungsi ini untuk memanggil role_id user

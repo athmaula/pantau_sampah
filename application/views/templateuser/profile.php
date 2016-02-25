@@ -2,11 +2,12 @@
 <?php $this->load->view('templateuser/sidebar') ?>
 <div class="content-wrapper">
  <?php echo $this->session->flashdata('success_edit'); ?>
-	<div class="content-header">
+	<section class="content">
+	<div class="row">
 		<div class="col-xs-12 col-sm-offset-2 col-sm-8">
 			<div class="box box-info">
 				<div class="box-header with-border">
-					<h2 class="box-title">Nama</h2>
+					<h2 class="box-title"><?php echo $profile->nama; ?></h2>
 					<a href="<?php echo site_url('user/edit') ?>" class="glyphicon glyphicon-pencil pull-right"></a>
 				</div>
 				<div class="box-body">
@@ -19,7 +20,7 @@
 									<table class="table table-bordered table-hover">
 										<tr>
 											<td>
-												Nama
+												Name
 											</td>
 											<td>
 												<?php echo $profile->nama; ?>
@@ -76,7 +77,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
+		</div>
+	</section>
 </div>
 <?php $this->load->view('templateuser/footer'); ?>
 

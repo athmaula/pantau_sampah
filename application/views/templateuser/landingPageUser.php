@@ -1,61 +1,51 @@
 <?php $this->load->view('navbaruser') ?>
 
 <!--carousel-->
-<div id="tipsCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-    <ol class="carousel-indicators" >
-    <?php $i=0; ?>
-    <?php foreach ($get as $row) { ?>
-      <li data-target="#tipsCarousel" data-slide-to="0" <?php switch ($i) {
-        case '0':
-          echo 'class="active">';
-          break;
-        
-        default:
-          echo '>';
-          break;
-      } ?> </li>
-      <?php $i++; ?>
-            <?php } ?>
-      
-    </ol>
-
-
+<section class="section-color">
+<div class="container-fluid">
+  <div id="tipsCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="row lebar-custom">
         <div class="col-xs-offset-3 col-xs-6">
           <div class="carousel-inner" role="listbox">
-          
-           <?php foreach ($get as $row) { ?>
-           <?php switch ($i) {
-             case '0':
-               echo '<div class="item active">';
-               break;
-             
-             default:
-               echo '<div class="item">';
-               break;
-           } ?>
-                <div class="carousel-content">
-                    <div>
-                      <div class="col-lg-3 col-md-6 text-center">
-                          <div class="service-box">
-                              <br/>
-                              <i class="fa fa-4x fa-pencil wow bounceIn text-primary"></i>
-                          </div>
-                      </div>
-                      <div class="col-lg-9 col-md-6 text-center">
-                          <div class="service-box">
-                              <h1><?php echo $row->title; ?></h1>
-                              <h4 class="text-muted">
-                              <?php echo $row->content; ?>
-                              </h4>
-                          </div>
-                      </div>
-                    </div>
-                </div>
+    <div class="item active">
+        <div class="carousel-content">
+            <div>
+              <div class="col-lg-3 col-md-6 text-center">
+                  <div class="service-box">
+                      <br/>
+                      <i class="fa fa-4x fa-info wow bounceIn text-primary" style="color: #00695c;"></i>
+                  </div>
+              </div>
+              <div class="col-lg-9 col-md-6 text-center">
+                  <div class="service-box">
+                      <h1>What Pantau Sampah ?</h3>
+                      <h4 class="text-muted">This application is collaboration idea from two student who aware the risk of not manage our garbage correctly. They believe unless someone start cares about garbage problem NOTHING is going to get better. They start to thing what kind of action they can make to make people aware about this problem. Because their basic is tecnology engineering, the first idea comes to their mind is application. They invent application that able to count user production of garbage, calculate it and serve it as interesting as they can. This way they provide real time data. </h4>
+                  </div>
+              </div>
             </div>
-            <?php $i++; ?>
-            <?php } ?>
+        </div>
+    </div>
+    <?php foreach ($get as $row) { ?>
+    <div class="item">
+        <div class="carousel-content">
+            <div>
+              <div class="col-lg-3 col-md-6 text-center">
+                  <div class="service-box">
+                      <br/>
+                      <i class="fa fa-4x fa-pencil wow bounceIn text-primary"></i>
+                  </div>
+              </div>
+              <div class="col-lg-9 col-md-6 text-center">
+                  <div class="service-box">
+                      <h3><?php echo $row->title ?></h3>
+                      <p class="text-muted"><?php echo $row->content ?></p>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
   </div></div>
 </div></div>
 
@@ -105,33 +95,50 @@
     </div>
     <br/><br/>
 </section>
+
 <!--end grafik jenis sampah-->
 
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading"><br/><br/>Grapich Garbage Productivity</h2>
+          <hr class="primary">
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <canvas id="diagram" width="600" height="400"></canvas>
+    </div>
+    <br/><br/><br/>
+</section>
 
 <script>
-var weekData = {
-	labels : ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-	datasets : [
-		{
-			fillColor : "#b2dfdb",
-			strokeColor : "#00796b",
-			pointColor : "#fff",
-			pointStrokeColor : "#004d40",
-			data : [2,3,1,5.5,9,3.2,4.9]
-		}
-	]
-}
+var data = {
+    labels: ["Maximum your input", "Minimum yout input", "Average"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [<?php echo $getdata_max->input_sampah; ?>,  <?php echo $getdata_min->input_sampah; ?> , <?php echo $getdata_avg->input_sampah;?>]
+        }
+    ]
+};
 
-var weeks = document.getElementById('weeks').getContext('2d');
-new Chart(weeks).Line(weekData);
+var context = document.getElementById('weeks').getContext('2d');
+var clientsChart = new Chart(context).Bar(data);
+
 
 var data = [
   {
-    value: 20,
-    color:"#878BB6"
+    value: 1,
+    color:"#000000"
   },
   {
-    value : 40,
+    value : <?php echo $getdata_min->input_sampah; ?>,
     color : "#4ACAB4"
   },
   {
@@ -150,6 +157,28 @@ var data = [
 
   var kind = document.getElementById("kind").getContext("2d");
   new Chart(kind).Doughnut(data);
+
+var weekData = {
+  labels : ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+  datasets : [
+    {
+      fillColor : "#b2dfdb",
+      strokeColor : "#00796b",
+      pointColor : "#fff",
+      pointStrokeColor : "#004d40",
+      data : [2,3,1,5.5,9,3.2,4.9]
+    }
+  ]
+}
+
+var weeks = document.getElementById('diagram').getContext('2d');
+new Chart(weeks).Line(weekData);
+
 </script>
+
+        <!--<script src="<?php echo base_url()?>asset/js/jquery.min.js"></script>-->
+        <!--<script src="<?php echo base_url()?>asset/js/jquery.min.js"></script>
+        <script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>-->
+
 
 <?php $this->load->view('footer') ?>

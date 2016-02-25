@@ -50,21 +50,11 @@ class userm extends CI_Model
 		$this->db->from('data_sampah_user');
 		$this->db->join('jenis_sampah', 'jenis_sampah.id = data_sampah_user.jenis_sampah');
 		$this->db->join('pembuangan_sampah', 'pembuangan_sampah.id = data_sampah_user.action');
+		$this->db->order_by('tanggal', 'desc');
 		$this->db->where('data_sampah_user.user_id', $id_user);
 		$query = $this->db->get();
 		return $query->result();
 	}
-
-	public function getdata()
-	{
-		$id_user = $this->session->userdata('id');
-		$this->db->select_sum('input_sampah');
-		$this->db->from('data_sampah_user');
-		$this->db->where('data_sampah_user.user_id', $id_user);
-		$query = $this->db->get();
-		return $query->row();
-	}
-
 
 	public function editsampah($a)
 	{
@@ -99,16 +89,69 @@ class userm extends CI_Model
     	return $this->db->delete('data_sampah_user');
     }
 
-    public function upload_image($data)
-    {
-    	$id_user = $this->session->userdata('id');
-    	$this->db->where('id', $id_user);
-    	$this->db->insert('user', $data);
-    }
 
     public function view_data_landingpage()
     {
 		$query = $this->db->get('data_tips');
 		return $query->result();
+    }
+
+    public function get_data_total()
+    {
+    	$id_user = $this->session->userdata('id');
+		$this->db->select_sum('input_sampah');
+		$this->db->from('data_sampah_user');
+		$this->db->where('data_sampah_user.user_id', $id_user);
+		$query = $this->db->get();
+		return $query->row();
+    }
+
+    public function get_data_max()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select_max('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+     public function get_data_min()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select_min('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function get_data_input()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function get_data_avg()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select_avg('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+     public function get_data_cnt4()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select_avg('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$query = $this->db->get();
+    	return $query->row();
     }
 }

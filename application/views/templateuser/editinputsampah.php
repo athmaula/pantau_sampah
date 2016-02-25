@@ -18,16 +18,6 @@
 	              </div>
 	            </div>
 	            <div class="form-group">
-                    <label class="col-sm-2 control-label">Satuan berat sampah</label>
-                    <div class="col-sm-5">
-                      <select class="form-control" name="satuan">
-                        <option value="0">--SELECT--</option>
-                        <option value="kilo">Kilo</option>
-                        <option value="gram">Gram</option>
-                      </select>
-                    </div>
-                  </div>
-	            <div class="form-group">
                     <label class="col-sm-2 control-label">Action</label>
                       <div class="col-sm-7">
                         <label>
@@ -78,7 +68,7 @@
                       <div class="col-sm-5">
                         <div class="input-group date">
                           <input type="text" class="form-control" name="tanggal" data-provide="datepicker" 
-                          	data-date-format="yyyy-dd-mm" value="<?php echo $tanggal ?>">
+                          	data-date-format="yyyy-mm-dd" value="<?php echo $tanggal ?>">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                         </div>
                       </div>

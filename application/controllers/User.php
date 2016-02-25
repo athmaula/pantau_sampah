@@ -22,16 +22,32 @@ class user extends CI_Controller
 		# code...
 		$data['getdata'] = $this->userm->view();
 		$data['getdata'] = $this->userm->viewjenis();
-		$data['data'] = $this->userm->getdata();
+		$data['data'] = $this->userm->get_data_total();
+		$data['data_max'] = $this->userm->get_data_max();
+		$data['data_min'] = $this->userm->get_data_min();
 
 		$this->load->view('templateuser/dashboard', $data);
 	}
 
 	public function landingpage()
 	{
+		$data['getdata_max'] = $this->userm->get_data_max();
+		$data['getdata_min'] = $this->userm->get_data_min();
+		$data['getdata_input'] = $this->userm->get_data_input();
+		$data['getdata_avg'] = $this->userm->get_data_avg();
+		$data['getdata_cnt4'] = $this->userm->get_data_cnt4();
 		$data['get'] = $this->userm->view_data_landingpage();
 		$this->load->view('templateuser/landingPageUser', $data);
+		$this->output->enable_profiler(true);
 	}
+
+	/*public function chart()
+	{
+		$data['getdata_max'] = $this->userm->get_data_max();
+		$data['getdata_min'] = $this->userm->get_data_min();
+		//$data['get'] = $this->userm->view_data_landingpage();
+		$this->load->view('templateuser/chart', $data);
+	}*/
 
 	public function view()
 	{

@@ -5,7 +5,7 @@
 		<div class="col-md-offset-1 col-md-8">
 			<div class="box box-info">
 				<div class="box-header with-border">
-					<h2 class="box-title">Nama</h2>
+					<h2 class="box-title"><strong><?php echo $nama; ?></strong></h2>
 				</div>
 				<div class="box-body">
 						<div class="panel-body">
@@ -17,7 +17,7 @@
 									<table class="table table-bordered table-hover">
 										<tr>
 											<td>
-												Nama
+												Name
 											</td>
 											<td>
 												<?php echo $nama ?>
