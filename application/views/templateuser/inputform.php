@@ -7,7 +7,7 @@
       <section class="content">
         <div class="row">
           <div class="col-sm-7">
-            <div class="box box-solid box-info">
+            <div class="box box-primary">
               <div class="box-header with-border">
                 <h3> Input Your Garbage Weight </h3>
               </div>
