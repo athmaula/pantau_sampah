@@ -13,11 +13,11 @@
     </section>
           <!-- /.box -->
           <section class="content">
-          <div class="row"> 
+          <div class="row">
             <div class="col-xs-12 col-md-10">
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title"> Inputan sampah</h3>
+                  <h3 class="box-title">Garbage Data</h3>
                 </div>
                 <div class="box-body">
                   <div class="box-body table-responsive">
@@ -25,11 +25,11 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Jumlah Inputan</th>
-                          <th>Aksi ke sampah</th>
-                          <th>Jenis</th>
-                          <th>Tanggal</th>
-                          <th>Aksi</th>
+                          <th>Garbage Weight</th>
+                          <th>Method of Disposal</th>
+                          <th>Garbage Kind</th>
+                          <th>Date</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -58,19 +58,19 @@
                 </div>
               </div>
             </div>
-            <div class="col-xs-12 col-md-5">
+            <div class="col-xs-12 col-md-10">
               <div class="box box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Total Input</h3>
+                  <h3 class="box-title">Total Garbage Input</h3>
                 </div>
                 <div class="box-body">
                   <div class="table-responsive">
                     <table class="table table-bordered table-hover" style="text-align: center">
                       <thead>
-                      <th>Total Garbage Input</th>
-                      <th>Monthly Total Input</th>
-                      <th>Maximum Total Input</th>
-                      <th>Minimum Total Input</th>
+                      <th>Total Garbage Inputed</th>
+                      <th>Monthly Garbage Weight Inputed</th>
+                      <th>Maximum Garbage Weight Inputed</th>
+                      <th>Minimum Garbage Weight Inputed</th>
                       </thead>
                       <tbody>
                         <tr>
@@ -102,8 +102,7 @@
         }
         else
         {
-            return false;  
-        } 
+            return false;
+        }
    }
   </script>
-
