@@ -6,13 +6,8 @@
     <?php echo $this->session->flashdata('error'); ?>
       <section class="content">
         <div class="row">
-<<<<<<< HEAD
             <div class="col-sm-7">
             <div class="box box-primary">
-=======
-          <div class="col-sm-9">
-            <div class="box box-solid box-info">
->>>>>>> 7659f797d89d3a364d93dc081683c6d80534dfbb
               <div class="box-header with-border">
                 <h3> Input Your Garbage Weight </h3>
               </div>
