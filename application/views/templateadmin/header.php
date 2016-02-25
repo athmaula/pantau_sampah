@@ -12,6 +12,7 @@
 
     <link href="<?php echo base_url(); ?>asset/plugins/jvectormap/jquery-jvectormap-1.2.2.css"  rel="stylesheet" >
     <!-- theme admin lte style -->
+    <script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
     <link href="<?php echo base_url(); ?>asset/css/AdminLTE.min.css"  rel="stylesheet" >
     <link href="<?php echo base_url(); ?>asset/css/skins/_all-skins.min.css"  rel="stylesheet" >
 

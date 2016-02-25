@@ -116,7 +116,7 @@ class userm extends CI_Model
     	return $query->row();
     }
 
-     public function get_data_min()
+    public function get_data_min()
     {
     	$id_user = $this->session->userdata('id');
     	$this->db->select_min('input_sampah');

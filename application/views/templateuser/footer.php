@@ -25,7 +25,7 @@
 <!-- SlimScroll 1.3.0 -->
 <script src="<?php echo base_url();?>asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
-<script src="<?php echo base_url();?>asset/plugins/chartjs/Chart.min.js"></script>
+<script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo base_url();?>asset/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->

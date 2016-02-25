@@ -45,13 +45,19 @@ class user extends CI_Controller
 		$this->load->view('templateuser/landingPageUser', $data);
 	}
 
-	/*public function chart()
+	public function chart()
 	{
 		$data['getdata_max'] = $this->userm->get_data_max();
 		$data['getdata_min'] = $this->userm->get_data_min();
-		//$data['get'] = $this->userm->view_data_landingpage();
+		$data['getdata_avg'] = $this->userm->get_data_avg();
+		$data['getdata_cnt1'] = $this->userm->get_data_cnt1();
+		$data['getdata_cnt2'] = $this->userm->get_data_cnt2();
+		$data['getdata_cnt3'] = $this->userm->get_data_cnt3();
+		$data['getdata_cnt4'] = $this->userm->get_data_cnt4();
+		$data['getdata_cnt5'] = $this->userm->get_data_cnt5();
+		$data['getdata_cnt6'] = $this->userm->get_data_cnt6();
 		$this->load->view('templateuser/chart', $data);
-	}*/
+	}
 
 	public function view()
 	{
