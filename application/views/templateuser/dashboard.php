@@ -75,7 +75,7 @@
                       <tbody>
                         <tr>
                           <td><?php echo $data->input_sampah; ?> Kilo</td>
-                          <td></td>
+                          <td><?php echo $data_monthly->input_sampah;?> Kilo</td>
                           <td><?php echo $data_max->input_sampah; ?> Kilo</td>
                           <td><?php echo $data_min->input_sampah; ?> Kilo</td>
                         </tr>

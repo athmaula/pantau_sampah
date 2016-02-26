@@ -50,7 +50,7 @@ class userm extends CI_Model
 		$this->db->from('data_sampah_user');
 		$this->db->join('jenis_sampah', 'jenis_sampah.id = data_sampah_user.jenis_sampah');
 		$this->db->join('pembuangan_sampah', 'pembuangan_sampah.id = data_sampah_user.action');
-		$this->db->order_by('tanggal', 'desc');
+		$this->db->order_by('id_data', 'desc');
 		$this->db->where('data_sampah_user.user_id', $id_user);
 		$query = $this->db->get();
 		return $query->result();
@@ -207,6 +207,17 @@ class userm extends CI_Model
     	$this->db->from('data_sampah_user');
     	$this->db->where('data_sampah_user.user_id', $id_user);
     	$this->db->where('jenis_sampah', '6');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_monthly()
+    {
+    	$id_user = $this->session->userdata('id');
+    	$this->db->select_sum('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('data_sampah_user.user_id', $id_user);
+    	$this->db->where('Month(tanggal)', '2');
     	$query = $this->db->get();
     	return $query->row();
     }

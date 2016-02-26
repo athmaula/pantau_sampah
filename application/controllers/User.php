@@ -25,6 +25,7 @@ class user extends CI_Controller
 		$data['data'] = $this->userm->get_data_total();
 		$data['data_max'] = $this->userm->get_data_max();
 		$data['data_min'] = $this->userm->get_data_min();
+		$data['data_monthly'] = $this->userm->getdata_monthly();
 
 		$this->load->view('templateuser/dashboard', $data);
 	}
