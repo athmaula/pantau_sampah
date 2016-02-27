@@ -50,7 +50,7 @@
                   </div>
                   <br />
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Action to Garbage</label>
+                    <label class="col-sm-4 control-label">Method of Disposal</label>
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="action" value="1">
