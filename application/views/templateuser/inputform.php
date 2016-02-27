@@ -6,7 +6,7 @@
     <?php echo $this->session->flashdata('error'); ?>
       <section class="content">
         <div class="row">
-          <div class="col-sm-7">
+          <div class="col-sm-9">
             <div class="box box-solid box-info">
               <div class="box-header with-border">
                 <h3> Input Your Garbage Weight </h3>
@@ -36,11 +36,11 @@
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="4">
-                          Logam
+                          Metal
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="5">
-                          Sisa Makanan
+                          Leftover
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="6">
@@ -54,15 +54,15 @@
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="action" value="1">
-                          Dibuang
+                          Discarded
                         </label>
                         <label>
                           <input type="radio" name="action" value="2">
-                          Dibakar
+                          Burnt
                         </label>
                         <label>
                           <input type="radio" name="action" value="3">
-                          Diserahkan TPS
+                          Send to Landfill
                         </label>
                       </div>
                   </div>
