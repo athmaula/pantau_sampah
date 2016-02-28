@@ -1,23 +1,23 @@
 <?php $this->load->view('templateuser/header'); ?>
 <?php $this->load->view('templateuser/sidebar') ?>
 <div class="content-wrapper">
-  <section class="content">
+  <section class="content pad-tengah">
   <div class="row">
-  	<div class="col-xs-12 col-md-7">
-  		<section>
-  		<div class="text-center">
+  	<div class="col-xs-12 col-md-9">
+  		<section >
+  		<div>
   			<h3>Grapich Garbage Productvity</h3>
   		</div>
-    		<div class="container text-center">
+    		<div class="container">
       			<canvas id="weeks" width="300" height="400"></canvas>
     		</div>
     		<br/><br/><br/>
 		</section>
 		<section>
-  		<div class="text-center">
+  		<div>
   			<h3>Grapich Garbage Productvity</h3>
   		</div>
-    		<div class="container text-center">
+    		<div class="container">
       			<canvas id="kind" width="300" height="400"></canvas>
     		</div>
     		<br/><br/><br/>
@@ -33,8 +33,8 @@ var data = {
     datasets: [
         {
             label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,0.8)",
+            fillColor: "#42a5f5",
+            strokeColor: "#1e88e5",
             highlightFill: "rgba(220,220,220,0.75)",
             highlightStroke: "rgba(220,220,220,1)",
             data: [<?php echo $getdata_max->input_sampah; ?>,<?php echo $getdata_min->input_sampah;?>, <?php echo $getdata_avg->input_sampah;?> ]

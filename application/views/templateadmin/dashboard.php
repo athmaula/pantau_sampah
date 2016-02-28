@@ -46,9 +46,9 @@
     datasets: [
         {
             label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.5)",
+            fillColor: "#26a69a",
             strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
+            highlightFill: "#00897b",
             highlightStroke: "rgba(220,220,220,1)",
             data: [<?php echo $getdata_max->input_sampah; ?>,<?php echo $getdata_min->input_sampah; ?>,<?php echo $getdata_avg->input_sampah; ?> ]
         }
@@ -61,33 +61,33 @@ var clientsChart = new Chart(context).Bar(data);
 var data = [
   {
     value: <?php echo $getdata_kind1->plastic; ?>,
-    color:"#F7464A",
-    label:"plastic"
+    color:"#2196f3",
+    label:"Plastic"
   },
   {
     value : <?php echo $getdata_kind2->paper; ?>,
-    color : "#009688",
-    label : "paper"
+    color : "#ff5722",
+    label : "Paper"
   },
   {
     value : <?php echo $getdata_kind3->glass; ?>,
     color : "#ffa000",
-    label : "glass"
+    label : "Glass"
   },
   {
     value : <?php echo $getdata_kind4->logam; ?>,
     color : "#00bcd4",
-    label : "logam"
+    label : "Metal"
   },
   {
     value : <?php echo $getdata_kind5->sisa; ?>,
-    color : "#304ffe",
-    label : "leftover"
+    color : "#e91e63",
+    label : "Leftover"
   },
   {
     value : <?php echo $getdata_kind6->other; ?>,
     color : "#cfd8dc",
-    label : "other"
+    label : "Other"
   }
   ];
 
@@ -97,19 +97,24 @@ var data = [
   var data = [
   {
     value: <?php echo $getdata_act1->burnt; ?>,
-    color:"#878BB6"
+    color:"#ab47bc",
+    label : "Burnt"
   },
   {
     value : <?php echo $getdata_act2->landfill; ?>,
-    color : "#4ACAB4"
+    color : "#29b6f6",
+    label : "Sent to Landfill"
   },
   {
     value : <?php echo $getdata_act3->discarded; ?>,
-    color : "#FF8153"
+    color : "#ffa726",
+    label : "Discarded"
   },
   {
     value : <?php echo $getdata_act4->other; ?>,
-    color : "#FFEA88"
+    color : "#8d6e63",
+    label : "other",
+    label : "Other"
   }
 ];
 
@@ -119,4 +124,3 @@ new Chart(action).Pie(data);
 
 
 </script>
-

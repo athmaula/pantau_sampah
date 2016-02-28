@@ -21,7 +21,7 @@
               <div class="col-xs-12 col-lg-9 col-md-6 text-center">
                   <div class="service-box">
                       <h1>What Pantau Sampah ?</h1>
-                      <h4 class="text-muted">This application is collaboration idea from two student who aware the risk of not manage our garbage correctly. They believe unless someone start cares about garbage problem NOTHING is going to get better. They start to thing what kind of action they can make to make people aware about this problem. Because their basic is tecnology engineering, the first idea comes to their mind is application. They invent application that able to count user production of garbage, calculate it and serve it as interesting as they can. This way they provide real time data. </h4>
+                      <h5 class="text-muted">This application is collaboration idea from two student who aware the risk of not manage our garbage correctly. They believe unless someone start cares about garbage problem NOTHING is going to get better. They start to thing what kind of action they can make to make people aware about this problem. Because their basic is tecnology engineering, the first idea comes to their mind is application. They invent application that able to count user production of garbage, calculate it and serve it as interesting as they can. This way they provide real time data. </h5>
                   </div>
               </div>
             </div>
@@ -70,7 +70,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="se ction-heading"><br/><br/>Grapich Garbage Productivity</h2>
+          <h2 class="section-heading"><br/>Grapich Garbage Productivity</h2>
           <hr class="primary">
         </div>
       </div>
@@ -121,8 +121,8 @@ var data = {
     datasets: [
         {
             label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,0.8)",
+            fillColor: "#42a5f5",
+            strokeColor: "#1e88e5",
             highlightFill: "rgba(220,220,220,0.75)",
             highlightStroke: "rgba(220,220,220,1)",
             data: [<?php echo $getdata_max->input_sampah; ?>,  <?php echo $getdata_min->input_sampah; ?> , <?php echo $getdata_avg->input_sampah;?>]

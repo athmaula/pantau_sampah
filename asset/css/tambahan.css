@@ -163,3 +163,11 @@
         border-bottom-style: solid;
         border-bottom-color: #26a69a;
 }
+
+.pad-tengah{
+    padding : 10px 300px 30px;
+}
+
+.sidebar-mini.sidebar-collapse .sidebar-menu > li:not(.treeview) > a > span {
+    border-bottom-right-radius: 4px;
+}
