@@ -2,6 +2,7 @@
 
 <!--carousel-->
 <section class="section-color">
+<div class="col-xs-12">
 <div class="container-fluid">
   <div id="tipsCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <!-- Wrapper for slides -->
@@ -11,15 +12,15 @@
     <div class="item active">
         <div class="carousel-content">
             <div>
-              <div class="col-lg-3 col-md-6 text-center">
+              <div class="col-xs-12 col-lg-3 col-md-6 text-center">
                   <div class="service-box">
                       <br/>
                       <i class="fa fa-4x fa-info wow bounceIn text-primary" style="color: #00695c;"></i>
                   </div>
               </div>
-              <div class="col-lg-9 col-md-6 text-center">
+              <div class="col-xs-12 col-lg-9 col-md-6 text-center">
                   <div class="service-box">
-                      <h1>What Pantau Sampah ?</h3>
+                      <h1>What Pantau Sampah ?</h1>
                       <h4 class="text-muted">This application is collaboration idea from two student who aware the risk of not manage our garbage correctly. They believe unless someone start cares about garbage problem NOTHING is going to get better. They start to thing what kind of action they can make to make people aware about this problem. Because their basic is tecnology engineering, the first idea comes to their mind is application. They invent application that able to count user production of garbage, calculate it and serve it as interesting as they can. This way they provide real time data. </h4>
                   </div>
               </div>
@@ -30,13 +31,13 @@
     <div class="item">
         <div class="carousel-content">
             <div>
-              <div class="col-lg-3 col-md-6 text-center">
+              <div class="col-xs-12 col-lg-3 col-md-6 text-center">
                   <div class="service-box">
                       <br/>
                       <i class="fa fa-4x fa-pencil wow bounceIn text-primary"></i>
                   </div>
               </div>
-              <div class="col-lg-9 col-md-6 text-center">
+              <div class="col-xs-12 col-lg-9 col-md-6 text-center">
                   <div class="service-box">
                       <h3><?php echo $row->title ?></h3>
                       <p class="text-muted"><?php echo $row->content ?></p>
@@ -60,6 +61,7 @@
     </a>
 
 </div>
+</div>
 </section>
 <!--ends of carousel-->
 
@@ -68,7 +70,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading"><br/><br/>Grapich Garbage Productivity</h2>
+          <h2 class="se ction-heading"><br/><br/>Grapich Garbage Productivity</h2>
           <hr class="primary">
         </div>
       </div>
@@ -130,7 +132,6 @@ var data = {
 
 var context = document.getElementById('weeks').getContext('2d');
 var clientsChart = new Chart(context).Bar(data);
-
 
 var data = [
   {

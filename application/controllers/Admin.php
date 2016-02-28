@@ -18,7 +18,20 @@ class admin extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('templateadmin/dashboard');
+		$data['getdata_max'] = $this->adminm->getdata_max();
+		$data['getdata_min'] = $this->adminm->getdata_min();
+		$data['getdata_avg'] = $this->adminm->getdata_avg();
+		$data['getdata_kind1'] = $this->adminm->getdata_kind1();
+		$data['getdata_kind2'] = $this->adminm->getdata_kind2();
+		$data['getdata_kind3'] = $this->adminm->getdata_kind3();
+		$data['getdata_kind4'] = $this->adminm->getdata_kind4();
+		$data['getdata_kind5'] = $this->adminm->getdata_kind5();
+		$data['getdata_kind6'] = $this->adminm->getdata_kind6();
+		$data['getdata_act1'] = $this->adminm->getdata_act1();
+		$data['getdata_act2'] = $this->adminm->getdata_act2();
+		$data['getdata_act3'] = $this->adminm->getdata_act3();
+		$data['getdata_act4'] = $this->adminm->getdata_act4();
+		$this->load->view('templateadmin/dashboard', $data);
 	}
 
 	public function view()

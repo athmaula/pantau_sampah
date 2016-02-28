@@ -9,12 +9,11 @@
     <!-- Font awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Ionicon -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-    <link href="<?php echo base_url(); ?>asset/plugins/jvectormap/jquery-jvectormap-1.2.2.css"  rel="stylesheet" >
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> 
     <!-- theme admin lte style -->
     <link href="<?php echo base_url(); ?>asset/css/AdminLTE.min.css"  rel="stylesheet" >
     <link href="<?php echo base_url(); ?>asset/css/skins/_all-skins.min.css"  rel="stylesheet" >
+    <script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
     <link href="<?php echo base_url(); ?>asset/css/tambahan.css"  rel="stylesheet" >
 
 

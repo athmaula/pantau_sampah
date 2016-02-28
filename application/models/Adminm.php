@@ -108,4 +108,116 @@ class adminm extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->delete('data_tips_homepage');
 	}
+
+	public function getdata_max()
+    {
+    	$this->db->select_max('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_min()
+    {
+    	$this->db->select_min('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_avg()
+    {
+    	$this->db->select_avg('input_sampah');
+    	$this->db->from('data_sampah_user');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_kind1()
+    {
+    	$this->db->select('COUNT(jenis_sampah) as plastic');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('jenis_sampah', '1');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_kind2()
+    {
+    	$this->db->select('COUNT(jenis_sampah) as paper');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('jenis_sampah', '2');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_kind3()
+    {
+    	$this->db->select('COUNT(jenis_sampah) as glass');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('jenis_sampah', '3');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_kind4()
+    {
+    	$this->db->select('COUNT(jenis_sampah) as logam');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('jenis_sampah', '4');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_kind5()
+    {
+    	$this->db->select('COUNT(jenis_sampah) as sisa');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('jenis_sampah', '5');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_kind6()
+    {
+    	$this->db->select('COUNT(jenis_sampah) as other');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('jenis_sampah', '6');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_act1()
+    {
+    	$this->db->select('COUNT(action) as burnt');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('action', '1');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+
+    public function getdata_act2()
+    {
+    	$this->db->select('COUNT(action) as landfill');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('action', '2');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+    public function getdata_act3()
+    {
+    	$this->db->select('COUNT(action) as discarded');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('action', '3');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
+    public function getdata_act4()
+    {
+    	$this->db->select('COUNT(action) as other');
+    	$this->db->from('data_sampah_user');
+    	$this->db->where('action', '4');
+    	$query = $this->db->get();
+    	return $query->row();
+    }
 }
