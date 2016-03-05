@@ -119,7 +119,6 @@ class user extends CI_Controller
 
 	public function inputsampah()
 	{
-
 		$id_user = $this->session->userdata('id');
 		$data['user_id'] = $id_user;
 		$data['input_sampah'] = $this->input->post('beratsampah');

@@ -213,11 +213,12 @@ class userm extends CI_Model
 
     public function getdata_monthly()
     {
+    	$bln = date('m');
     	$id_user = $this->session->userdata('id');
     	$this->db->select_sum('input_sampah');
     	$this->db->from('data_sampah_user');
     	$this->db->where('data_sampah_user.user_id', $id_user);
-    	$this->db->where('Month(tanggal)', '2');
+    	$this->db->where('Month(tanggal)', $bln);
     	$query = $this->db->get();
     	return $query->row();
     }

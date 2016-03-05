@@ -13,23 +13,25 @@
     </section>
           <!-- /.box -->
           <section class="content">
-          <div class="row">
-            <div class="col-xs-12 col-md-10">
+           <div class="row">
+            <div class="col-xs-12">
               <div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Garbage Data</h3>
                 </div>
                 <div class="box-body">
                   <div class="box-body table-responsive">
-                    <table class="table table-bordered table-hover" style="text-align: center">
+                    <table id="table1" class="table table-bordered table-hover" style="text-align: center">
                       <thead>
                         <tr>
                           <th>No</th>
+                          <th class="hidden"></th>
+                          <th class="hidden"></th>
                           <th>Garbage Weight</th>
-                          <th>Method of Disposal</th>
-                          <th>Garbage Kind</th>
+                          <th class="method">Method of Disposal</th>
+                          <th class="kind">Garbage Kind</th>
                           <th>Date</th>
-                          <th>Action</th>
+                          <th class="action">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -37,7 +39,7 @@
                            foreach ($getdata as $row) {
                         # code..
                               $no++;
-                       ?>
+                        ?>
                         <tr>
                           <td><?php echo $no; ?></td>
                           <td class="hidden"><?php echo $row->id_data; ?></td>
@@ -57,15 +59,13 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-12 col-md-10">
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Total Garbage Input</h3>
                 </div>
                 <div class="box-body">
                   <div class="table-responsive">
-                    <table class="table table-bordered table-hover" style="text-align: center">
+                    <table id="table" class="table table-bordered table-hover" style="text-align: center">
                       <thead>
                       <th>Total Garbage Inputed</th>
                       <th>Monthly Garbage Weight Inputed</th>
@@ -89,11 +89,18 @@
           </section>
           <!-- /.row -->
         </div>
-        <?php $this->load->view('templateuser/footer'); ?>
-        <!-- /.col -->
-  <!-- /.content-wrapper -->
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.2
+    </div>
+    <strong>Copyright &copy; 2014-2015</strong>
+  </footer>
+</div>
+<!-- ./wrapper -->
 
-  <script type="text/javascript">
+<?php $this->load->view('templateuser/footer'); ?>
+
+<script>
     function dodelete()
     {
         if(confirm("Are You Sure ?"))
@@ -105,4 +112,24 @@
             return false;
         }
    }
+//datatables
+  $(document).ready(function() {
+    $('#table1').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      columnDefs: [{ targets: 'action', orderable: false}]
+    });
+    $('#table').DataTable({
+      "paging": false,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": false,
+      "info": false,
+      "autoWidth": false
+    });
+} );
   </script>

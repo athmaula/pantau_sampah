@@ -66,7 +66,7 @@
         			</div>
         			<div class="box-footer">
                   		<div class="form-group">
-                    		<div class="col-sm-offset-9 col-sm-5">
+                    		<div class="col-sm-offset-2 col-sm-5">
                       			<input type="submit" class="btn btn-success btn-flat" value="submit">
                     		</div>
                   		</div>

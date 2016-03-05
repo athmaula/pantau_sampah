@@ -1,28 +1,29 @@
 <?php $this->load->view('templateuser/header'); ?>
 <?php $this->load->view('templateuser/sidebar') ?>
 <div class="content-wrapper">
-  <section class="content pad-tengah">
+  <section class="content">
   <div class="row">
-  	<div class="col-xs-12 col-md-9">
-  		<section >
-  		<div>
-  			<h3>Grapich Garbage Productvity</h3>
-  		</div>
-    		<div class="container">
+  	<div class="co-xs-12 col-md-5">
+      <div class="box box-primary">
+        <div class="box-header">
+  			 <h3 class="box-title">Grapich Garbage Productvity</h3>
+        </div>
+    		<div class="box-body">
       			<canvas id="weeks" width="300" height="400"></canvas>
     		</div>
-    		<br/><br/><br/>
-		</section>
-		<section>
-  		<div>
-  			<h3>Grapich Garbage Productvity</h3>
-  		</div>
-    		<div class="container">
-      			<canvas id="kind" width="300" height="400"></canvas>
+      </div>
+    </div>
+  		<div class="col-xs-12 col-md-offset-1 col-md-5">
+      <div class="box box-primary">
+        <div class="box-header">
+    			<h3 class="box-title">Grapich Garbage Productvity</h3>
     		</div>
-    		<br/><br/><br/>
-		</section>
+    		<div class="box-body">
+      			<canvas id="kind" width="300" height="400" style="margin-left: 50px"></canvas>
+    		</div>
+      </div>
   	</div>
+  </div>
   </section>
   </div>
 
