@@ -57,6 +57,7 @@ class user extends CI_Controller
 		$data['getdata_cnt4'] = $this->userm->get_data_cnt4();
 		$data['getdata_cnt5'] = $this->userm->get_data_cnt5();
 		$data['getdata_cnt6'] = $this->userm->get_data_cnt6();
+		$data['data_monthly'] = $this->userm->getdata_monthly();
 		$this->load->view('templateuser/chart', $data);
 	}
 
