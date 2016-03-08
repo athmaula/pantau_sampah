@@ -5,7 +5,7 @@
     <div class="dark-mask"></div>
     <!-- Wrapper for slides -->
     <div class="row tengah">
-        <div class="col-xs-offset-3 col-xs-6">
+        <div class="col-xs-offset-4 col-xs-6">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <div class="carousel-content">
@@ -55,17 +55,7 @@
     </div>
 </section>
 
-<section class="bar background-image-fixed no-mb color-white text-center">
-    <div class="dark-mask"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h3>"Tahukah anda, sampah plastik terurai selama 400tahun"</h3>
-                <p class="lead">Fact</p>
-            </div>
-        </div>
-    </div>
-</section>
+
 <br />
 <br />
 <br />
@@ -121,7 +111,7 @@
                         <div class="col-md-3">
                             <i class="fa fa-4x fa-group wow bounceIn text-primary" data-wow-delay=".3s"></i>
                             <div class="about-box">
-                                <h3 class="title-section">Join Pantau Sampah now</h3>
+                                <h3 class="title-section">Join Pantau Sampah now</h3><br />
                                 <p class="text-muted">We can't educate people about garbage hazard alone. Joining Pantau Sampah can help us
                                 tell you about garbage hazard and hopefully you will spread the information into your famiy, your friends,
                                 your collagues, and your neigbour. Let's save our earth.

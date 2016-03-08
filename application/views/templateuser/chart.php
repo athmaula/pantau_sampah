@@ -27,7 +27,7 @@
               <div class="chart">
                 <canvas id="kind" style="height:250px"></canvas>
               </div>
-              <div id="js-legend" class="chart-legend"></div
+              <div id="js-legend" class="chart-legend"></div>
             </div>
             <!-- /.box-body -->
           </div>

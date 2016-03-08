@@ -1,18 +1,32 @@
 .latar{
-  background-image: url("../img/section.jpg");
+  background-image: url("../img/wallpaper2.png");
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 609px;
+  height: 639px;
 }
 
 .navbar-custom{
   background-color: #4db6ac;
-
 }
+
+.navbar-brand.m-r-lg {
+  font-weight: bold;
+}
+
 .navbar-brand a{
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
 }
+
+.navbar-brand.pantau_sampah{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 23px;
+  border-bottom: 2px solid transparent;
+}
+
 .navbar-brand a:hover{
   color: #00695c;
   text-decoration: none;
@@ -20,8 +34,12 @@
 }
 
 .navbar-nav > li > a{
-  color: white;
-  text-decoration: none;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* IE8 proofing */
+  border-bottom: 2px solid transparent;
 }
 .navbar-nav > li > a:hover{
   color: #00695c;
@@ -130,7 +148,6 @@
 
 .nav-baru{
   text-decoration: none;
-  padding: 15px;
 }
 
 .nav-baru a:hover{
@@ -145,10 +162,24 @@
   color: #00695c;
 }
 
-.section-color{
+.navbar-right {
+  font-size: 16px;
+}
+
+.section-color.carousel{
   background-color: #b2dfdb;
   width: 100%;
+  height: 500px;
+}
+
+.char{
+  background: -webkit-linear-gradient(#fff 15%, #f4f4f4 25%); /* Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fff 15%, #f4f4f4 25%); /* For Opera 11.6 to 12.0 */
+    background: -moz-linear-gradient(#fff 15%, #f4f4f4 25%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fff 15%, #f4f4f4 25%); /* Standard syntax (must be last) */
+  width: 100%;
   height: 609px;
+  margin-top: 20px;
 }
 
 .box.box-solid.box-info > .box-header {
@@ -159,9 +190,9 @@
 
 .box-header.with-border {
     border-bottom: 1px solid #26a69a;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: #26a69a;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #26a69a;
 }
 
 .pad-tengah{
@@ -200,9 +231,10 @@ h3.title-section {
 
 .about-box{
   margin-top: -30px;
+  margin-bottom: 40px;
   background-color: #fff;
   padding: 20px;
-  min-height: 347px;
+  height: 429px;
 }
 
 .carousel .dark-mask{
@@ -246,17 +278,26 @@ h3.title-section {
 }
 
 .bar.background-white {
-  background-color: #f6f6f6;
+  background-color: #b2dfdb;
 }
 
 /*static image info*/
 .bar.background-image-fixed {
-  background: url('../img/9.jpg') center top no-repeat;
+  background: url('../img/wallpaperbatal.png') center top no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  height: 600px;
+}
+.bar.background-image-fixed-2 {
+  background: url('../img/photo4.jpg') center top no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 230px ;
+  margin-bottom: 50px;
 }
 
-.bar.color-white h3,
+.bar.color-white h2,
 .bar.color-white p{
   color: #fff;
+  font-style: bold;
 }

@@ -19,7 +19,7 @@
             <li>
               <a href="<?php echo site_url('admin/view_input_tips');?>" style="color:#00695c;">
                 <i class="fa fa-pencil"></i>
-                <span> Input Tips LandingPage User</span>
+                <span> Input Tips Infographic Page User</span>
               </a>
             </li>
             <li>

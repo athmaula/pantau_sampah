@@ -22,9 +22,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $password = set_value('password');
 
       $hasil = $this->db->where('username',$username) //mengambil data dari database untuk di cocokan dengan inputan
-                ->where('password',$password)
-                ->limit(1)
-                ->get('user');
+                        ->where('password',$password)
+                        ->limit(1)
+                        ->get('user');
 
       if ($hasil->num_rows()>0)
       {
@@ -56,6 +56,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     $this->db->insert('user', $data); //query insert data
     
+  }
+
+  public function check_if_username_exist($username)
+  {
+    $this->db->where('username', $username);
+    $result = $this->db->get('user');
+
+    if ($result->num_rows() > 0) {
+        return FALSE; //username taken
+    }
+    else
+    {
+      return TRUE; //username can be Reg
+    }
   }
 
   public function view_data_homepage()

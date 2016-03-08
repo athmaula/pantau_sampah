@@ -1,114 +1,93 @@
 <?php $this->load->view('navbaruser') ?>
 
 <!--carousel-->
-<section class="section-color">
-<div class="col-xs-12">
-<div class="container-fluid">
-  <div id="tipsCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-    <!-- Wrapper for slides -->
-    <div class="row lebar-custom">
-        <div class="col-xs-offset-3 col-xs-6">
-          <div class="carousel-inner" role="listbox">
-    <div class="item active">
-        <div class="carousel-content">
-            <div>
-              <div class="col-xs-12 col-lg-3 col-md-6 text-center">
-                  <div class="service-box">
-                      <br/>
-                      <i class="fa fa-4x fa-info wow bounceIn text-primary" style="color: #00695c;"></i>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-lg-9 col-md-6 text-center">
-                  <div class="service-box">
-                      <h1>What Pantau Sampah ?</h1>
-                      <h5 class="text-muted">This application is collaboration idea from two student who aware the risk of not manage our garbage correctly. They believe unless someone start cares about garbage problem NOTHING is going to get better. They start to thing what kind of action they can make to make people aware about this problem. Because their basic is tecnology engineering, the first idea comes to their mind is application. They invent application that able to count user production of garbage, calculate it and serve it as interesting as they can. This way they provide real time data. </h5>
-                  </div>
-              </div>
+<section class="section-color carousel">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container-fluid">
+        <div id="tipsCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- Wrapper for slides -->
+         <div class="row tengah">
+          <div class="col-xs-offset-3 col-xs-6">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="carousel-content">
+                        <div>
+                            <h1>What is Pantau Sampah ?</h1>
+                            <h4>Pantau Sampah is our project, dedicated to warn people about how dangerous garbage can be.</h4>
+                        </div>
+                    </div>
+                </div>
+                <?php foreach ($get as $row) { ?>
+                <div class="item">
+                    <div class="carousel-content">
+                        <div>
+                            <h1><strong><?php echo $row->title; ?></strong></h1>
+                            <h4><?php echo $row->content; ?></strong></h4>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
-    <?php foreach ($get as $row) { ?>
-    <div class="item">
-        <div class="carousel-content">
-            <div>
-              <div class="col-xs-12 col-lg-3 col-md-6 text-center">
-                  <div class="service-box">
-                      <br/>
-                      <i class="fa fa-4x fa-pencil wow bounceIn text-primary"></i>
-                  </div>
-              </div>
-              <div class="col-xs-12 col-lg-9 col-md-6 text-center">
-                  <div class="service-box">
-                      <h3><?php echo $row->title ?></h3>
-                      <p class="text-muted"><?php echo $row->content ?></p>
-                  </div>
-              </div>
-            </div>
-        </div>
-    </div>
-    <?php } ?>
-  </div></div>
-</div></div>
-
-
-    <a class="left carousel-control" href="#tipsCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#tipsCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
+</div>
 </div>
 </div>
 </section>
 <!--ends of carousel-->
-
-<!--Grafik per minggu-->
-<section>
+<section class="bar background-image-fixed no-mb color-white text-center">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading"><br/>Grapich Garbage Productivity</h2>
-          <hr class="primary">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
         </div>
-      </div>
     </div>
-    <div class="container text-center">
-      <canvas id="weeks" width="300" height="400"></canvas>
-    </div>
-    <br/><br/><br/>
 </section>
-<!-- end grafik per minggu-->
 
-<section class="section-color">
-    <div class="container">
+<section class="char">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading"><br/><br/>Grapich Garbage Productivity</h2>
-          <hr class="primary">
-        </div>
+        <h2 class="text-center">Grapich Garbage Productivity</h2>
+        <hr class="primary">
+        <div class="col-md-5 col-md-offset-1">
+            <div class="container">
+              <canvas id="diagram" width="600" height="400"></canvas>
+            </div>
+          </div>
+          <!--Grafik per inputan-->
+          <div class="col-md-6">
+            <div class="container">
+              <canvas id="weeks" width="500" height="400"></canvas>
+            </div>
+          </div>
       </div>
+</section>
+<!-- end grafik per inputan-->
+<section class="bar background-image-fixed-2 no-mb color-white text-center">
+    <div class="dark-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>"Do you Know, Styrofoam can't straggling.."</h2>
+                <p class="lead"> - Fact - </p>
+            </div>
+        </div>
     </div>
-    <div class="container text-center">
-      <canvas id="diagram" width="600" height="400"></canvas>
-    </div>
-    <br/><br/><br/>
 </section>
 
 <!--grafik jenis sampah-->
 <section>
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading"><br/><br/>Grapich Garbage Type</h2>
+        <div class="col-sm-6 col-sm-offset-3">
+          <h2 class="text-center">Grapich Garbage Type</h2>
           <hr class="primary">
+          <div class="text-center">
+            <canvas id="kind" width="300" height="300"></canvas>
+          </div>
+          <div id="js-legend" class="chart-legend"></div>
         </div>
       </div>
-    </div>
-    <div class="container text-center">
-      <canvas id="kind" width="300" height="300"></canvas>
     </div>
     <br/><br/>
 </section>
@@ -166,8 +145,14 @@ var data = [
   }
   ];
 
-  var kind = document.getElementById("kind").getContext("2d");
-  new Chart(kind).Doughnut(data);
+  var options = {
+      //String - A legend template
+      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+  }
+
+  var ctx = document.getElementById("kind").getContext("2d");
+  var kind = new Chart(ctx).Doughnut(data, options);
+  document.getElementById('js-legend').innerHTML = kind.generateLegend();
 
 var weekData = {
   labels : [<?php $no=0; foreach ($getdata_input as $row) {

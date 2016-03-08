@@ -16,6 +16,7 @@
     <link href="<?php echo base_url(); ?>asset/css/AdminLTE.min.css"  rel="stylesheet" >
     <link href="<?php echo base_url(); ?>asset/css/skins/_all-skins.min.css"  rel="stylesheet" >
     <script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
+    <!-- style css custom -->
     <link href="<?php echo base_url(); ?>asset/css/tambahan.css"  rel="stylesheet" >
 
 
@@ -23,47 +24,28 @@
   <body class="hold-transition skin-custom sidebar-mini">
     <div class="wrapper">
       <header class="main-header">
-        <!-- Logo -->
         <a href="<?php echo site_url('user/landingpage') ?>" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>Ps</b></span>
-          <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Pantau</b>Sampah</span>
         </a>
-
-        <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-          <!-- Navbar Right Menu -->
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="<?php echo base_url(); ?>asset/img/avatar04.png" class="user-image" alt="User Image">
                   <?php echo $this->session->userdata('username') ?>
                 </a>
                 <ul class="dropdown-menu">
-                <!-- User image -->
                   <li class="user-header">
-                    <img src="<?php echo base_url(); ?>asset/img/avatar04.png" class="img-circle" alt="User Image">
-                    <p>
-                      <?php echo $this->session->userdata('username') ?>
-                    </p>
-                    <p>
-                    <?php if ($this->session->userdata('role') == 1) {
+                    <h3 style="color:#fff;"><strong><?php echo $this->session->userdata('username') ?></strong></h3>
+                    <p><?php if ($this->session->userdata('role') == 1) {
                       echo "admin";
-                      # code...
                       }else
                       {
                         echo "Member";
                       }
                     ?></p>
                   </li>
-                  <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
                       <a href="<?php echo site_url('/user/view') ?>" class="btn btn-default btn-flat">Profile</a>
@@ -74,7 +56,6 @@
                   </li>
                 </ul>
               </li>
-              <!-- Control Sidebar Toggle Button -->
             </ul>
           </div>
         </nav>

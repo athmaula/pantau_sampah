@@ -22,6 +22,7 @@
                 <div class="box-body">
                  <canvas id="action" width="300" height="400" style="margin-left: 150px"></canvas>
                </div>
+               <div id="legend-chart" class="chart-legend"></div>
                </div>
             </div>
               <div class="col-md-6">
@@ -31,6 +32,7 @@
                 </div>
                 <div class="box-body">
                  <canvas id="kind" width="300" height="400" style="margin-left: 100px"></canvas>
+                  <div id="js-legend" class="chart-legend"></div>
                </div>
                </div>
             </div>
@@ -67,7 +69,7 @@ var data = [
   {
     value : <?php echo $getdata_kind2->paper; ?>,
     color : "#ff5722",
-    label : "Paper"
+    label : "Paper" 
   },
   {
     value : <?php echo $getdata_kind3->glass; ?>,
@@ -90,9 +92,14 @@ var data = [
     label : "Other"
   }
   ];
+  var options = {
+      //String - A legend template
+      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+  }
 
-  var kind = document.getElementById("kind").getContext("2d");
-  new Chart(kind).Doughnut(data);
+  var ctx = document.getElementById("kind").getContext("2d");
+  var kind = new Chart(ctx).Doughnut(data, options);
+  document.getElementById('js-legend').innerHTML = kind.generateLegend();
 
   var data = [
   {
@@ -118,8 +125,9 @@ var data = [
   }
 ];
 
-var action= document.getElementById("action").getContext("2d");
-new Chart(action).Pie(data);
+  var ctx = document.getElementById("action").getContext("2d");
+  var action = new Chart(ctx).Doughnut(data, options);
+  document.getElementById('legend-chart').innerHTML = action.generateLegend();
 
 
 

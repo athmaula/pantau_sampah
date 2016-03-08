@@ -8,13 +8,13 @@
 <!-- ./wrapper -->
 
 
-<!-- jQuery 2.1.4 -->
+<!-- jQuery -->
 <script src="<?php echo base_url();?>asset/js/jquery.js"></script>
 <!-- Bootstrap 3.3.5 -->
 <script src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
+<!-- datatable -->
 <script src="<?php echo base_url();?>asset/plugins/datatables/jquery.dataTables.js"></script>
 <script src="<?php echo base_url();?>asset/plugins/datatables/dataTables.bootstrap.js"></script>
-  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
 <!-- FastClick -->
 <script src="<?php echo base_url();?>asset/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->

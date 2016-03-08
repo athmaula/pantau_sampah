@@ -7,6 +7,7 @@
       <h1>
         Dashboard
       </h1>
+       <?php echo $this->session->flashdata('success') ?>
        <?php echo $this->session->flashdata('success_insert'); ?>
        <?php echo $this->session->flashdata('success_edit'); ?>
        <?php echo $this->session->flashdata('success_delete'); ?>

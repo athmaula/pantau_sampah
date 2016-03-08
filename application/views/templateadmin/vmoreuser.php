@@ -10,9 +10,6 @@
 				</div>
 				<div class="box-body">
 						<div class="panel-body">
-							<div class="col-xs-12 col-md-4">
-								<img src="<?php echo base_url();?>asset/img/avatar04.png" class="img-responsive img-circle" />
-							</div>
 							<div class="col-xs-12 col-md-5">
 								<div class="box-body table-responsive no-padding">
 									<table class="table table-bordered table-hover">

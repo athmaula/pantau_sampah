@@ -10,7 +10,7 @@
         <div class="col-xs-12 col-md-10">
         	<div class="box box-info">
         		<div class="box-header with-header">
-        			<h3 class="box-title">LANDINGPAGE USER TIPS</h3>
+        			<h3 class="box-title">INFOGRAPHIC USER TIPS</h3>
         		</div>
         		<div class="box-body">
         			<div class="box-body table-responsive">

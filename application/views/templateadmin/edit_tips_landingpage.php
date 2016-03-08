@@ -6,7 +6,7 @@
   <div class="col-xs-12 col-md-7">
     <div class="box box-info">
       <div class="box-header with-border">
-        <h3 class="box-title">Edit Tips in LandingPage
+        <h3 class="box-title">Edit Tips in Infographic User
       </div>
       <div class="box-body">
         <?php echo form_open('admin/update_tips_landingpage','class="form-horizontal"');?>  <!--mengarahkan hasil inputan ke controller-->

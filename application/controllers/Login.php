@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		{
 			//menset rules apa saja yang di pakai untuk form
 			$this->form_validation->set_rules('nama', 'Nama', 'trim|required|callback_alpha_space_only');
-			$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]');
+			$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|callback_check_if_username_exist');
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|matches[passconf]');
 			$this->form_validation->set_rules('passconf', 'Confirm Password', 'trim|required');
@@ -81,7 +81,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$this->mfile->register();
 				//membuat alert message sukses register
 				$this->session->set_flashdata('success', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Successfully Registered.</strong></div>');
-				redirect('file/register');
+				$valid_user = $this->mfile->checkvalid();
+				$this->session->set_userdata('role',$valid_user->role_id);
+				redirect('user');
 			}
 
 		}
@@ -99,4 +101,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             	return TRUE;
         	}
 	   	}
+
+	   	public function check_if_username_exist($requested_username)
+	   	{
+	   		$username_available = $this->mfile->check_if_username_exist($requested_username);
+
+	   		if ($username_available)
+	   		{
+	   			return TRUE;
+	   		}
+	   		else
+	   		{
+            	$this->form_validation->set_message('check_if_username_exist', 'Sorry username is Already taken.');
+	   			return FALSE;
+	   		}
+	   	} 
 	}
