@@ -237,20 +237,14 @@ h3.title-section {
   height: 429px;
 }
 
-.carousel .dark-mask{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0e232e;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
-}
-
 .carousel h1,
 .carousel h4 {
   color: #fff;
+}
+
+.carousel.slide h1,
+.carousel.slide h4 {
+  color: #000;
 }
 
 /*css buat chart.js doughnut user */

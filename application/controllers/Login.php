@@ -10,7 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		function __construct()
 		{
-			# code...
 			parent::__construct();
 			$this->load->model('mfile');
 			$this->load->library('form_validation'); //memanggil form validation
@@ -82,7 +81,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				//membuat alert message sukses register
 				$this->session->set_flashdata('success', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Successfully Registered.</strong></div>');
 				$valid_user = $this->mfile->checkvalid();
+				$this->session->set_userdata('username',$valid_user->username);
 				$this->session->set_userdata('role',$valid_user->role_id);
+				$this->session->set_userdata('id',$valid_user->id);
 				redirect('user');
 			}
 

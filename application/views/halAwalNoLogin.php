@@ -2,7 +2,6 @@
 
 <!--carousel-->
   <div id="myCarousel" class="carousel slide carousel-fade latar" data-ride="carousel">
-    <div class="dark-mask"></div>
     <!-- Wrapper for slides -->
     <div class="row tengah">
         <div class="col-xs-offset-4 col-xs-6">
