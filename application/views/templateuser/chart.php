@@ -33,9 +33,8 @@
           </div>
         </div>
       </div>
+      </section>
     </div>
-  </section>
-  </div>
 
 <?php $this->load->view('templateuser/footer'); ?>
 <script>

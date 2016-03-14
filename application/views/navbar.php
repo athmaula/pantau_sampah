@@ -13,7 +13,7 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand pantau_sampah" href="<?php echo site_url('file/index'); ?>">PantauSampah</a>
-				<a href="<?php echo site_url('file/index#tentang'); ?>" class="navbar-brand" style="font-size:14px">About Us</a>
+				<a href="#tentang" class="navbar-brand" style="font-size:14px">About Us</a>
 			</div>
         	<div class="nav navbar-brand navbar-right" style="font-size:14px">
           		<a href="<?php echo site_url('file/login'); ?>">Login</a>

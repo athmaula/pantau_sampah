@@ -3,12 +3,12 @@
 <div class="content-wrapper">
 	<div class="content-header">
 		<div class="row">
-		<div class="col-md-offset-1 col-md-8">
-			<div class="box box-info">
-				<div class="box-header with-border">
-					<h2 class="box-title"><strong><?php echo $nama; ?></strong></h2>
-				</div>
-				<div class="box-body">
+			<div class="col-md-8">
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h2 class="box-title"><strong><?php echo $nama; ?></strong></h2>
+					</div>
+					<div class="box-body">
 						<div class="panel-body">
 							<div class="col-xs-12 col-md-5">
 								<div class="box-body table-responsive no-padding">

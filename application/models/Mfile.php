@@ -44,7 +44,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $email     = set_value('email');
     $gender    = set_value('gender');
     $role      = set_value('', '2'); // 'user_role' diset otomatis '2' / untuk member
-    $create_at = set_value('');
     
     $data['nama']       = $nama;
     $data['username']   = $username;
@@ -52,7 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['email']      = $email;
     $data['gender']     = $gender;
     $data['role_id']    = $role;
-    $data['create_at']  = $create_at;
 
     $this->db->insert('user', $data); //query insert data
     

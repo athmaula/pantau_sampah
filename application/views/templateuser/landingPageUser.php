@@ -36,33 +36,18 @@
 </div>
 </section>
 <!--ends of carousel-->
-<section class="bar background-image-fixed no-mb color-white text-center">
+<section class="chart-lines">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="char">
       <div class="row">
         <h2 class="text-center">Grapich Garbage Productivity</h2>
-        <hr class="primary">
-        <div class="col-md-5 col-md-offset-1">
-            <div class="container">
-              <canvas id="diagram" width="600" height="400"></canvas>
-            </div>
+        <div class="col-md-5 col-md-offset-5">
+          <div class="chart-1">
+            <canvas id="weeks" width="400" height="400"></canvas>
           </div>
-          <!--Grafik per inputan-->
-          <div class="col-md-6">
-            <div class="container">
-              <canvas id="weeks" width="500" height="400"></canvas>
-            </div>
-          </div>
+        </div>
       </div>
+    </div>
 </section>
-<!-- end grafik per inputan-->
 <section class="bar background-image-fixed-2 no-mb color-white text-center">
     <div class="dark-mask"></div>
     <div class="container">
@@ -74,24 +59,48 @@
         </div>
     </div>
 </section>
-
+<section class="chart-bars">
+    <div class="container">
+      <div class="row">
+        <h2 class="text-center">Grapich Garbage Productivity</h2>
+          <!--Grafik per inputan-->
+          <div class="col-md-6 col-md-offset-1">
+            <div class="chart-2">
+              <canvas id="diagram" width="700" height="400"></canvas>
+            </div>
+          </div>
+      </div>
+    </div>
+</section>
+<!-- end grafik per inputan-->
+<section class="bar background-image-fixed no-mb color-white text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+</section>
 <!--grafik jenis sampah-->
 <section>
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-md-12">
           <h2 class="text-center">Grapich Garbage Type</h2>
           <hr class="primary">
-          <div class="text-center">
-            <canvas id="kind" width="300" height="300"></canvas>
+          <div class="col-md-6 col-md-offset-2">
+            <div class="container">
+              <canvas id="kind" width="300" height="300"></canvas>
+            </div>
           </div>
-          <div id="js-legend" class="chart-legend"></div>
+          <div class="col-md-1">
+            <div id="js-legend" class="chart-legend"></div>
+          </div>
         </div>
       </div>
     </div>
     <br/><br/>
 </section>
-
 <!--end grafik jenis sampah-->
 
 <script>
@@ -161,6 +170,7 @@ var weekData = {
                     } ?>],
   datasets : [
     {
+      label : "Grapich Garbage Productivity",
       fillColor : "#b2dfdb",
       strokeColor : "#00796b",
       pointColor : "#fff",

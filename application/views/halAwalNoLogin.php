@@ -59,7 +59,7 @@
 <br />
 <br />
 
-<div class="container" id="tentang">
+<div class="section scrollspy" id="tentang">
     <div class="row">
         <div class="container">
             <div class="col-sm-12">
@@ -134,3 +134,5 @@
 </html>
 
 <?php $this->load->view('footer') ?>
+
+
