@@ -222,4 +222,12 @@ class userm extends CI_Model
     	$query = $this->db->get();
     	return $query->row();
     }
+
+    public function upload_file($data)
+    {  
+        $id_user = $this->session->userdata('id');
+        $this->db->insert('user', $data);
+        $this->db->where('user_id', $id_user);
+        return TRUE;
+    }
 }

@@ -2,15 +2,14 @@
 
 <!--carousel-->
   <div id="myCarousel" class="carousel slide carousel-fade latar" data-ride="carousel">
-    <!-- Wrapper for slides -->
     <div class="row tengah">
         <div class="col-xs-offset-4 col-xs-6">
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner" role="listbox" id="item-carousel-homepage">
                 <div class="item active">
                     <div class="carousel-content">
                         <div>
-                            <h1>What is Pantau Sampah ?</h1>
-                            <h4>Pantau Sampah is our project, dedicated to warn people about how dangerous garbage can be.</h4>
+                            <h1>Join with us Now</h1>
+                            <a href="<?php echo site_url('file/register'); ?>" class="btn-reg">Sign Up</a>
                         </div>
                     </div>
                 </div>

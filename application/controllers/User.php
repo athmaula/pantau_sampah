@@ -89,9 +89,6 @@ class user extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templateuser/editprofile', $data);
-			//$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
-
-			# code...
 		}
 		else
 	  	{
@@ -104,7 +101,6 @@ class user extends CI_Controller
 	        'bio'      =>$this->input->post('bio'),
 	        'born_date' =>$this->input->post('born_date'),
 	        'gender'	=>$this->input->post('gender'),
-	        'role_id' 	=>$this->input->post('role'),
 	        'edit_at'	=>$this->input->post('edit')
 			);
 	   		$this->userm->updatemodel($id ,$data);
@@ -178,35 +174,4 @@ class user extends CI_Controller
 		$this->session->set_flashdata('success_delete','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Delete Data,</div>');
 	  	$this->index();
 	  }
-/*
-	public function do_upload()
-    {
-	    if($this->input->post('upload'))
-		{
-			$config['upload_path'] = 'asset/uploads/';
-			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-			$config['max_size']    = '2048';
-			$this->load->library('upload', $config);
-			if ( ! $this->upload->do_upload())
-			{
-				$error = array('error' => $this->upload->display_errors());
-				$this->load->view('templateuser/editprofile', $error);
-			}
-			else
-			{
-				$data=$this->upload->data();
-				$file=array(
-				'file'=>$data['raw_name'],
-				'ext'=>$data['file_ext'],
-			);
-			$this->userm->upload_image($file);
-			$data = array('upload_data' => $this->upload->data());
-			$this->load->view('templateuser/profile', $data);
-			}
-		}
-		else
-		{
-			redirect('user/view');
-		}
-	}*/
 }

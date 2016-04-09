@@ -10,7 +10,7 @@
     </div>
       <div class="box-body">
         <div class="col-xs-12 col-md-offset-2 col-md-6">
-                   <?php echo form_open('user/update','class="form-horizontal"'); ?>  <!--mengarahkan hasil inputan ke controller--> 
+                   <?php echo form_open_multipart('user/update','class="form-horizontal"'); ?>  <!--mengarahkan hasil inputan ke controller--> 
           <div class="form-group">
             <label class="col-sm-2 control-label">Full Name</label>
             <div class="col-sm-10">
@@ -49,7 +49,7 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">Born Date</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="born_date" value="<?php echo $profile->born_date; ?>">
+                <input type="text" class="form-control" data-provide="datepicker" data-date-format="yyyy-mm-dd" name="born_date" value="<?php echo $profile->born_date; ?>">
                 <p>ex. 1990-09-09</p>
             </div>
           </div>
@@ -67,11 +67,10 @@
                 <a href="<?php echo site_url('user/view') ?>" class="btn btn-danger" >Back</a>
             </div>
           </div>
-      <?php form_close(); ?> <!-- menutup form -->
+        </form>
       </div>
     </div>
     </div>
-  </div>
   </div>
   </section>
 </div>

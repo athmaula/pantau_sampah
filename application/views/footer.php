@@ -17,12 +17,12 @@
                 <hr>
             </div>
             <div class="col-md-4 col-sm-4">
-                <h4><span class="glyphicon glyphicon-send">Contact Us</span></h4>
+                <h4><span class="glyphicon glyphicon-send"></span>  Contact Us</h4>
                 <p>You can contact the admin through
                   pantausampah@gmail.com<br/>
                   athoil286@gmail.com<br/>
                   patriciabriliani@gmail.com<br/>
-                  just choose one adress and sent your email.
+                  just choose one address and sent your email.
                 </p>
                 <hr>
             </div>

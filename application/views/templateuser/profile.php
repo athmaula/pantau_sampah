@@ -4,7 +4,7 @@
  <?php echo $this->session->flashdata('success_edit'); ?>
 	<section class="content">
 	<div class="row">
-		<div class="col-xs-12 col-sm-offset-2 col-sm-8">
+		<div class="col-xs-12 col-sm-8">
 			<div class="box box-info">
 				<div class="box-header with-border">
 					<h2 class="box-title"><?php echo $profile->nama; ?></h2>

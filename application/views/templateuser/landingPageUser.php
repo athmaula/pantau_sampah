@@ -9,7 +9,7 @@
         <!-- Wrapper for slides -->
          <div class="row tengah">
           <div class="col-xs-offset-3 col-xs-6">
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner" role="listbox" id="item-carousel-infopage">
                 <div class="item active">
                     <div class="carousel-content">
                         <div>

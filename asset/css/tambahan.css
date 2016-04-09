@@ -101,8 +101,73 @@
   background-color: #00695c;
 }
 
+.btn-reg{
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  width: 55%;
+  height: 45px;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */
+  background: rgba(213, 0, 0, 0.9);
+  border-radius: 8px;
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+
+.btn-reg:hover,
+.btn-reg:focus,
+.btn-reg:active {
+  background: #1e348e; /* fallback color for old browsers */
+  background: rgb(255, 82, 82);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .tengah{
-    padding: 165px 30px 50px 80px;
+    padding: 105px 30px 50px 80px;
+}
+
+.login-body{
+  background-color: #4db6ac;
+}
+
+#login-box{
+  background:#fff;
+  border-radius:6px;
+  padding:20px;
+  width:400px;
+  margin:50px auto;
+  box-shadow:15px 15px 0px rgba(0,0,0,.1);
+}
+
+.title-title{
+  text-align:center;
+  font-size:1.4em;
+  font-weight:700;
+  color:#ccc;
+  margin-bottom:24px;
+  font-family:"Helvetica Neue", Helvetica, Arial;
+}
+
+.register-body{
+  background-color: #4db6ac;
+}
+
+#reg-box{
+  background:#fff;
+  border-radius:6px;
+  padding:20px;
+  width:500px;
+  margin:50px auto;
+  box-shadow:15px 15px 0px rgba(0,0,0,.1);
 }
 
 .lebar{
@@ -126,6 +191,16 @@
 #myCarousel {
   width: 100%;
   padding: 50px;
+}
+
+#item-carousel-homepage{
+  margin-top: 100px;
+  margin-left: 70px;
+}
+
+#item-carousel-infopage
+{
+  margin-top: 150px;
 }
 
 .bottom {

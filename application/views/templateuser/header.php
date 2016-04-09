@@ -29,15 +29,18 @@
           <span class="logo-lg"><b>Pantau</b>Sampah</span>
         </a>
         <nav class="navbar navbar-static-top" role="navigation">
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="text-transform: uppercase;">
                   <?php echo $this->session->userdata('username') ?>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="user-header">
-                    <h3 style="color:#fff;"><strong><?php echo $this->session->userdata('username') ?></strong></h3>
+                    <h3 style="color:#fff;  text-transform: uppercase;"><strong><?php echo $this->session->userdata('username') ?></strong></h3>
                     <p><?php if ($this->session->userdata('role') == 1) {
                       echo "admin";
                       }else
@@ -51,7 +54,7 @@
                       <a href="<?php echo site_url('/user/view') ?>" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <?php echo anchor('logout', 'Sign Out', 'class="btn btn-default btn-flat"'); ?>
+                      <?php echo anchor('logout', 'Sign Out', 'class="btn btn-danger btn-flat"'); ?>
                     </div>
                   </li>
                 </ul>

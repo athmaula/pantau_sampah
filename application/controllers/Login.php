@@ -45,6 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							redirect('admin');	
 							break;
 						case '2': //user
+							$this->session->set_flashdata('sukses','<div class="text-center alert alert-success fade in animated bounceInDown noborder">Hello, Welcome back <b>'.$valid_user->username.'!</b><a href="#" class="close" style="text-decoration : none;" data-dismiss="alert" aria-label="close">&times;</a></div>');
 							redirect('user');	
 							break;		
 						default: break;
@@ -79,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			{
 				$this->mfile->register();
 				//membuat alert message sukses register
-				$this->session->set_flashdata('success', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Successfully Registered.</strong></div>');
+				$this->session->set_flashdata('success', '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Successfully Registered.</strong> Welcome to Pantau Sampah</div>');
 				$valid_user = $this->mfile->checkvalid();
 				$this->session->set_userdata('username',$valid_user->username);
 				$this->session->set_userdata('role',$valid_user->role_id);
