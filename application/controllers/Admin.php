@@ -78,7 +78,6 @@ class admin extends CI_Controller
 	        'bio'      =>$this->input->post('bio'),
 	        'born_date'   =>$this->input->post('born_date'),
 	        'gender'	=>$this->input->post('gender'),
-	        'role_id' 	=>$this->input->post('role'),
 	        'edit_at'	=>$this->input->post('edit')
 			);
 	   		$this->adminm->updatemodel($id ,$data);

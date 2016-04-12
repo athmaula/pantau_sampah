@@ -132,7 +132,9 @@
 }
 
 .tengah{
-    padding: 105px 30px 50px 80px;
+    margin-top: 120px;
+    text-align: center;
+    vertical-align: center;
 }
 
 .login-body{
@@ -253,7 +255,8 @@
 }
 
 .chart-lines{
-  background: url('../img/chart-background-1.jpg') center top no-repeat;
+  /*background: url('../img/chart-background-1.jpg') center top no-repeat;*/
+  background-color: #fea9ac;
   background-size: cover;
   height: 650px;
 }
@@ -262,7 +265,7 @@
   margin-top: 105px;
 }
 .chart-1 {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .chart-bars{
@@ -378,7 +381,7 @@ h3.title-section {
   height: 600px;
 }
 .bar.background-image-fixed-2 {
-  background: url('../img/photo4.jpg') center top no-repeat;
+  background: url('../img/city.jpg') center top no-repeat;
   background-attachment: fixed;
   background-size: cover;
   height: 230px ;
@@ -389,3 +392,9 @@ h3.title-section {
   color: #fff;
   font-style: bold;
 }
+
+img {
+display: block;
+max-width:100%;
+height:auto;
+width:auto\9;}

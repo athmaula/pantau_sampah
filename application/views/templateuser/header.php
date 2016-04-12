@@ -24,7 +24,7 @@
   <body class="hold-transition skin-custom sidebar-mini">
     <div class="wrapper">
       <header class="main-header">
-        <a href="<?php echo site_url('user/landingpage') ?>" class="logo">
+        <a href="<?php echo site_url('user') ?>" class="logo">
           <span class="logo-mini"><b>Ps</b></span>
           <span class="logo-lg"><b>Pantau</b>Sampah</span>
         </a>

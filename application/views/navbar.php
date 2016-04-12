@@ -1,7 +1,6 @@
 <?php $this->load->view('header') ?>
 <body>
 	<style media="screen">
-
 	</style>
 	<nav class="navbar navbar-custom navbar-fixed-top navbar-collapse">
 		<div class="container">

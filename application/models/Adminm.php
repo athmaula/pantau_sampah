@@ -33,8 +33,6 @@ class adminm extends CI_Model
 
 	public function view_data()
 	{
-		$user_id =  $this->session->userdata('id');
-		$this->db->where('id_user', $user_id);
 		$query = $this->db->get('data_tips');
 		return $query->result();
 	}
@@ -75,8 +73,6 @@ class adminm extends CI_Model
 
 	public function view_data_tips_homepage()
 	{
-		$user_id =  $this->session->userdata('id');
-		$this->db->where('id_user', $user_id);
 		$query = $this->db->get('data_tips_homepage');
 		return $query->result();
 	}

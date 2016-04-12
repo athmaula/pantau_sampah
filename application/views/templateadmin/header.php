@@ -51,7 +51,7 @@
                   </li>
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="<?php echo site_url('/user/view') ?>" class="btn btn-default btn-flat">Profile</a>
+                      <a href="<?php echo site_url('/admin/view') ?>" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <?php echo anchor('logout', 'Sign Out', 'class="btn btn-danger btn-flat"'); ?>

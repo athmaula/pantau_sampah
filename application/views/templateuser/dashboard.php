@@ -30,8 +30,8 @@
                           <th class="hidden"></th>
                           <th class="hidden"></th>
                           <th>Garbage Weight</th>
-                          <th class="method">Method of Disposal</th>
-                          <th class="kind">Garbage Kind</th>
+                          <th class="method">Disposal Method</th>
+                          <th class="kind">Garbage Type</th>
                           <th>Date</th>
                           <th class="action">Action</th>
                         </tr>

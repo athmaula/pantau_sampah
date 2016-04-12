@@ -20,7 +20,7 @@
                     </div>
                   </div>
                    <div class="form-group">
-                     <label class="col-sm-4 control-label">Garbage Form</label>
+                     <label class="col-sm-4 control-label">Garbage Type</label>
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="jenis" value="1">
@@ -50,7 +50,7 @@
                   </div>
                   <br />
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Method of Disposal</label>
+                    <label class="col-sm-4 control-label">Disposal Method</label>
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="action" value="1">

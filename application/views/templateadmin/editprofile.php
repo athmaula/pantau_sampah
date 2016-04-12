@@ -49,7 +49,7 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">Born Date</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="born_date" value="<?php echo $profile->born_date; ?>">
+                <input type="text" class="form-control" name="born_date" data-provide="datepicker" data-date-format="yyyy-mm-dd" value="<?php echo $profile->born_date; ?>">
                 <p>ex. 1990-09-09</p>
             </div>
           </div>

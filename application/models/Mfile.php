@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $password = set_value('password');
 
       $hasil = $this->db->where('username',$username) //mengambil data dari database untuk di cocokan dengan inputan
-                        ->where('password', md5($password))
+                        ->where('password', md5(md5($password)))
                         ->limit(1)
                         ->get('user');
 
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     $data['nama']       = $nama;
     $data['username']   = $username;
-    $data['password'] = md5($password);
+    $data['password'] = md5(md5($password));
     $data['email']      = $email;
     $data['gender']     = $gender;
     $data['role_id']    = $role;

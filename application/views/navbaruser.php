@@ -10,13 +10,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand pantau_sampah" href="#">PantauSampah</a>
+        <a class="navbar-brand pantau_sampah" href="<?php echo site_url('user')?>">PantauSampah</a>
       </div>
           <div class="nav navbar-brand navbar-right" style="font-size:14px">
               <?php echo anchor('logout', 'Sign Out'); ?>
-          </div>
-          <div class="nav navbar-brand navbar-right" style="font-size:14px">
-              <a href="<?php echo site_url('user')?>">Dashboard</a>
           </div>
       </div>
   </nav>
