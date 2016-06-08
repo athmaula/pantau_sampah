@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.3.2
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2015</strong>
+    Pantau Sampah
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -14,6 +14,11 @@
 <script src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
 <!-- datatable -->
 <script src="<?php echo base_url();?>asset/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url();?>asset/plugins/datatables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url();?>asset/plugins/datatables/extensions/Buttons/js/buttons.bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>asset/plugins/datatables/extensions/Buttons/js/pdfmake.min.js"></script>
+<script src="<?php echo base_url();?>asset/plugins/datatables/extensions/Buttons/js/vfsfont.js"></script>
+<script src="<?php echo base_url();?>asset/plugins/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
 <script src="<?php echo base_url();?>asset/plugins/datatables/dataTables.bootstrap.js"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url();?>asset/plugins/fastclick/fastclick.js"></script>
@@ -23,6 +28,8 @@
 <script src="<?php echo base_url();?>asset/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- SlimScroll 1.3.0 -->
 <script src="<?php echo base_url();?>asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- Jquery.confirm -->
+<script type="text/javascript" src="<?php echo base_url();?>asset/plugins/jquery.confirm-master/jquery.confirm.js"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->

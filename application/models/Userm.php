@@ -45,13 +45,14 @@ class userm extends CI_Model
 
 	public function viewjenis()
 	{
+        $tanggal = date('d');
 		$id_user = $this->session->userdata('id');
 		$this->db->select('*');
 		$this->db->from('data_sampah_user');
 		$this->db->join('jenis_sampah', 'jenis_sampah.id = data_sampah_user.jenis_sampah');
 		$this->db->join('pembuangan_sampah', 'pembuangan_sampah.id = data_sampah_user.action');
-		$this->db->order_by('id_data', 'desc');
 		$this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->order_by('Date(tanggal) DESC', $tanggal);
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -62,25 +63,10 @@ class userm extends CI_Model
  		return $d;
 	}
 
-	public function updatesampah($id_data)
+	public function updatesampah($id_data, $data)
 	{
-	    $inputsampah 		= $this->input->post('inputsampah');
-	    $action  			= $this->input->post('action');
-	    $jenis_sampah    	= $this->input->post('jenis_sampah');
-	    $tanggal    		= $this->input->post('tanggal');
-	    $edit	 			= $this->input->post('now()');
-	   
-		$data = array(
-			'input_sampah'		=> $inputsampah,
-			'action' 			=> $action,
-	        'jenis_sampah'    	=> $jenis_sampah,
-	        'tanggal'		  	=> $tanggal,
-	        'edit_at'		  	=> $edit
-
-			);
-
       	$this->db->where('id_data', $id_data);
-  		$this->db->update('data_sampah_user', $data);
+  		return $this->db->update('data_sampah_user', $data);
 	}
 
 	public function deletesampah($id)
@@ -221,5 +207,115 @@ class userm extends CI_Model
     	$this->db->where('Month(tanggal)', $bln);
     	$query = $this->db->get();
     	return $query->row();
+    }
+
+    public function get_data_action1()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('action', '1');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_action2()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('action', '2');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_action3()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('action', '3');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_action4()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('action', '4');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_totkind1()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('jenis_sampah', '1');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_totkind2()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('jenis_sampah', '2');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_totkind3()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('jenis_sampah', '3');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_totkind4()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('jenis_sampah', '4');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_totkind5()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('jenis_sampah', '5');
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function get_data_totkind6()
+    {
+        $id_user = $this->session->userdata('id');
+        $this->db->select_sum('input_sampah');
+        $this->db->from('data_sampah_user');
+        $this->db->where('data_sampah_user.user_id', $id_user);
+        $this->db->where('jenis_sampah', '6');
+        $query = $this->db->get();
+        return $query->row();
     }
 }

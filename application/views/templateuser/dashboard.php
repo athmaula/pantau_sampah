@@ -7,6 +7,9 @@
       <h1>
         Dashboard
       </h1>
+      <ol class="breadcrumb">
+        <li><a class="active" href="<?php echo site_url('user');?>">Home</a></li>
+      </ol>
        <?php echo $this->session->flashdata('sukses') ?>
        <?php echo $this->session->flashdata('success') ?>
        <?php echo $this->session->flashdata('success_insert'); ?>
@@ -17,9 +20,9 @@
           <section class="content">
            <div class="row">
             <div class="col-xs-12">
-              <div class="box box-primary">
+              <div class="box box-solid box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Garbage Data</h3>
+                  <h3 class="box-title">Data Pembuangan Sampah</h3>
                 </div>
                 <div class="box-body">
                   <div class="box-body table-responsive">
@@ -29,11 +32,11 @@
                           <th>No</th>
                           <th class="hidden"></th>
                           <th class="hidden"></th>
-                          <th>Garbage Weight</th>
-                          <th class="method">Disposal Method</th>
-                          <th class="kind">Garbage Type</th>
-                          <th>Date</th>
-                          <th class="action">Action</th>
+                          <th>Berat Sampah</th>
+                          <th class="method">Pembuangan Sampah</th>
+                          <th class="kind">Jenis Sampah</th>
+                          <th>Tanggal</th>
+                          <th class="action">Aksi</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -52,7 +55,7 @@
                           <td><?php echo $row->tanggal; ?></td>
                           <td>
                             <a href="<?php echo site_url('user/editinputsampah/'.$row->id_data);?>" class="btn btn-warning">Edit</a>
-                            <a href="<?php echo site_url('user/deleteinputsampah/'.$row->id_data); ?>" class="btn btn-danger" onclick="return dodelete()">Delete</a>
+                            <a href="<?php echo site_url('user/deleteinputsampah/'.$row->id_data); ?>" class="btn btn-danger delete">Delete</a>
                           </td>
                         </tr>
                         <?php }  ?>
@@ -61,18 +64,18 @@
                   </div>
                 </div>
               </div>
-              <div class="box box-info">
+              <div class="box box-solid box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Total Garbage Input</h3>
+                  <h3 class="box-title">Total Inputan Pembuangan Sampah</h3>
                 </div>
                 <div class="box-body">
                   <div class="table-responsive">
                     <table id="table" class="table table-bordered table-hover" style="text-align: center">
                       <thead>
-                      <th>Total Garbage Inputed</th>
-                      <th>Monthly Garbage Weight Inputed</th>
-                      <th>Maximum Garbage Weight Inputed</th>
-                      <th>Minimum Garbage Weight Inputed</th>
+                      <th>Total Inputan Sampah</th>
+                      <th>Pembuangan Bulan Ini</th>
+                      <th>Pembuangan Sampah Maksimal</th>
+                      <th>Pembuangan Samapah Minimal</th>
                       </thead>
                       <tbody>
                         <tr>
@@ -95,27 +98,44 @@
 <?php $this->load->view('templateuser/footer'); ?>
 
 <script>
-    function dodelete()
-    {
-        if(confirm("Are You Sure ?"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-   }
-//datatables
+
+    $("a.delete").confirm({
+      text: "Are you sure you want to delete ?",
+      title: "Confirmation required",
+      confirmButton: "Yes Sure",
+      cancelButton: "No, Cancel",
+      post: true,
+      confirmButtonClass: "btn-danger",
+      cancelButtonClass: "btn-default",
+      dialogClass: "modal-dialog modal-md"
+    });
+//datatables output garbage user
   $(document).ready(function() {
     $('#table1').DataTable({
       "paging": true,
-      "lengthChange": false,
-      "searching": false,
+      "lengthChange": true,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": true,
-      columnDefs: [{ targets: 'action', orderable: false}]
+      columnDefs: [{ targets: 'action', orderable: false}],
+      dom: 'Bfrtip',
+      lengthMenu: [
+        [ 10, 25, 50, -1 ],
+        [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+      ],
+       buttons: [
+        {
+          extend: 'pdf',
+          download: 'open',
+          text: 'Cetak PDF',
+          orientation: 'portrait',
+          pageSize: 'A4',
+          exportOptions: {
+                  columns: [ 0, 3, 4, 5 ]
+              }
+        }
+    ]
     });
     $('#table').DataTable({
       "paging": false,

@@ -15,6 +15,7 @@ class adminm extends CI_Model
 	public function getId()
 	{	
 		$user_id =  $this->session->userdata('id');
+        $this->db->select('id, nama, username, password, email, bio, born_date, gender, create_at, edit_at');
 		$this->db->where('id', $user_id);
 		$query = $this->db->get('user'); //get all data from user_profiles table that belong to the respective user
 		return $query->row(); //return the data
@@ -215,5 +216,13 @@ class adminm extends CI_Model
     	$this->db->where('action', '4');
     	$query = $this->db->get();
     	return $query->row();
+    }
+
+    public function get_data_input()
+    {
+        $this->db->select('input_sampah');
+        $this->db->from('data_sampah_user');
+        $query = $this->db->get();
+        return $query->result();
     }
 }

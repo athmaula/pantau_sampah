@@ -7,7 +7,7 @@
     <link href="<?php echo base_url()?>asset/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>asset/plugins/datepicker/datepicker3.css">
     <!-- Font awesome -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/plugins/jquery.confirm-master/website/css/font-awesome.min.css">
     <!-- data table -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/plugins/datatables/dataTables.bootstrap.css">
     <!-- Ionicon -->
@@ -18,6 +18,8 @@
     <script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
     <!-- style css custom -->
     <link href="<?php echo base_url(); ?>asset/css/tambahan.css"  rel="stylesheet" >
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="<?php echo base_url();?>asset/css/animate.min.css" type="text/css">
 
 
   </head>
@@ -54,7 +56,7 @@
                       <a href="<?php echo site_url('/user/view') ?>" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <?php echo anchor('logout', 'Sign Out', 'class="btn btn-danger btn-flat"'); ?>
+                      <?php echo anchor('logout', 'Sign Out', 'class="btn btn-danger"'); ?>
                     </div>
                   </li>
                 </ul>

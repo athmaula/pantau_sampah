@@ -3,12 +3,14 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-  <?php echo $this->session->flashdata('success_edit'); ?>
-  <?php echo $this->session->flashdata('error_edit'); ?>
+    <section class="content-header">
+        <?php echo $this->session->flashdata('success_edit'); ?>
+        <?php echo $this->session->flashdata('error_edit'); ?>
+    </section>
       <section class="content">
         <div class="row">
         <div class="col-xs-12 col-md-10">
-        	<div class="box box-info">
+        	<div class="box box-solid box-info">
         		<div class="box-header with-header">
         			<h3 class="box-title">HOMEPAGE TIPS</h3>
         		</div>
@@ -17,9 +19,9 @@
         				<table class="table table-strip table-hover">
         					<thead>
     							<th>No</th>
-    							<th>Title</th>
-    							<th>Content</th>
-    							<th style="width: 150px;">Action</th>
+    							<th>Judul</th>
+    							<th>Konten Tips</th>
+    							<th style="width: 150px;">Aksi</th>
         					</thead>
         					<tbody>
         					<?php 	$no = 0;
@@ -34,7 +36,7 @@
         							<td><?php echo $row->content; ?></td>
         							<td>
         								<a href="<?php echo site_url('admin/edit_tips_homepage/'.$row->id);?>" class="btn btn-warning">Edit</a>
-                            			<a href="<?php echo site_url('admin/delete_tips_homepage/'.$row->id); ?>" class="btn btn-danger" onclick="return dodelete()">Delete</a>
+                            			<a href="<?php echo site_url('admin/delete_tips_homepage/'.$row->id); ?>" class="btn btn-danger delete">Delete</a>
         							</td>
         						</tr>
         						<?php } ?>
@@ -45,22 +47,23 @@
         	</div>
         </div>
         	<div class="col-xs-12 col-md-6">
-        		<div class="box box-primary">
+        		<div class="box box-solid box-info">
         			<div class="box-header with-header">
-        				<h3 class="box-title">INPUT TIPS</h3>
+        				<h3 class="box-title">Masukkan Tips</h3>
         			</div>
         			 <?php echo form_open('admin/input_tips_homepage','class="form-horizontal"');?>
         			<div class="box-body">
         				<div class="form-group">
-                    		<label class="col-sm-2 control-label">Title</label>
+                    		<label class="col-sm-2 control-label">Judul Tips</label>
                     		<div class="col-sm-8">
                       			<input type="text" class="form-control" name="title">
                     		</div>
                   		</div>
                   		<div class="form-group">
-                    		<label class="col-sm-2 control-label">Content</label>
+                    		<label class="col-sm-2 control-label">Konten Tips</label>
                     		<div class="col-sm-8">
                       			<textarea class="form-control" name="content" rows="5" cols="50"></textarea>
+                            <p style="color:#FF6384">***Max 15 Kata</p>
                     		</div>
                   		</div>
         			</div>
@@ -80,15 +83,14 @@
 <?php $this->load->view('templateadmin/footer'); ?>
 
 <script type="text/javascript">
-    function dodelete()
-    {
-        if(confirm("Are You Sure ?"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;  
-        } 
-   }
+    $("a.delete").confirm({
+      text: "Are you sure you want to delete ?",
+      title: "Confirmation required",
+      confirmButton: "Yes Sure",
+      cancelButton: "No, Cancel",
+      post: true,
+      confirmButtonClass: "btn-danger",
+      cancelButtonClass: "btn-default",
+      dialogClass: "modal-dialog modal-md"
+    });
   </script>

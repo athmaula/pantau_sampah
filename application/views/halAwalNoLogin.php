@@ -3,11 +3,11 @@
 <!--carousel-->
   <div id="myCarousel" class="carousel slide carousel-fade latar" data-ride="carousel">
     <div class="row tengah">
-        <div class="col-xs-offset-4 col-xs-6">
+        <div class="col-xs-offset-0 col-sm-offset-0 col-lg-offset-3 col-md-offset-4 col-xs-8 col-sm-6 col-md-6 col-lg-6">
             <div class="carousel-inner" role="listbox" id="item-carousel-homepage">
                 <div class="item active">
                     <div class="carousel-content">
-                        <div>
+                        <div class="col-xs-offset-0 col-sm-offset-0 col-lg-offset-3 col-md-offset-4 col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <h1>Join with us Now</h1>
                             <a href="<?php echo site_url('file/register'); ?>" class="btn-reg">Sign Up</a>
                         </div>
@@ -16,9 +16,9 @@
                 <?php foreach ($tips_homepage as $row) { ?>
                 <div class="item">
                     <div class="carousel-content">
-                        <div>
+                        <div class="col-xs-offset-2 col-sm-offset-3 col-lg-offset-3 col-md-offset-3 col-xs-8 col-sm-6 col-md-6 col-lg-6">
                             <h1><strong><?php echo $row->title; ?></strong></h1>
-                            <h4><?php echo $row->content; ?></strong></h4>
+                            <h4><?php echo $row->content; ?></h4>
                         </div>
                     </div>
                 </div>
@@ -26,6 +26,8 @@
             </div>
         </div>
     </div>
+    <a class="carousel-control left" data-slide="prev" href="#myCarousel"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="carousel-control right" data-slide="next" href="#myCarousel"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div><!--ends of carousel-->
 
 <section class="bar background-white">

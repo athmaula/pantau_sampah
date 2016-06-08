@@ -1,11 +1,17 @@
 <?php $this->load->view('templateuser/header'); ?>
 <?php $this->load->view('templateuser/sidebar') ?>
 <div class="content-wrapper">
- <?php echo $this->session->flashdata('success_edit'); ?>
+	<section class="content-header">
+      <ol class="breadcrumb">
+        <li><a href="<?php echo site_url('user');?>">Home</a></li>
+        <li><a class="active"> Profile</a></li>
+      </ol>
+       <?php echo $this->session->flashdata('success_edit'); ?>
+    </section>
 	<section class="content">
 	<div class="row">
 		<div class="col-xs-12 col-sm-8">
-			<div class="box box-info">
+			<div class="box box-solid box-info">
 				<div class="box-header with-border">
 					<h2 class="box-title"><?php echo $profile->nama; ?></h2>
 					<a href="<?php echo site_url('user/edit') ?>" class="glyphicon glyphicon-pencil pull-right"></a>
@@ -17,7 +23,7 @@
 									<table class="table table-bordered table-hover">
 										<tr>
 											<td>
-												Name
+												Nama
 											</td>
 											<td>
 												<?php echo $profile->nama; ?>
@@ -55,7 +61,7 @@
 								</tr>
 								<tr>
 									<td>
-										Born Date
+										Tanggal Lahir
 									</td>
 									<td>
 										<?php echo $profile->born_date; ?>

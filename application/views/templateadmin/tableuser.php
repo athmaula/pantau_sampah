@@ -9,9 +9,10 @@
   <section class="content">
     <div class="row">
       <div class="col-xs-12">
-        <div class="box box-primary">
+        <div class="box box-solid box-info">
             <div class="box-header with-border">
-                <a href="<?php echo site_url('crud/add') ?>" class="fa fa-user-plus fa-3x"> add new</a>
+                <h3 class="box-title">Tabel User Pantau Sampah</h3> 
+                <a href="<?php echo site_url('crud/add') ?>" class="fa fa-user-plus fa-3x pull-right"> Tambah Baru</a>
             </div><!-- /.box-header -->
             <div class="box-body">
                 <div class="box-body table-responsive">
@@ -21,7 +22,7 @@
                           <th>No</th>
                           <th class="hidden"></th>
                           <th>Username</th>
-                          <th>Name</th>
+                          <th>Nama</th>
                           <th>Create at</th>
                           <th>Edit at</th>
                           <th>Action</th>
@@ -42,7 +43,7 @@
                           <td><?php echo $row->edit_at; ?></td>
       					          <td>
       					          	<a href="<?php echo site_url('crud/edit/'.$row->id);?>" class="btn btn-warning btn-flat">Edit</a> 
-      					          	<a href="<?php echo site_url('crud/delete_user/'.$row->id);?>" id="delete" class="btn btn-danger btn-flat" onclick="return dodelete()">Delete</a>
+      					          	<a href="<?php echo site_url('crud/delete_user/'.$row->id);?>" id="confirm" class="btn btn-danger delete">Delete</a>
                             <a href="<?php echo site_url('crud/viewmoreuser/'.$row->id); ?>" class="btn btn-info btn-flat">View More</a>
                           </td>
                         </tr>
@@ -59,22 +60,22 @@
 <?php $this->load->view('templateadmin/footer'); ?> 
 
 <script>
-    function dodelete()
-    {
-        if(confirm("Are You Sure ?"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;  
-        } 
-   }
-   $(document).ready(function() {
+    $("a.delete").confirm({
+      text: "Are you sure you want to delete ?",
+      title: "Confirmation required",
+      confirmButton: "Yes Sure",
+      cancelButton: "No, Cancel",
+      post: true,
+      confirmButtonClass: "btn-danger",
+      cancelButtonClass: "btn-default",
+      dialogClass: "modal-dialog modal-md"
+    });
+
+    $(document).ready(function() {
     $('#example').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
       "autoWidth": true

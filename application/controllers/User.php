@@ -19,7 +19,6 @@ class user extends CI_Controller
 
 	public function index()
 	{
-		# code...
 		$data['getdata'] = $this->userm->view();
 		$data['getdata'] = $this->userm->viewjenis();
 		$data['data'] = $this->userm->get_data_total();
@@ -57,6 +56,16 @@ class user extends CI_Controller
 		$data['getdata_cnt4'] = $this->userm->get_data_cnt4();
 		$data['getdata_cnt5'] = $this->userm->get_data_cnt5();
 		$data['getdata_cnt6'] = $this->userm->get_data_cnt6();
+		$data['getdata_action1'] = $this->userm->get_data_action1();
+		$data['getdata_action2'] = $this->userm->get_data_action2();
+		$data['getdata_action3'] = $this->userm->get_data_action3();
+		$data['getdata_action4'] = $this->userm->get_data_action4();
+		$data['getdata_totkind1'] = $this->userm->get_data_totkind1();
+		$data['getdata_totkind2'] = $this->userm->get_data_totkind2();
+		$data['getdata_totkind3'] = $this->userm->get_data_totkind3();
+		$data['getdata_totkind4'] = $this->userm->get_data_totkind4();
+		$data['getdata_totkind5'] = $this->userm->get_data_totkind5();
+		$data['getdata_totkind6'] = $this->userm->get_data_totkind6();
 		$data['data_monthly'] = $this->userm->getdata_monthly();
 		$this->load->view('templateuser/chart', $data);
 	}
@@ -89,14 +98,16 @@ class user extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templateuser/editprofile', $data);
+			$this->session->set_flashdata('error_edit','<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>error,</strong> Edit Data,</div>');
 		}
 		else
 	  	{
+
 	  		$id = $this->input->post('id');
 	  		$data = array(
 			'nama'=>$this->input->post('nama'),
 			'username'=>$this->input->post('username'), 
-			'password'=>$this->input->post('password'),
+			'password'=>md5(md5($this->input->post('password'))),
 	        'email'    =>$this->input->post('email'),
 	        'bio'      =>$this->input->post('bio'),
 	        'born_date' =>$this->input->post('born_date'),
@@ -116,26 +127,36 @@ class user extends CI_Controller
 
 	public function inputsampah()
 	{
-		$id_user = $this->session->userdata('id');
-		$data['user_id'] = $id_user;
-		$data['input_sampah'] = $this->input->post('beratsampah');
-		$data['action'] = $this->input->post('action');
-		$data['jenis_sampah'] = $this->input->post('jenis');
-		$data['tanggal'] = $this->input->post('tanggal');
-		//$data['input_total'] = $this->input->post('beratsampah');
+		$this->form_validation->set_rules('beratsampah', 'Berat Sampah', 'trim|required|numeric');
+		$this->form_validation->set_rules('jenis', 'Garbage Type', 'required');
+		$this->form_validation->set_rules('action', 'Disposal Method', 'required');	
+		$this->form_validation->set_rules('tanggal', 'Date', 'required');						
 
-		$hasil = $this->userm->insertsampah($data);
-		if ($hasil) 
-		{	
-			$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
-			redirect('user');
-			# code...
-		}
-		else
-		{
+		if ($this->form_validation->run() == FALSE) {
 			$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
-			redirect('inputview');
-		}		
+			$this->load->view('templateuser/inputform');
+		}
+		else {
+
+			$id_user = $this->session->userdata('id');
+			$data['user_id'] = $id_user;
+			$data['input_sampah'] = $this->input->post('beratsampah');
+			$data['action'] = $this->input->post('action');
+			$data['jenis_sampah'] = $this->input->post('jenis');
+			$data['tanggal'] = $this->input->post('tanggal');
+
+			$hasil = $this->userm->insertsampah($data);
+			if ($hasil) 
+			{	
+				$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
+				redirect('user');
+			}
+			else
+			{
+				$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
+				redirect('inputview');
+			}		
+		}
 	}
 
 	public function editinputsampah()
@@ -157,14 +178,21 @@ class user extends CI_Controller
 	{
 		if ($this->input->post('submit'))
 	  	{
-	   		$id_data = $this->input->post('id_data');
-	   		$this->userm->updatesampah($id_data);
+	  		$id_data = $this->input->post('id_data');
+	   		$data = array(
+			'input_sampah'=>$this->input->post('inputsampah'),
+			'action'=>$this->input->post('action'), 
+			'tanggal'=>$this->input->post('tanggal'),
+	        'edit_at'    =>$this->input->post('edit_at')
+			);
+	   		$this->userm->updatesampah($id_data, $data);
 			$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
 	   		redirect('user');
 	   	}
 	   	else
 	   	{
 	    	redirect('user/editinputsampah/'.$id_data);
+	    	$this->session->set_flashdata('error', '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error</strong>,</div>');
 	    }
 	}
 

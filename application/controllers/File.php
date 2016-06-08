@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class File extends CI_Controller {
+class file extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -29,38 +29,12 @@ class File extends CI_Controller {
  	 public function index()
  	 {
  	 	$data['tips_homepage'] = $this->Mfile->view_data_homepage();
- 	 	$this->load->view('halAwalNoLogin', $data);
+ 	 	$this->load->view('homepage', $data);
  	 }
-
-	 //fungsi ini untuk memanggil role_id user
-	 public function nama()
-	 {
-		 //$data['data_user']=$this->Mfile->Mnama();
-		 //$username=$data['data_user'];
-		 $data['Vnamauser'] = $this->Mfile->get_user_all();
-		 //$this->load->view('Vnamauser', $data);
-	 }
-
-	 	//fungsi ini untuk menentukkan navbar sesuai role_id
-		public function PantauSampah()
-		{
-     if ($this->nama()==1) {
-		 	$this->load->view('navbaradmin');
-     }
-     else if ($this->nama()==2) {
-         $this->load->view('navbaruser');
-       }
-       else {
-        	//$this->load->view('navbar');
-					$this->load->view('halAwalNoLogin');
-					//echo "<br/><br/><br/><br/><br/>",$this->nama();
-       }
-
-  	}
 
 		//fungsi untuk menampilkan tampilkan
 
-		public function login()
+	public function login()
 	{
 		$this->load->view('form-login');	//memanggil halaman login
 	}
@@ -69,7 +43,4 @@ class File extends CI_Controller {
 	{
 		$this->load->view('form-register'); //memanggil halaman register
 	}
-
-		//tampilkan error Message
-		//$this->output->enable_profiler(true);
-	}
+}

@@ -17,7 +17,7 @@
 									<table class="table table-bordered table-hover">
 										<tr>
 											<td>
-												Name
+												Nama
 											</td>
 											<td>
 												<?php echo $profile->nama; ?>
@@ -55,7 +55,7 @@
 								</tr>
 								<tr>
 									<td>
-										Born Date
+										Tanggal Lahir
 									</td>
 									<td>
 										<?php echo $profile->born_date; ?>

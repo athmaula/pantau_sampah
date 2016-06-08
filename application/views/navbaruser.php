@@ -1,4 +1,4 @@
-<?php $this->load->view('header') ?>
+<?php $this->load->view('templateuser/header') ?>
 <body>
 
 <nav class="navbar navbar-custom navbar-fixed-top navbar-collapse">

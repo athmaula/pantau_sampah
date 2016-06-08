@@ -21,6 +21,7 @@ class admin extends CI_Controller
 		$data['getdata_max'] = $this->adminm->getdata_max();
 		$data['getdata_min'] = $this->adminm->getdata_min();
 		$data['getdata_avg'] = $this->adminm->getdata_avg();
+		$data['getdata_input'] = $this->adminm->get_data_input();
 		$data['getdata_kind1'] = $this->adminm->getdata_kind1();
 		$data['getdata_kind2'] = $this->adminm->getdata_kind2();
 		$data['getdata_kind3'] = $this->adminm->getdata_kind3();
@@ -63,9 +64,6 @@ class admin extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templateadmin/editprofile', $data);
-			//$this->session->set_flashdata('success_edit','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Edit Data,</div>');
-
-			# code...
 		}
 		else
 	  	{
@@ -73,7 +71,7 @@ class admin extends CI_Controller
 	  		$data = array(
 			'nama'=>$this->input->post('nama'),
 			'username'=>$this->input->post('username'), 
-			'password'=>$this->input->post('password'),
+			'password'=>md5(md5($this->input->post('password'))),
 	        'email'    =>$this->input->post('email'),
 	        'bio'      =>$this->input->post('bio'),
 	        'born_date'   =>$this->input->post('born_date'),
@@ -96,7 +94,7 @@ class admin extends CI_Controller
 	{
 		$id_user = $this->session->userdata('id');
 		$data['id_user'] = $id_user;
-		$data['title'] = $this->input->post('title');
+		$data['title']   = $this->input->post('title');
 		$data['content'] = $this->input->post('content');
 
 		$hasil = $this->adminm->insert_tips($data);
@@ -104,7 +102,6 @@ class admin extends CI_Controller
 		{	
 			$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
 			redirect('admin/view_input_tips');
-			# code...
 		}
 		else
 		{
@@ -166,7 +163,6 @@ class admin extends CI_Controller
 		{	
 			$this->session->set_flashdata('success_insert','<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success</strong> Add Data,</div>');
 			redirect('admin/view_input_tips_homepage');
-			# code...
 		}
 		else
 		{

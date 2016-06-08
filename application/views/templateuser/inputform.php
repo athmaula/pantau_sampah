@@ -3,76 +3,94 @@
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+    <section class="content-header">
     <?php echo $this->session->flashdata('error'); ?>
+      <ol class="breadcrumb">
+          <li><a href="<?php echo site_url('user');?>">Home</a></li>
+          <li><a class="active">Input Garbage</a></li>
+      </ol>
+    </section>
       <section class="content">
         <div class="row">
             <div class="col-sm-7">
-            <div class="box box-primary">
+            <div class="box box-solid box-info">
               <div class="box-header with-border">
-                <h3> Input Your Garbage Weight </h3>
+                <h3 class="box-title"> Masukan Berat Pembuangan Sampah Anda </h3>
               </div>
               <?php echo form_open('user/inputsampah','class="form-horizontal"');?>
                 <div class="box-body" id="settings">
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Garbage Weight</label>
+                    <label class="col-sm-4 control-label">Berat Sampah</label>
                     <div class="col-sm-7">
                       <input type="text" class="form-control" name="beratsampah" placeholder="Kilo">
+                      <?php echo form_error('beratsampah', '<div class="error" style="color: #d50000">', '</div>'); ?>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Tipe Sampah</label>
+                  </div>
                    <div class="form-group">
-                     <label class="col-sm-4 control-label">Garbage Type</label>
+                     <label class="col-sm-4 control-label">Organik</label>
                       <div class="col-sm-7">
                         <label>
-                          <input type="radio" name="jenis" value="1">
-                          Plastic
-                        </label>
-                        <label>
                           <input type="radio" name="jenis" value="2">
-                          Paper
-                        </label>
-                        <label>
-                          <input type="radio" name="jenis" value="3">
-                          Glass
-                        </label>
-                        <label>
-                          <input type="radio" name="jenis" value="4">
-                          Metal
+                          Kertas
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="5">
-                          Leftover
+                          Sisa Makanan
                         </label>
                         <label>
                           <input type="radio" name="jenis" value="6">
-                          Other
+                          lainnya
                         </label>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Anorganik</label>
+                      <div class="col-sm-7">
+                        <label>
+                          <input type="radio" name="jenis" value="1">
+                          Plastik
+                        </label>
+                        <label>
+                          <input type="radio" name="jenis" value="3">
+                          Kaca
+                        </label>
+                        <label>
+                          <input type="radio" name="jenis" value="4">
+                          Logam
+                        </label>
+                        <?php echo form_error('jenis', '<div class="error" style="color: #d50000">', '</div>'); ?>
                       </div>
                   </div>
                   <br />
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Disposal Method</label>
+                    <label class="col-sm-4 control-label">Cara Pembuangan</label>
                       <div class="col-sm-7">
                         <label>
                           <input type="radio" name="action" value="1">
-                          Discarded
+                          Dibakar
                         </label>
                         <label>
                           <input type="radio" name="action" value="2">
-                          Burnt
+                          Kirim ke TPS
                         </label>
                         <label>
                           <input type="radio" name="action" value="3">
-                          Send to Landfill
+                          Buang Sembarang
                         </label>
+                        <?php echo form_error('action', '<div class="error" style="color: #d50000">', '</div>'); ?>
                       </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Date</label>
+                    <label class="col-sm-4 control-label">Tanggal</label>
                       <div class="col-sm-7">
                         <div class="input-group date">
                           <input type="text" class="form-control" name="tanggal" data-provide="datepicker" data-date-format="yyyy-mm-dd">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                         </div>
+                        <?php echo form_error('tanggal', '<div class="error" style="color: #d50000">', '</div>'); ?>
                       </div>
                   </div>
                 </div>
@@ -90,5 +108,3 @@
       </section>
   </div>
 <?php $this->load->view('templateadmin/footer'); ?>
-
- <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->

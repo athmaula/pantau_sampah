@@ -1,6 +1,6 @@
 <!--start of footer-->
 
-<div class="bottom">
+<div class="bottom" id="contact">
         <div class="container">
           <br/><br/>
             <div class="col-md-8 col-sm-4">
@@ -14,17 +14,19 @@
                 production of garbage, calculate it and serve it as interesting as they can. This way they provide
                 real time data.
                 </p>
-                <hr>
             </div>
             <div class="col-md-4 col-sm-4">
-                <h4><span class="glyphicon glyphicon-send"></span>  Contact Us</h4>
-                <p>You can contact the admin through
-                  pantausampah@gmail.com<br/>
+                <h4> Contact Us</h4>
+                <p>You can contact the admin through and we will get back to you as soon as possible!<br />
+                <i class="fa fa-envelope-o fa-1x"></i>
                   athoil286@gmail.com<br/>
+                  <i class="fa fa-envelope-o fa-1x"></i>
                   patriciabriliani@gmail.com<br/>
                   just choose one address and sent your email.
                 </p>
-                <hr>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <p class="footer pull-right">powered by : startbootstrap-creative</p>
             </div>
         </div>
     </div>
@@ -32,15 +34,14 @@
 <!--end of footer-->
 
 <script src="<?php echo base_url()?>asset/js/jquery.min.js"></script>
- <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
 <script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
 <script src="<?php echo base_url()?>asset/js/scriptGrafik.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="<?php echo base_url()?>asset/js/bootstrap.min.js"></script>-->
- <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
- 
-<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script-->
+<script src="<?php echo base_url()?>asset/js/jquery.easing.min.js"></script>
+<script src="<?php echo base_url()?>asset/js/jquery.fittext.js"></script>
+<script src="<?php echo base_url()?>asset/js/wow.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="<?php echo base_url()?>asset/js/creative.js"></script>
 
 </body>
 </html>
