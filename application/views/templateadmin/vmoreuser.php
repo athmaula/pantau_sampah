@@ -15,7 +15,7 @@
 									<table class="table table-bordered table-hover">
 										<tr>
 											<td>
-												Name
+												Nama Lengkap
 											</td>
 											<td>
 												<?php echo $nama ?>
@@ -53,7 +53,7 @@
 								</tr>
 								<tr>
 									<td>
-									 Role as
+									 Status
 									</td>
 									<td>
 										<?php echo $role_id ?>
@@ -61,7 +61,7 @@
 								</tr>
 								<tr>
 									<td>
-										Born Date
+										Tanggal Lahir
 									</td>
 									<td>
 										<?php echo $born_date ?>

@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							redirect('admin');	
 							break;
 						case '2': //user
-							$this->session->set_flashdata('sukses','<div class="text-center alert alert-success fade in animated bounceInDown noborder">Hello, Welcome back <b>'.$valid_user->username.'!</b><a href="#" class="close" style="text-decoration : none;" data-dismiss="alert" aria-label="close">&times;</a></div>');
+							$this->session->set_flashdata('sukses','<div class="text-center alert alert-success fade in animated bounceInDown noborder">Hai, Selamat datang kembali <b>'.$valid_user->username.' !</b><a href="#" class="close" style="text-decoration : none;" data-dismiss="alert" aria-label="close">&times;</a></div>');
 							redirect('user');	
 							break;		
 						default: break;

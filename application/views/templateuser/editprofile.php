@@ -17,7 +17,7 @@
             <h3 class="box-title">Edit Profil</h3>
           </div>
           <div class="box-body">
-            <div class="col-xs-12 col-md-offset-2 col-md-6">
+            <div class="col-xs-12 col-md-offset-1 col-md-8">
                        <?php echo form_open_multipart('user/update','class="form-horizontal"'); ?>  <!--mengarahkan hasil inputan ke controller--> 
               <div class="form-group">
                 <label class="col-sm-3 control-label">Nama Lengkap</label>

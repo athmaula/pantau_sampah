@@ -18,7 +18,7 @@
   <div class="col-sm-offset-3 col-xs-12 col-sm-6 tengah-reg">
     <?php echo $this->session->flashdata('error') ?>
     <?php echo form_open('register/register','class="form-horizontal" id="reg-box"')?>
-    <h3 class="title-box">Sign Up Pantau Sampah <hr /></h3>
+    <h3 class="title-box">Daftar Pantau Sampah <hr /></h3>
       <div class="form-group">
         <div class="col-sm-12">
         <label class="control-label">Nama Lengkap</label>
@@ -64,8 +64,8 @@
       </div>
     <div class="clearfix"></div>
     <div class="box-footer">
-      <a class="col-sm-offset-0 col-sm-10" href="<?php echo site_url('file/login') ?>">sudah punya akun, sign in sekarang</a>
-      <button type="submit" class="btn btn-success">Sign Up</button>
+      <a class="col-sm-offset-0 col-sm-10" href="<?php echo site_url('file/login') ?>">sudah punya akun, masuk sekarang</a>
+      <button type="submit" class="btn btn-success">Daftar</button>
     </div>
     <?php form_close(); ?> <!-- menutup form -->
   </div>

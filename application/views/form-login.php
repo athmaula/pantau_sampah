@@ -36,7 +36,7 @@
     <div class="clearfix"></div>
     <div class="box-footer">
       <a class="col-sm-offset-0 col-sm-9" href="<?php echo site_url('file/register') ?>">belum punya akun ? register disini</a>
-      <button type="submit" class="btn btn-success">Sign in</button>
+      <button type="submit" class="btn btn-success">Masuk</button>
     </div>
     <?php form_close(); ?> <!-- menutup form -->
   </body>

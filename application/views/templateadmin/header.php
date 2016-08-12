@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- bootstrap link -->
     <link href="<?php echo base_url()?>asset/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Date Picker -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>asset/plugins/datepicker/datepicker3.css">
-    <!-- Font awesome -->
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="<?php base_url();?>asset/font-awesome/css/font-awesome.min.css" type="text/css">
+    <!-- Jquery.confirm -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/plugins/jquery.confirm-master/website/css/font-awesome.min.css">
     <!-- data table -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/plugins/datatables/dataTables.bootstrap.css">
@@ -54,7 +57,7 @@
                       <a href="<?php echo site_url('/admin/view') ?>" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <?php echo anchor('logout', 'Sign Out', 'class="btn btn-danger btn-flat"'); ?>
+                      <?php echo anchor('logout', 'Keluar', 'class="btn btn-danger btn-flat"'); ?>
                     </div>
                   </li>
                 </ul>

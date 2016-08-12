@@ -61,10 +61,10 @@
 
 <script>
     $("a.delete").confirm({
-      text: "Are you sure you want to delete ?",
-      title: "Confirmation required",
-      confirmButton: "Yes Sure",
-      cancelButton: "No, Cancel",
+      text: "Anda Yakin Ingin Menghapus Data ini ?",
+      title: "Konfirmasi",
+      confirmButton: "Ya, Hapus",
+      cancelButton: "Tidak, Batal",
       post: true,
       confirmButtonClass: "btn-danger",
       cancelButtonClass: "btn-default",

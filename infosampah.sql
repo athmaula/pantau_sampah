@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 08, 2016 at 01:55 PM
+-- Generation Time: Aug 07, 2016 at 06:40 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.17
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `data_sampah_user` (
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id_data`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=118 ;
 
 --
 -- Dumping data for table `data_sampah_user`
@@ -68,7 +68,15 @@ INSERT INTO `data_sampah_user` (`id_data`, `user_id`, `input_sampah`, `input_tot
 (98, 95, 1.2, 0, 2, 2, '2016-05-15', '2016-05-15 14:41:19', '0000-00-00 00:00:00'),
 (100, 95, 3, 0, 2, 1, '2016-06-03', '2016-06-03 15:26:25', '0000-00-00 00:00:00'),
 (101, 95, 1.2, 0, 2, 5, '2016-06-05', '2016-06-05 05:34:09', '0000-00-00 00:00:00'),
-(102, 95, 0.3, 0, 3, 5, '2016-06-05', '2016-06-05 05:34:31', '0000-00-00 00:00:00');
+(102, 95, 0.3, 0, 3, 5, '2016-06-05', '2016-06-05 05:34:31', '0000-00-00 00:00:00'),
+(104, 99, 2, 0, 2, 5, '2016-06-09', '2016-06-08 16:13:00', '0000-00-00 00:00:00'),
+(105, 99, 1.2, 0, 3, 3, '2016-06-09', '2016-06-08 16:14:06', '0000-00-00 00:00:00'),
+(109, 95, 1, 0, 2, 3, '2016-06-08', '2016-06-08 16:18:38', '0000-00-00 00:00:00'),
+(110, 99, 1.2, 0, 2, 2, '2016-06-09', '2016-06-08 17:40:15', '0000-00-00 00:00:00'),
+(111, 99, 1.2, 0, 3, 6, '2016-06-08', '2016-06-08 17:40:43', '0000-00-00 00:00:00'),
+(113, 99, 1, 0, 2, 4, '2016-06-09', '2016-06-08 17:42:20', '0000-00-00 00:00:00'),
+(116, 99, 1, 0, 1, 2, '2016-06-09', '2016-06-08 18:10:30', '0000-00-00 00:00:00'),
+(117, 95, 1, 0, 2, 5, '2016-07-22', '2016-07-22 00:44:04', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -92,8 +100,8 @@ CREATE TABLE IF NOT EXISTS `data_tips` (
 --
 
 INSERT INTO `data_tips` (`id`, `id_user`, `title`, `content`, `create_at`, `edit_at`) VALUES
-(3, 48, 'Did you know ?', 'the aluminum can be decomposed in 200 years', '2016-04-12 19:23:54', '2016-04-12 19:23:54'),
-(4, 48, 'Do you know ?', ' Cows in Kupang, NTT eat garbage from Alak Landfill. It''s usuall now to find some cow dead suddenly, ', '2016-05-15 16:24:49', '2016-05-15 16:24:49');
+(3, 48, 'Tahukah anda ?', 'alumunium dapat terurai alami dalam waktu 200 tahun', '2016-06-09 05:34:41', '2016-06-09 05:34:41'),
+(4, 48, 'Tahukah anda ?', 'Sapi di Kupang, NTT. memakan sampah yang berasal dari TPA di Alak.  ', '2016-06-09 05:36:12', '2016-06-09 05:36:12');
 
 -- --------------------------------------------------------
 
@@ -109,15 +117,15 @@ CREATE TABLE IF NOT EXISTS `data_tips_homepage` (
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `edit_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `data_tips_homepage`
 --
 
 INSERT INTO `data_tips_homepage` (`id`, `id_user`, `title`, `content`, `create_at`, `edit_at`) VALUES
-(1, 48, 'Did you know ?', 'the tissue paper be decomposed in one month ', '2016-04-12 19:17:56', '0000-00-00 00:00:00'),
-(2, 48, 'Did You Know ?', 'Indonesia contribute heaps of plastic garbage in the world, currently second in the world with 3,216,856', '2016-02-25 08:01:54', '0000-00-00 00:00:00');
+(2, 48, 'Tahukah anda ?', 'Indonesia membantu berkonstribusi dalam pencemaran sampah plastik di dunia. setidaknya sebanyak 3,216,856...', '2016-06-09 05:28:37', '0000-00-00 00:00:00'),
+(3, 98, 'Waktu Tisu Terurai ?', 'Tahukah anda tissue terurai secara alami dalam kurun waktu 1 bulan... jadi gunakan sebaik mungkin agar tidak menjadi pencemaran sampah :)', '2016-07-21 14:02:30', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -189,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `edit_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=100 ;
 
 --
 -- Dumping data for table `user`
@@ -200,7 +208,8 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `bio`, `born_
 (94, 'Sampah', 'sampah', 'd31f71cf013b18fe6beab90a560ba7e2', 'sampah@sampah.com', 'Sampah sampah', '0000-00-00', 'female', 2, '2016-05-08 10:43:01', '2016-05-08 15:45:34'),
 (95, 'Dinus Open Source Community', 'doscom', 'a9dfb46e320b6f0587a070dd9cf1209e', 'doscom@official.com', 'Dinus Open Source Community', '2008-10-28', 'male', 2, '2016-05-08 14:37:25', '2016-05-08 15:56:11'),
 (96, 'Bring me the horizon', 'bmthband', '897c8fde25c5cc5270cda61425eed3c8', 'bmth@band.com', '', '2016-03-16', 'male', 2, '2016-05-08 16:36:53', '0000-00-00 00:00:00'),
-(97, 'Admin Pantau Sampah', 'admin', 'a6160f504775ad2505783ab57ba5cff7', 'pantau_sampah@official.com', 'Admin Pantau Sampah', '2016-09-03', 'male', 1, '2016-06-05 11:38:28', '2016-06-05 13:45:15');
+(98, 'Admin Pantau Sampah', 'admin', '897c8fde25c5cc5270cda61425eed3c8', 'admin@admin.com', '', '0000-00-00', 'male', 1, '2016-06-08 16:09:43', '0000-00-00 00:00:00'),
+(99, 'athoil', 'athoil', '897c8fde25c5cc5270cda61425eed3c8', 'athoil@maula.com', '', '0000-00-00', 'male', 2, '2016-06-08 16:11:55', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 

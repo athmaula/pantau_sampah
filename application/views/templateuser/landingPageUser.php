@@ -12,8 +12,8 @@
                 <div class="item active">
                   <div class="carousel-content">
                     <div>
-                      <h2>What is Pantau Sampah ?</h2>
-                      <h4>Pantau Sampah is our project, dedicated to warn people about how dangerous garbage can be.</h4>
+                      <h2>Apa itu Pantau Sampah ?</h2>
+                      <h4>Pantau Sampah sebuah project yang terdedikasi untuk memperingatkan tentang bahaya sampah dan bahaya yang ditimbulkannya.</h4>
                     </div>
                   </div>
                 </div>
@@ -21,8 +21,8 @@
                 <div class="item">
                   <div class="carousel-content">
                     <div class="col-xs-offset-2 col-sm-offset-3 col-lg-offset-2 col-md-offset-3 col-xs-8 col-sm-6 col-md-6 col-lg-12">
-                      <h1><strong><?php echo $row->title; ?></strong></h1>
-                      <h4><?php echo $row->content; ?></strong></h4>
+                      <h1><?php echo $row->title; ?></h1>
+                      <h4><?php echo $row->content; ?></h4>
                     </div>
                   </div>
                 </div>

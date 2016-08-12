@@ -55,7 +55,7 @@
                           <td><?php echo $row->tanggal; ?></td>
                           <td>
                             <a href="<?php echo site_url('user/editinputsampah/'.$row->id_data);?>" class="btn btn-warning">Edit</a>
-                            <a href="<?php echo site_url('user/deleteinputsampah/'.$row->id_data); ?>" class="btn btn-danger delete">Delete</a>
+                            <a href="<?php echo site_url('user/deleteinputsampah/'.$row->id_data); ?>" class="btn btn-danger delete">Hapus</a>
                           </td>
                         </tr>
                         <?php }  ?>
@@ -100,10 +100,10 @@
 <script>
 
     $("a.delete").confirm({
-      text: "Are you sure you want to delete ?",
-      title: "Confirmation required",
-      confirmButton: "Yes Sure",
-      cancelButton: "No, Cancel",
+      text: "Apakah anda yakin ingin menghapus data ini ?",
+      title: "Konfirmasi",
+      confirmButton: "Hapus",
+      cancelButton: "Batal",
       post: true,
       confirmButtonClass: "btn-danger",
       cancelButtonClass: "btn-default",

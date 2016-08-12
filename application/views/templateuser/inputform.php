@@ -33,15 +33,15 @@
                      <label class="col-sm-4 control-label">Organik</label>
                       <div class="col-sm-7">
                         <label>
-                          <input type="radio" name="jenis" value="2">
+                          <input type="radio" name="jenis" value="2" class="flat-green">
                           Kertas
                         </label>
                         <label>
-                          <input type="radio" name="jenis" value="5">
+                          <input type="radio" name="jenis" value="5" class="flat-green">
                           Sisa Makanan
                         </label>
                         <label>
-                          <input type="radio" name="jenis" value="6">
+                          <input type="radio" name="jenis" value="6" class="flat-green">
                           lainnya
                         </label>
                       </div>
@@ -50,15 +50,15 @@
                     <label class="col-sm-4 control-label">Anorganik</label>
                       <div class="col-sm-7">
                         <label>
-                          <input type="radio" name="jenis" value="1">
+                          <input type="radio" name="jenis" value="1" class="flat-red">
                           Plastik
                         </label>
                         <label>
-                          <input type="radio" name="jenis" value="3">
+                          <input type="radio" name="jenis" value="3" class="flat-red"> 
                           Kaca
                         </label>
                         <label>
-                          <input type="radio" name="jenis" value="4">
+                          <input type="radio" name="jenis" value="4" class="flat-red">
                           Logam
                         </label>
                         <?php echo form_error('jenis', '<div class="error" style="color: #d50000">', '</div>'); ?>
@@ -69,15 +69,15 @@
                     <label class="col-sm-4 control-label">Cara Pembuangan</label>
                       <div class="col-sm-7">
                         <label>
-                          <input type="radio" name="action" value="1">
+                          <input type="radio" name="action" value="1" class="flat-aero">
                           Dibakar
                         </label>
                         <label>
-                          <input type="radio" name="action" value="2">
+                          <input type="radio" name="action" value="2" class="flat-aero">
                           Kirim ke TPS
                         </label>
                         <label>
-                          <input type="radio" name="action" value="3">
+                          <input type="radio" name="action" value="3" class="flat-aero">
                           Buang Sembarang
                         </label>
                         <?php echo form_error('action', '<div class="error" style="color: #d50000">', '</div>'); ?>
@@ -107,4 +107,5 @@
         </div>
       </section>
   </div>
-<?php $this->load->view('templateadmin/footer'); ?>
+
+<?php $this->load->view('templateuser/footer'); ?>

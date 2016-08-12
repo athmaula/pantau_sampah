@@ -103,7 +103,7 @@
     tooltipTemplate: "<%if (label){%><%=label%> : <%}%><%= value + ' Kilo' %>"
   }
   var data = {
-    labels: ["Maximum your input", "Minimum yout input", "Average your Input"],
+    labels: ["Maximum user input", "Minimum user input", "Average user Input"],
     datasets: [
     {
       label: "My First dataset",

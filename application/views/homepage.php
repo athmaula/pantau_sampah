@@ -17,16 +17,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Tentang</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#tips">Tips</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#service">Service</a>
+                        <a class="page-scroll" href="#service">Fitur</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Kontak</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="<?php echo site_url('file/login'); ?>" title="Login Pantau Sampah"> <i class="fa fa-sign-in fa-lg"></i> Login</a>
@@ -43,8 +43,8 @@
             <div class="header-content-inner">
                 <h1>Pantau Sampah</h1>
                 <hr>
-                <p>This application can help people counting their own garbage and acoumulate it with other's people garbage. In return we will acquire how many garbage this city produce, and we will now what happend to that garbage.</p>
-                <a href="<?php echo site_url('file/register'); ?>" class="btn btn-primary btn-xl page-scroll"><i class="fa fa-user fa-lg"></i> Register Now !</a>
+                <p>Merupakan sebuah aplikasi yang dapat menghitung jumlah pengeluaran sampah pengguna dan mengakumulasikan dengan pengeluaran sampah orang lain. harapannya kita dapat belajar seberapa banyak sampah yang telah diproduksi di kota dan kita tahu apa yang akan terjadi pada sampah tersebut</p>
+                <a href="<?php echo site_url('file/register'); ?>" class="btn btn-primary btn-xl page-scroll"><i class="fa fa-user fa-lg"></i> Daftar Sekarang</a>
             </div>
         </div>
     </header>
@@ -52,7 +52,7 @@
     <section class="bg-primary" id="tips">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
+                <div class="col-sm-12 text-center">
                     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
                         <div class="row">
                             <div class="col-xs-offset-0 col-sm-offset-0 col-lg-offset-3 col-md-offset-4 col-xs-8 col-sm-6 col-md-6 col-lg-6">
@@ -60,16 +60,16 @@
                                     <div class="item active">
                                         <div class="carousel-content">
                                             <div class="col-xs-offset-4 col-sm-offset-0 col-lg-offset-3 col-md-offset-4 col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                <h1>Did You Know ?</h1>
-                                                <h4> Styrofoam can't Straggling ... </h4>
+                                                <h1>Tahukah Anda ?</h1>
+                                                <h4> Sterofoam tidak bisa terurai secara alami ... </h4>
                                             </div>
                                         </div>
                                     </div>
                                     <?php foreach ($tips_homepage as $row) { ?>
                                     <div class="item">
                                         <div class="carousel-content">
-                                            <div class="col-xs-offset-4 col-sm-offset-3 col-lg-offset-3 col-md-offset-3 col-xs-8 col-sm-6 col-md-6 col-lg-6">
-                                                <h1><strong><?php echo $row->title; ?></strong></h1>
+                                            <div class="col-xs-offset-4 col-sm-offset-3 col-lg-offset-3 col-md-offset-3 col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                <h1><?php echo $row->title; ?></h1>
                                                 <h4><?php echo $row->content; ?></h4>
                                             </div>
                                         </div>
@@ -90,7 +90,7 @@
      <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Service</h2>
+                    <h2 class="section-heading">Fitur Pantau Sampah</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -98,7 +98,7 @@
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="service-box">
+                    <span class="service-box">
                         <img src="<?php echo base_url();?>asset/img/output-charts.png" class="img-responsive img-service" alt="">
                         <div class="service-box-caption">
                             <div class="service-box-caption-content">
@@ -110,10 +110,10 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </span>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="service-box">
+                    <span class="service-box">
                         <img src="<?php echo base_url();?>asset/img/output-data.png" class="img-responsive img-service" alt="">
                         <div class="service-box-caption">
                             <div class="service-box-caption-content">
@@ -125,10 +125,10 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </span>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="service-box">
+                    <span class="service-box">
                         <img src="<?php echo base_url();?>asset/img/tips.png" class="img-responsive img-service" alt="">
                         <div class="service-box-caption">
                             <div class="service-box-caption-content">
@@ -137,7 +137,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About Pantau Sampah</h2>
+                    <h2 class="section-heading">Tentang Pantau Sampah</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -157,29 +157,29 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="about-box">
                         <i class="fa fa-4x fa-comment-o wow bounceIn text-primary"></i>
-                        <h3>What is Pantau Sampah ?</h3>
-                        <p class="text-muted">Pantau Sampah is our project, dedicated to warn people about how dangerous garbage can be.The solution is take care of the garbage carefully. Carefully means we throw garbage in garbage dump, sorting the chemical waste from household waste, and doing recycle. </p>
+                        <h3>Apa itu Pantau Sampah ?</h3>
+                        <p class="text-muted">Pantau Sampah adalah sebuah project yang terdedikasikan untuk menghimbah masyarakat tentang bagaimana bahaya yang ditimbulkan dari sampah. Sebuah solusi untuk mengatasi sampah dengan baik. Seperti kita membuang sampah ke tempat sampah, memilah sampah berdasarkan jenisnya , dan mendaur ulang. </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="about-box">
                         <i class="fa fa-4x fa-line-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>What Pantau Sampah Function ?</h3>
-                        <p class="text-muted">This application can help people counting their own garbage and acoumulate it with other's people garbage.In return we will acquire how many garbage this city produce, and we will now what happend to that garbage.</p>
+                        <h3>Apa Fungsinya ?</h3>
+                        <p class="text-muted">Aplikasi ini dapat membantu masyarakat menghitung jumlah pengeluaran sampah mereka dan mengakumulasi dengan pengeluaran sampah orang lain. harapannya kita dapat belajar seberapa banyak sampah yang telah diproduksi di kota dan kita tahu apa yang akan terjadi pada sampah tersebut.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="about-box">
                         <i class="fa fa-4x fa-thumbs-o-up wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Useful Tips From Pantau Sampah</h3>
-                        <p class="text-muted">We provide information and fun fact about garbage. The information we provide will be update regulary, so the information will be up to date.From this information we hope people more aware about how garbage can affect our surrounding and our future. </p>
+                        <h3>Tips Berguna dari Pantau Sampah</h3>
+                        <p class="text-muted">Kami menyediakan informasi dan fakta seputar sampah. Informasi yang kami berikan terbaru, jadi informasi tersebut up to date.dari informasi kami berharap masyarkat dapat lebih sadar bagaimana efek yang ditimbulkan dari sampah. </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="about-box">
                         <i class="fa fa-4x fa-users wow bounceIn text-primary" data-wow-delay=".3s"></i>
                         <h3>Join Pantau Sampah</h3>
-                        <p class="text-muted">We can't educate people about garbage hazard alone. Joining Pantau Sampah can help us tell you about garbage hazard and hopefully you will spread the information into your famiy, your friends, your collagues, and your neigbour. Let's save our earth. </p>
+                        <p class="text-muted">Kami tidak bisa mengedukasi masyarakat bahaya dari sampah sendiri. bergabung dengan Pantau Sampah dapat membantu kita untuk memberitahu anda tentang bahaya sampah dan harapanya anda dapat menyebarkan informasi ke keluarga anda, teman anda, teman kuliah anda, dan tetangga anda. Mari selamatkan bumi kita!. </p>
                     </div>
                 </div>
             </div>

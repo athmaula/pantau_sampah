@@ -9,12 +9,12 @@
       <div class="col-md-8">
         <div class="box box-solid box-info">
           <div class="box-header">
-            <h3 class="box-title">Add New User </h3>
+            <h3 class="box-title">Tambah User Baru </h3>
           </div>
           <div class="box-body">
               <?php echo form_open('crud/insert','class="form-horizontal"');?>
               <div class="form-group">
-                <label class="col-md-2 control-label">Full Name</label>
+                <label class="col-md-2 control-label">Nama Lengkap</label>
                 <div class="col-md-7">
                     <input type="text" class="form-control" name="nama" placeholder="Pantau Sampah">
                     <?php echo form_error('nama', '<div class="error" style="color: #d50000">', '</div>'); ?>
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-md-2 control-label">Born Date</label>
+                <label class="col-md-2 control-label">Tanggal Lahir</label>
                 <div class="col-sm-7">
                   <input type="text" class="form-control" data-provide="datepicker" data-date-format="yyyy-mm-dd" name="born_date">
                   <p>ex. 1990-09-09</p>
@@ -65,7 +65,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-md-2 control-label">Role As</label>
+                <label class="col-md-2 control-label">Status</label>
                 <div class="col-sm-7">
                     <input type="radio" name="role" value="1" <?php echo set_radio('gender', '1'); ?>/>Admin
                     <input type="radio" name="role" value="2" <?php echo set_radio('gender', '2'); ?>/>User Only

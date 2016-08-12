@@ -15,11 +15,17 @@
     <!-- theme admin lte style -->
     <link href="<?php echo base_url(); ?>asset/css/AdminLTE.min.css"  rel="stylesheet" >
     <link href="<?php echo base_url(); ?>asset/css/skins/_all-skins.min.css"  rel="stylesheet" >
+    <!-- chart.js -->
     <script src="<?php echo base_url()?>asset/plugins/chartjs/Chart.min.js"></script>
     <!-- style css custom -->
     <link href="<?php echo base_url(); ?>asset/css/tambahan.css"  rel="stylesheet" >
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="<?php echo base_url();?>asset/css/animate.min.css" type="text/css">
+    <!--- icheck -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/plugins/iCheck/all.css">
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="<?php base_url();?>asset/font-awesome/css/font-awesome.min.css" type="text/css">
+
 
 
   </head>
@@ -56,7 +62,7 @@
                       <a href="<?php echo site_url('/user/view') ?>" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <?php echo anchor('logout', 'Sign Out', 'class="btn btn-danger"'); ?>
+                      <?php echo anchor('logout', 'Keluar', 'class="btn btn-danger"'); ?>
                     </div>
                   </li>
                 </ul>
